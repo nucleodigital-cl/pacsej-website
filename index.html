@@ -39,52 +39,20 @@
     }
 
     /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 3rem;
-      background: rgba(255, 255, 255, 0.98); 
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      font-weight: bold;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-    }
-
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-
-    .nav-cta {
-      background: var(--accent2);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      text-decoration: none;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: bold;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-    .nav-cta:hover { background: #DD6B20; }
-
+    <nav>
+  <div class="nav-logo">PACSEJ</div>
+  <ul class="nav-menu">
+    <li><a href="#que-es">¿Qué es?</a></li>
+    <li><a href="#taxonomia">Taxonomía</a></li>
+    <li><a href="#marco-legal">Marco Legal</a></li>
+    <li><a href="#asistente">Asistente IA</a></li>
+    <li><a href="#noticias">Noticias</a></li>
+    <li><a href="#autora">Autora</a></li>
+  </ul>
+  <a href="https://form.typeform.com/to/lwooln58" class="nav-cta" target="_blank">
+    INICIAR AUDITORÍA
+  </a>
+</nav>
     /* HERO */
     #inicio {
       padding: 10rem 3rem 5rem;
