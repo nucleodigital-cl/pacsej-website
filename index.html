@@ -124,6 +124,129 @@ color: var(--text-muted);
 line-height: 1.6;
 }
 
+.hero-cta {
+display: inline-block;
+margin-top: 2.5rem;
+background: var(--accent2);
+color: white;
+padding: 1.2rem 2.8rem;
+text-decoration: none;
+font-family: var(--font-mono);
+font-size: 1rem;
+font-weight: bold;
+border-radius: 6px;
+letter-spacing: 0.08em;
+transition: 0.3s;
+box-shadow: 0 4px 20px rgba(237,137,54,0.35);
+}
+.hero-cta:hover { background: #DD6B20; transform: translateY(-3px); box-shadow: 0 8px 28px rgba(237,137,54,0.45); }
+
+/* PROTOCOLO SECTION */
+.protocolo-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+margin-top: 3rem;
+}
+.protocolo-card {
+background: white;
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 2rem;
+}
+.protocolo-card.full-width {
+grid-column: 1 / -1;
+}
+.protocolo-card-icon {
+font-size: 1.8rem;
+margin-bottom: 0.8rem;
+}
+.protocolo-card h3 {
+font-family: var(--font-mono);
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: var(--accent);
+margin-bottom: 0.8rem;
+}
+.protocolo-card p {
+font-size: 1rem;
+color: var(--text-muted);
+line-height: 1.7;
+margin-bottom: 0.8rem;
+}
+.protocolo-card ul {
+list-style: none;
+padding: 0;
+margin: 0.8rem 0 0;
+}
+.protocolo-card ul li {
+font-size: 0.95rem;
+color: var(--text-muted);
+padding: 0.35rem 0;
+padding-left: 1.2rem;
+position: relative;
+line-height: 1.5;
+}
+.protocolo-card ul li::before {
+content: "→";
+position: absolute;
+left: 0;
+color: var(--accent2);
+font-weight: bold;
+}
+.resultado-badges {
+display: flex;
+gap: 0.8rem;
+flex-wrap: wrap;
+margin: 1rem 0;
+}
+.badge {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+padding: 0.4rem 1rem;
+border-radius: 20px;
+font-family: var(--font-mono);
+font-size: 0.78rem;
+font-weight: bold;
+}
+.badge-verde { background: #F0FFF4; color: #276749; border: 1px solid #9AE6B4; }
+.badge-amarillo { background: #FFFFF0; color: #744210; border: 1px solid #F6E05E; }
+.badge-rojo { background: #FFF5F5; color: #9B2335; border: 1px solid #FEB2B2; }
+.protocolo-highlight {
+background: var(--accent);
+color: white;
+border: none;
+}
+.protocolo-highlight h3 { color: rgba(255,255,255,0.75); }
+.protocolo-highlight p { color: rgba(255,255,255,0.9); }
+.protocolo-highlight ul li { color: rgba(255,255,255,0.85); }
+.protocolo-highlight ul li::before { color: var(--accent2); }
+.protocolo-cta-box {
+background: linear-gradient(135deg, var(--accent2), #DD6B20);
+color: white;
+border: none;
+text-align: center;
+}
+.protocolo-cta-box h3 { color: rgba(255,255,255,0.8); }
+.protocolo-cta-box p { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
+.protocolo-cta-box .btn-white {
+display: inline-block;
+margin-top: 1.5rem;
+background: white;
+color: var(--accent2);
+padding: 0.9rem 2rem;
+text-decoration: none;
+font-family: var(--font-mono);
+font-size: 0.85rem;
+font-weight: bold;
+border-radius: 4px;
+letter-spacing: 0.06em;
+transition: 0.3s;
+}
+.protocolo-cta-box .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
 /* SECTIONS */
 section { 
 padding: 6rem 3rem;
@@ -746,11 +869,14 @@ top: 0;
 nav { padding: 1rem; }
 .nav-links { display: none; }
 section { padding: 4rem 1.5rem; }
-.hero-title { font-size: 3rem; }
+.hero-title { font-size: 2.8rem; }
 .reg-grid { grid-template-columns: 1fr; }
 .author-content { grid-template-columns: 1fr; text-align: center; }
 .author-img { margin: 0 auto; }
 .author-links { justify-content: center; }
+.protocolo-grid { grid-template-columns: 1fr; }
+.protocolo-card.full-width { grid-column: 1; }
+.resultado-badges { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -773,23 +899,85 @@ section { padding: 4rem 1.5rem; }
 <!-- HERO -->
 <section id="inicio">
 <span class="hero-tag">Protocolo v3.0 · CTS & Legaltech</span>
-<h1 class="hero-title">Audita el sesgo de <em>cualquier sistema IA</em> en contextos jurídicos.</h1>
+<h1 class="hero-title">¿Tu IA cumple con la normativa?<br><em>Verifícalo ahora.</em></h1>
+<a href="https://tally.so/r/A78ReB" target="_blank" class="hero-cta">INICIAR AUDITORÍA</a>
 <p class="hero-subtitle">
-PACSEJ es un protocolo de auditoría sociotécnica para identificar y remediar sesgoritmos en sistemas de inteligencia artificial implementados en estudios jurídicos, empresas y organizaciones independientes.
+La inteligencia artificial ya está tomando decisiones que afectan derechos, procesos legales y vidas cotidianas. Pero hoy, auditar esos sistemas sigue siendo difícil, técnico y, muchas veces, inaccesible.<br><br>
+<strong>El Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos cambia eso.</strong>
 </p>
 </section>
 
 <!-- QUÉ ES -->
 <section id="que-es" class="section-divider">
-<span class="section-label">01. Propósito</span>
-<h2 class="section-title">El sesgo no es un error técnico.<br>Es una coproducción sociotécnica.</h2>
+<span class="section-label">01. El Protocolo</span>
+<h2 class="section-title">🔍 Un protocolo abierto para auditar,<br>clasificar y corregir sistemas de IA.</h2>
 <p class="section-intro">
-Los sistemas de inteligencia artificial que operan en contextos jurídicos no son herramientas neutras. 
-Son artefactos que coproducen conocimiento jurídico mientras invisibilizan las desigualdades estructurales 
-bajo una apariencia de objetividad técnica. PACSEJ permite identificar, clasificar y remediar los 
-<strong>sesgoritmos jurídicos</strong>: mecanismos algorítmicos que participan en la validación del 
-conocimiento legal mientras reproducen inequidades sistémicas.
+PACSEJ es un sistema de auditoría sociotécnica que permite evaluar si una herramienta de inteligencia artificial está realmente preparada para operar en contextos jurídicos. A través de un test estructurado, cualquier persona —no solo expertos técnicos— puede analizar un sistema y obtener un diagnóstico claro.
 </p>
+
+<div class="protocolo-grid">
+
+<!-- CARD 1: Qué evalúa -->
+<div class="protocolo-card">
+<div class="protocolo-card-icon">⚖️</div>
+<h3>¿Qué evalúa PACSEJ?</h3>
+<p>El protocolo verifica si un sistema de IA:</p>
+<ul>
+<li>Cumple con estándares de equidad y no discriminación</li>
+<li>Garantiza transparencia y trazabilidad de sus decisiones</li>
+<li>Permite supervisión humana efectiva</li>
+<li>Se adecua a la normativa vigente en Chile (IA, ciberseguridad y protección de datos)</li>
+</ul>
+</div>
+
+<!-- CARD 2: El resultado -->
+<div class="protocolo-card">
+<div class="protocolo-card-icon">📊</div>
+<h3>De la opacidad a la decisión informada</h3>
+<p>El resultado no es un informe técnico incomprensible. PACSEJ traduce problemas complejos en una clasificación simple y accionable:</p>
+<div class="resultado-badges">
+<span class="badge badge-verde">🟢 Cumple</span>
+<span class="badge badge-amarillo">🟡 Cumple parcialmente</span>
+<span class="badge badge-rojo">🔴 No cumple</span>
+</div>
+<p>Y cuando un sistema falla, no te deja solo: genera recomendaciones concretas para corregirlo, alineadas con estándares regulatorios y buenas prácticas internacionales.</p>
+</div>
+
+<!-- CARD 3: No solo técnica -->
+<div class="protocolo-card protocolo-highlight">
+<div class="protocolo-card-icon">🧠</div>
+<h3>No es solo una herramienta técnica</h3>
+<p>PACSEJ parte de una premisa fundamental: los sesgos no son errores aislados. Son el resultado de cómo se diseñan, entrenan e implementan los sistemas.</p>
+<p>Por eso, la auditoría no solo evalúa código, sino también:</p>
+<ul>
+<li>Decisiones de diseño</li>
+<li>Datos utilizados en el entrenamiento</li>
+<li>Contextos de uso y aplicación</li>
+<li>Impactos diferenciados en distintos grupos</li>
+</ul>
+</div>
+
+<!-- CARD 4: Contexto chileno -->
+<div class="protocolo-card">
+<div class="protocolo-card-icon">🇨🇱</div>
+<h3>Diseñado para Chile, con estándares globales</h3>
+<p>El protocolo integra un marco regulatorio multinivel:</p>
+<ul>
+<li>Exigencias regulatorias emergentes en Chile</li>
+<li>Principios de derechos fundamentales</li>
+<li>Estándares internacionales de gobernanza de IA, incluyendo sistemas de alto riesgo (EU AI Act)</li>
+</ul>
+</div>
+
+<!-- CARD 5: CTA final -->
+<div class="protocolo-card protocolo-cta-box full-width">
+<div class="protocolo-card-icon">🚀</div>
+<h3>Auditar antes de implementar no es opcional</h3>
+<p>Si vas a usar inteligencia artificial en contextos jurídicos, necesitas saber si puedes confiar en ella.<br>PACSEJ te permite hacerlo de forma clara, estructurada y basada en evidencia.</p>
+<a href="https://tally.so/r/A78ReB" target="_blank" class="btn-white">INICIAR AUDITORÍA AHORA →</a>
+</div>
+
+</div>
 </section>
 
 <!-- TAXONOMÍA -->
@@ -874,23 +1062,28 @@ para el funcionamiento democrático del derecho. Sin explicación, no hay derech
 <!-- SESGO 4 -->
 <div class="sesgo-card">
 <div class="sesgo-number">Sesgoritmo 04</div>
-<h3 class="sesgo-title">Epistémico o de Autoridad Automatizada</h3>
+<h3 class="sesgo-title">Sesgoritmo Epistémico o de Autoridad Automatizada</h3>
 <p class="sesgo-def">
-Ocurre cuando la autoridad cognitiva del juez o abogado se desplaza hacia la máquina. El algoritmo 
-actúa como nuevo actor epistémico capaz de generar enunciados que adquieren fuerza normativa, 
+Ocurre cuando la autoridad cognitiva del juez o abogado se desplaza hacia la máquina. El algoritmo
+actúa como nuevo actor epistémico capaz de generar enunciados que adquieren fuerza normativa,
 transformando quién tiene derecho a producir verdad jurídica.
 </p>
 <div class="sesgo-case">
-<strong>Caso paradigmático: Corte Constitucional Colombia</strong>
-La Corte Constitucional de Colombia advirtió expresamente sobre los riesgos de la delegación de 
-funciones jurisdiccionales a sistemas de IA, estableciendo que aunque la tecnología puede asistir, 
-no puede sustituir el razonamiento jurídico humano. El caso evidencia cómo sistemas predictivos 
-importados (como COMPAS, diseñado en EE.UU.) imponen ontologías jurídicas ajenas al contexto local.
+<strong>Caso paradigmático: Sentencia T-323/24 — Corte Constitucional de Colombia</strong>
+Juez de Cali usó ChatGPT 3.5 para "extender argumentos" de sentencia sobre copagos de menor con
+autismo, transcribiendo literalmente preguntas y respuestas del sistema como fundamento del fallo.
+La Corte Constitucional estableció que la IA puede asistir (corrección, síntesis) pero no sustituir
+el razonamiento indelegable del juez: interpretar hechos, valorar pruebas, motivar decisiones.
+Advirtió que las "alucinaciones" configuran falsedad en la motivación judicial y vulneran el debido
+proceso. El caso evidencia desplazamiento epistémico: el output algorítmico adquiere fuerza normativa
+sin que el juez conozca los sesgos o limitaciones del entrenamiento.
 </div>
 <p class="sesgo-cts">
-Los sistemas de IA importan ontologías jurídicas predominantemente Anglo-americanas que se exportan 
-como estándares técnicos universales, suprimiendo saberes jurídicos plurales y produciendo colonialidad 
-algorítmica (Harding, 1986; Yuk Hui, 2016).
+<strong>Dimensión CTS:</strong> Los sistemas generativos importan ontologías jurídicas anglo-americanas
+(corpus common law) que se exportan como estándares universales, suprimiendo saberes plurales y
+produciendo colonialidad algorítmica (Harding, 1991; Yuk Hui, 2016). La autoridad automatizada opera
+como nuevo régimen epistémico donde la máquina —y no el jurista— determina qué cuenta como
+"fundamento válido" (Jasanoff, 2006).
 </p>
 </div>
 </div>
