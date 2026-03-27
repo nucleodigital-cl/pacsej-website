@@ -992,6 +992,22 @@ margin-top: 1rem;
 color: var(--text-muted);
 }
 
+.rec-box {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.5rem;
+text-align: left;
+margin-top: 1.2rem;
+font-size: 0.88rem;
+line-height: 1.7;
+color: var(--text);
+}
+.rec-box strong { color: var(--text); }
+.rec-box ul { padding-left: 1.4rem; margin: 0.5rem 0; }
+.rec-box ul li { margin-bottom: 0.4rem; }
+.rec-box hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
 /* RESPONSIVE */
 @media (max-width: 968px) {
 .news-container {
@@ -1720,12 +1736,33 @@ function calcularResultado() {
         alertas += `<div class="audit-alerta" style="border-color:#9B2335;">🔴 <strong>Riesgo Inaceptable:</strong> El puntaje (${pct.toFixed(0)}%) sugiere múltiples vulneraciones. Consulta el Marco Regulatorio PACSEJ.</div>`;
     }
 
+    const contenidoBajo = `
+        <div class="rec-box">
+            <strong>🛡️ Guía de Seguridad para el Ciudadano:</strong>
+            <ul>
+                <li><strong>Supervisión Humana:</strong> Aunque el sistema sea confiable, siempre debe haber una persona revisando las decisiones importantes.</li>
+                <li><strong>Cierra la puerta digital:</strong> Usa contraseñas fuertes y activa el "doble factor" (ese código que llega al celular) para evitar hackeos.</li>
+                <li><strong>Guarda pruebas:</strong> El sistema debe anotar quién hizo qué. Si algo falla, esos registros (logs) son tu mejor defensa.</li>
+                <li><strong>Capacitación:</strong> Aprende a reconocer correos falsos (phishing). El error humano es la brecha más común.</li>
+            </ul>
+            <hr>
+            <strong>⚠️ Lo que debes saber sobre este resultado:</strong>
+            <ul>
+                <li><strong>Di la verdad:</strong> Si el sistema habla con personas, avísales claramente: "Hola, soy una IA". Es tu obligación legal.</li>
+                <li><strong>El riesgo no es eterno:</strong> Si hoy usas la IA para tareas simples pero mañana la usas para manejar datos sensibles, el riesgo sube a ALTO de inmediato.</li>
+                <li><strong>Sigues siendo responsable:</strong> Un riesgo bajo no te quita la responsabilidad civil. Si la IA causa un daño, tú respondes por ella.</li>
+            </ul>
+        </div>`;
+
     resDiv.innerHTML = `
         <h3>${esAlto ? '🔴 RIESGO ALTO / INACEPTABLE' : '🟢 RIESGO BAJO / LIMITADO'}</h3>
         <p style="font-size:0.9rem; color:var(--text-muted); margin:0.5rem 0 1rem;">
           Puntaje PACSEJ: <strong>${pct.toFixed(0)}%</strong> (${score}/40 puntos) · ${checked.length}/10 preguntas respondidas
         </p>
-        ${alertas || '<div class="audit-alerta" style="border-color:var(--accent3);">✅ No se detectaron sesgoritmos críticos en las respuestas proporcionadas.</div>'}
+        ${esAlto
+            ? (alertas || '<div class="audit-alerta" style="border-color:#9B2335;">🔴 Se detectaron fallas críticas de transparencia. Se recomienda una auditoría legal urgente antes de seguir usando este sistema.</div>')
+            : contenidoBajo
+        }
     `;
     resDiv.style.display = 'block';
     window.scrollTo({ top: resDiv.offsetTop - 80, behavior: 'smooth' });
