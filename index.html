@@ -1050,45 +1050,55 @@ nav, .hero-cta, .cta-section, footer,
 body { background: white; }
 }
 
+/* AUDIT INTRO GRID — 2 cols side by side */
+.audit-intro-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+max-width: 960px;
+margin: 0 auto 2rem;
+align-items: start;
+}
+@media (max-width: 700px) {
+  .audit-intro-grid { grid-template-columns: 1fr; }
+}
+
 /* AUDIT INTRO MANUAL */
 .audit-manual {
 background: var(--bg3);
 border: 1px solid var(--border);
 border-radius: 8px;
-padding: 1.5rem 2rem;
-margin-bottom: 2rem;
-max-width: 780px;
-margin-left: auto;
-margin-right: auto;
+padding: 1.5rem 1.5rem;
+height: 100%;
+box-sizing: border-box;
 }
-.audit-manual-steps { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+.audit-manual-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1rem; }
 .audit-manual-step {
-flex: 1;
-min-width: 180px;
 background: var(--bg);
 border: 1px solid var(--border);
 border-radius: 6px;
-padding: 0.8rem 1rem;
-font-size: 0.82rem;
+padding: 0.9rem 1rem;
+font-size: 0.97rem;
+line-height: 1.45;
 }
 .audit-manual-step strong {
 display: block;
 font-family: var(--font-mono);
-font-size: 0.65rem;
+font-size: 0.75rem;
 text-transform: uppercase;
 letter-spacing: 0.08em;
 color: var(--accent);
-margin-bottom: 0.3rem;
+margin-bottom: 0.4rem;
 }
 
 /* RESULT MOCKUP */
 .result-mockup {
-max-width: 780px;
-margin: 2rem auto 0;
+height: 100%;
+box-sizing: border-box;
 }
 .result-mockup-label {
 font-family: var(--font-mono);
-font-size: 0.65rem;
+font-size: 0.72rem;
 text-transform: uppercase;
 letter-spacing: 0.1em;
 color: var(--text-muted);
@@ -1103,9 +1113,9 @@ padding: 1.5rem;
 pointer-events: none;
 user-select: none;
 }
-.result-mockup-card .audit-badge { font-size: 0.65rem; padding: 0.4rem 1.4rem; }
-.result-mockup-card .sesgo-tag { font-size: 0.68rem; margin: 0.8rem 0; }
-.result-mockup-card .audit-action-box { font-size: 0.8rem; padding: 1rem; }
+.result-mockup-card .audit-badge { font-size: 0.72rem; padding: 0.4rem 1.4rem; }
+.result-mockup-card .sesgo-tag { font-size: 0.78rem; margin: 0.8rem 0; }
+.result-mockup-card .audit-action-box { font-size: 0.88rem; padding: 1rem; }
 
 /* CASOS DE USO */
 .casos-grid {
@@ -1311,9 +1321,12 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <h2 class="section-title">Cuestionario PACSEJ<br><em>Ciudadano v3.0</em></h2>
 <p class="section-intro">Herramienta de auditoría gratuita, sin registro, sin expertos técnicos. En 15 minutos obtienes un diagnóstico de sesgos y un plan de acción concreto.</p>
 
+<!-- GRID: MANUAL + MOCKUP lado a lado -->
+<div class="audit-intro-grid">
+
 <!-- MANUAL DE USO -->
 <div class="audit-manual">
-<p style="font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:0.5rem;">¿Qué vas a encontrar aquí?</p>
+<p style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:0.5rem;">¿Qué vas a encontrar aquí?</p>
 <div class="audit-manual-steps">
 <div class="audit-manual-step"><strong>Paso 1 — Elige módulo</strong>ChatGPT / Trabajo / Justicia / Ayuda social</div>
 <div class="audit-manual-step"><strong>Paso 2 — Responde</strong>10 preguntas comunes + 6–8 específicas de tu caso</div>
@@ -1328,12 +1341,12 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <div class="result-mockup-card">
 <div style="text-align:center;">
 <div class="audit-badge b-high" style="pointer-events:none;">RIESGO ALTO</div>
-<h3 style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin:0.4rem 0 0;color:var(--text);">Sistema de Caja Negra — Puntaje: 42%</h3>
+<h3 style="font-family:var(--font-mono);font-size:0.88rem;text-transform:uppercase;letter-spacing:0.08em;margin:0.4rem 0 0;color:var(--text);">Sistema de Caja Negra — Puntaje: 42%</h3>
 </div>
 <div class="sesgo-tag s-high">⚠️ PELIGRO — Sesgos críticos: Opacidad Algorítmica · Discriminación Directa/Proxies · Feedback Loop Negativo</div>
 <div class="audit-action-box">
-<h4 class="h-accent" style="font-size:0.68rem;">🛠️ Plan de Acción y Defensa:</h4>
-<ul style="font-size:0.8rem;padding-left:1.2rem;margin:0.4rem 0;">
+<h4 class="h-accent" style="font-size:0.78rem;">🛠️ Plan de Acción y Defensa:</h4>
+<ul style="font-size:0.88rem;padding-left:1.2rem;margin:0.4rem 0;">
 <li><strong>Exige supervisión humana obligatoria</strong> antes de aceptar cualquier decisión.</li>
 <li>Apela toda decisión automática que te afecte.</li>
 <li>Documenta cada error con fecha y pantallazos.</li>
@@ -1341,6 +1354,8 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 </div>
 </div>
 </div>
+
+</div><!-- /audit-intro-grid -->
 
 <div class="audit-inner" style="margin-top:2.5rem;">
 
