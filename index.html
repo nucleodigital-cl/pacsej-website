@@ -39,7 +39,7 @@ body {
 background: var(--bg);
 color: var(--text);
 font-family: var(--font-serif);
-font-size: 18px;
+font-size: 19px;
 line-height: 1.7;
 }
 
@@ -466,7 +466,7 @@ font-style: italic;
 }
 
 .reg-card-desc {
-font-size: 0.95rem;
+font-size: 1rem;
 color: var(--text-muted);
 margin-bottom: 1.5rem;
 line-height: 1.7;
@@ -729,7 +729,7 @@ text-transform: uppercase;
 }
 
 .news-item-excerpt {
-font-size: 0.9rem;
+font-size: 0.95rem;
 color: var(--text-muted);
 line-height: 1.6;
 margin-top: 0.5rem;
@@ -861,6 +861,29 @@ margin: 0 auto;
 
 /* AUDITORÍA CIUDADANA */
 .audit-inner { max-width: 820px; margin: 0 auto; }
+
+.citizen-science-banner {
+background: linear-gradient(135deg, #166534, #0D9488);
+color: white;
+padding: 1.2rem 1.8rem;
+border-radius: 12px;
+display: flex;
+align-items: center;
+gap: 1.2rem;
+max-width: 780px;
+margin: 0 auto 2rem;
+box-shadow: 0 4px 20px rgba(22, 101, 52, 0.25);
+}
+.cs-icon { font-size: 2.2rem; flex-shrink: 0; }
+.citizen-science-banner strong {
+display: block;
+font-family: var(--font-mono);
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+margin-bottom: 0.3rem;
+}
+.citizen-science-banner p { margin: 0; font-size: 0.9rem; opacity: 0.92; line-height: 1.5; }
 
 .audit-module-selector {
 background: var(--bg2);
@@ -1002,7 +1025,7 @@ border-radius: 8px;
 padding: 1.5rem;
 text-align: left;
 margin-top: 1.2rem;
-font-size: 0.88rem;
+font-size: 1rem;
 line-height: 1.7;
 color: var(--text);
 }
@@ -1114,7 +1137,7 @@ color: var(--text-muted);
 margin-bottom: 0.3rem;
 }
 .caso-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--text); }
-.caso-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6; }
+.caso-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.65; }
 .caso-hallazgo {
 background: var(--bg3);
 border-left: 3px solid var(--accent);
@@ -1263,7 +1286,7 @@ section { padding: 4rem 1.5rem; }
 <li><a href="#auditoria">Auditoría</a></li>
 <li><a href="#que-es">¿Qué es?</a></li>
 <li><a href="#casos-uso">Casos de Uso</a></li>
-<li><a href="#red-colaboracion">Colaboración</a></li>
+
 <li><a href="#taxonomia">Taxonomía</a></li>
 <li><a href="#marco">Marco Legal</a></li>
 <li><a href="#autora">Autora</a></li>
@@ -1320,6 +1343,16 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 </div>
 
 <div class="audit-inner" style="margin-top:2.5rem;">
+
+<!-- BANNER CIENCIA CIUDADANA -->
+<div class="citizen-science-banner">
+<div class="cs-icon">🔬</div>
+<div>
+<strong>¡Estás participando en un experimento de Ciencia Ciudadana!</strong>
+<p>Mientras auditas este sistema, estás ayudando a construir un Chile digital más justo. Gracias por ser parte.</p>
+</div>
+</div>
+
 <!-- SELECTOR DE MÓDULO -->
 <div class="audit-module-selector">
 <p>Paso 1 — Elige el módulo que deseas auditar:</p>
@@ -1488,55 +1521,10 @@ PACSEJ es un sistema de auditoría sociotécnica que permite evaluar si una herr
 </div>
 </section>
 
-<!-- RED DE COLABORACIÓN -->
-<section id="red-colaboracion" class="section section-divider">
-<span class="section-label">04. Red de Colaboración</span>
-<h2 class="section-title">Validación internacional.<br><em>Alcance global.</em></h2>
-<p class="section-intro">PACSEJ ha sido construido en diálogo con referentes académicos e instituciones de primer nivel. Esta red de colaboración es la que le da peso y rigor al protocolo.</p>
-
-<div class="red-grid">
-<div class="red-card">
-<div class="red-card-icon">🎓</div>
-<h4>Stanford University</h4>
-<p>HAI — Human-Centered Artificial Intelligence. Referente en gobernanza de IA y derechos fundamentales.</p>
-<span class="red-tag">Academia Internacional</span>
-</div>
-<div class="red-card">
-<div class="red-card-icon">🏢</div>
-<h4>Microsoft</h4>
-<p>Responsible AI Division. Estándares de equidad, transparencia y rendición de cuentas algorítmica.</p>
-<span class="red-tag">Industria Tech</span>
-</div>
-<div class="red-card">
-<div class="red-card-icon">📊</div>
-<h4>Deloitte Chile</h4>
-<p>Prácticas de auditoría tecnológica y compliance regulatorio para sistemas de IA en sector público.</p>
-<span class="red-tag">Consultoría</span>
-</div>
-<div class="red-card">
-<div class="red-card-icon">⚖️</div>
-<h4>Consejo de Estado de España</h4>
-<p>Marco jurídico comparado para la adopción de IA en administración pública y sistemas judiciales.</p>
-<span class="red-tag">Marco Legal</span>
-</div>
-<div class="red-card">
-<div class="red-card-icon">🌐</div>
-<h4>ONG Derechos Digitales</h4>
-<p>Organización latinoamericana de referencia en derechos humanos digitales y vigilancia algorítmica.</p>
-<span class="red-tag">Sociedad Civil</span>
-</div>
-<div class="red-card">
-<div class="red-card-icon">🏛️</div>
-<h4>Universidad Alberto Hurtado</h4>
-<p>Proyecto de tesis del Magíster en CTS. Investigación interdisciplinaria con respaldo institucional.</p>
-<span class="red-tag">Institución Patrocinante</span>
-</div>
-</div>
-</section>
 
 <!-- TAXONOMÍA -->
 <section id="taxonomia" class="section-divider">
-<span class="section-label">05. Taxonomía de Sesgoritmos Jurídicos</span>
+<span class="section-label">04. Taxonomía de Sesgoritmos Jurídicos</span>
 <h2 class="section-title">Los cuatro sesgoritmos.<br>Una tipología crítica.</h2>
 <p class="section-intro">
 A partir del análisis de casos judicializados internacionales, esta investigación propone una tipología 
@@ -1645,7 +1633,7 @@ como nuevo régimen epistémico donde la máquina —y no el jurista— determin
 
 <!-- MARCO REGULATORIO -->
 <section id="marco" class="section-divider">
-<span class="section-label">06. Marco Regulatorio</span>
+<span class="section-label">05. Marco Regulatorio</span>
 <h2 class="section-title">La arquitectura jurídica de la gobernanza algorítmica.</h2>
 
 <div class="reg-intro-box">
@@ -1659,10 +1647,53 @@ gobernanza responsable.</strong>
 </p>
 </div>
 
-<!-- PILAR EUROPEO -->
+<!-- PILAR NACIONAL CHILE -->
 <div class="reg-section">
 <div class="reg-section-header">
 <div class="reg-section-number">01</div>
+<div class="reg-section-title">
+<h3>Marco Nacional — Chile</h3>
+<p>Legislación aplicable en territorio chileno</p>
+</div>
+</div>
+
+<div class="reg-grid">
+<!-- LEY 19.628 -->
+<div class="reg-card primary">
+<h4 class="reg-card-title">Ley sobre Protección de la Vida Privada</h4>
+<div class="reg-card-ref">Ley N° 19.628 — En proceso de reforma</div>
+<p class="reg-card-desc">
+Base del tratamiento de datos personales en Chile. La reforma en trámite incorporará derechos
+ARCO alineados con estándares GDPR.
+</p>
+</div>
+
+<!-- CONSTITUCIÓN -->
+<div class="reg-card">
+<h4 class="reg-card-title">Constitución Política de Chile</h4>
+<div class="reg-card-ref">Art. 19 N° 4 — Rango constitucional</div>
+<p class="reg-card-desc">
+El derecho a la protección de datos personales tiene rango constitucional en Chile desde la
+reforma de 2018, elevando su jerarquía normativa.
+</p>
+</div>
+
+<!-- POLÍTICA NACIONAL IA -->
+<div class="reg-card">
+<h4 class="reg-card-title">Política Nacional de Inteligencia Artificial</h4>
+<div class="reg-card-ref">Actualización 2024-2025 — Soft law</div>
+<p class="reg-card-desc">
+Establece principios éticos que tribunales chilenos están comenzando a citar como estándar de
+diligencia en casos de responsabilidad por uso de IA.
+</p>
+</div>
+</div>
+</div>
+
+<!-- PILAR EUROPEO -->
+<div class="reg-section">
+<div class="reg-section-header">
+<div class="reg-section-number">02</div>
 <div class="reg-section-title">
 <h3>Pilar Europeo</h3>
 <p>El estándar más avanzado de gobernanza de IA a nivel mundial</p>
@@ -1675,8 +1706,8 @@ gobernanza responsable.</strong>
 <h4 class="reg-card-title">Reglamento de Inteligencia Artificial (EU AI Act)</h4>
 <div class="reg-card-ref">Reglamento (UE) 2024/1689 — Vigente desde 2024</div>
 <p class="reg-card-desc">
-El eje central de la regulación global. Clasifica sistemas según riesgo: prohibido, alto, limitado 
-y mínimo. Los sistemas de IA en administración de justicia son <strong>alto riesgo por defecto</strong> 
+El eje central de la regulación global. Clasifica sistemas según riesgo: prohibido, alto, limitado
+y mínimo. Los sistemas de IA en administración de justicia son <strong>alto riesgo por defecto</strong>
 (Anexo III).
 </p>
 <div class="reg-card-key">Artículos clave:</div>
@@ -1693,7 +1724,7 @@ y mínimo. Los sistemas de IA en administración de justicia son <strong>alto ri
 <h4 class="reg-card-title">GDPR — Protección de Datos</h4>
 <div class="reg-card-ref">Reglamento (UE) 2016/679 — Vigente desde 2018</div>
 <p class="reg-card-desc">
-Regula el tratamiento de datos personales y establece el derecho a no ser objeto de decisiones 
+Regula el tratamiento de datos personales y establece el derecho a no ser objeto de decisiones
 basadas únicamente en tratamiento automatizado.
 </p>
 <div class="reg-card-key">Artículos relevantes:</div>
@@ -1702,49 +1733,6 @@ basadas únicamente en tratamiento automatizado.
 <li><strong>Art. 15:</strong> Derecho de acceso y explicación de la lógica aplicada</li>
 <li><strong>Art. 35:</strong> Evaluación de impacto (DPIA) obligatoria</li>
 </ul>
-</div>
-</div>
-</div>
-
-<!-- PILAR NACIONAL CHILE -->
-<div class="reg-section">
-<div class="reg-section-header">
-<div class="reg-section-number">02</div>
-<div class="reg-section-title">
-<h3>Marco Nacional — Chile</h3>
-<p>Legislación aplicable en territorio chileno</p>
-</div>
-</div>
-
-<div class="reg-grid">
-<!-- LEY 19.628 -->
-<div class="reg-card primary">
-<h4 class="reg-card-title">Ley sobre Protección de la Vida Privada</h4>
-<div class="reg-card-ref">Ley N° 19.628 — En proceso de reforma</div>
-<p class="reg-card-desc">
-Base del tratamiento de datos personales en Chile. La reforma en trámite incorporará derechos 
-ARCO alineados con estándares GDPR.
-</p>
-</div>
-
-<!-- CONSTITUCIÓN -->
-<div class="reg-card">
-<h4 class="reg-card-title">Constitución Política de Chile</h4>
-<div class="reg-card-ref">Art. 19 N° 4 — Rango constitucional</div>
-<p class="reg-card-desc">
-El derecho a la protección de datos personales tiene rango constitucional en Chile desde la 
-reforma de 2018, elevando su jerarquía normativa.
-</p>
-</div>
-
-<!-- POLÍTICA NACIONAL IA -->
-<div class="reg-card">
-<h4 class="reg-card-title">Política Nacional de Inteligencia Artificial</h4>
-<div class="reg-card-ref">Actualización 2024-2025 — Soft law</div>
-<p class="reg-card-desc">
-Establece principios éticos que tribunales chilenos están comenzando a citar como estándar de 
-diligencia en casos de responsabilidad por uso de IA.
-</p>
 </div>
 </div>
 </div>
@@ -1795,7 +1783,7 @@ auditoría técnica PACSEJ.
 
 <!-- ASISTENTE IA -->
 <section id="asistente" class="section-divider">
-<span class="section-label">07. Asistente IA</span>
+<span class="section-label">06. Asistente IA</span>
 <h2 class="section-title">Tu consultor de gobernanza algorítmica.<br>Disponible 24/7.</h2>
 <p class="section-intro">
 El asistente PACSEJ está diseñado para responder las preguntas prácticas que los operadores jurídicos 
@@ -1830,7 +1818,7 @@ En desarrollo — Suscríbete para acceso anticipado a la versión beta
 <!-- NOTICIAS -->
 <section id="noticias" class="news-section">
 <div class="news-header">
-<span class="section-label">08. Actualidad</span>
+<span class="section-label">07. Actualidad</span>
 <h2>Noticias y Desarrollos en IA</h2>
 <p>
 Seguimiento automático de noticias sobre inteligencia artificial, auditoría algorítmica 
@@ -1873,7 +1861,7 @@ analiza cómo imaginarios neocoloniales moldean adopción de IA en la región.
 
 <!-- AUTORA -->
 <section id="autora" class="author-section">
-<span class="section-label">09. Autora</span>
+<span class="section-label">08. Autora</span>
 <div class="author-content">
 <div class="author-img">👤</div>
 <div class="author-info">
