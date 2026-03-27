@@ -854,6 +854,144 @@ max-width: 800px;
 margin: 0 auto;
 }
 
+/* AUDITORÍA DIRECTA */
+.audit-fase { max-width: 780px; margin: 0 auto; }
+
+.audit-fase-label {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--accent);
+margin-bottom: 1.5rem;
+padding-bottom: 0.5rem;
+border-bottom: 1px solid var(--border);
+}
+
+.audit-scanner {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 2rem;
+}
+
+.audit-scanner label {
+display: block;
+font-family: var(--font-mono);
+font-size: 0.75rem;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+color: var(--text-muted);
+margin-bottom: 0.4rem;
+}
+
+.audit-scanner select {
+width: 100%;
+padding: 0.7rem 1rem;
+margin-bottom: 1.4rem;
+border: 1px solid var(--border);
+border-radius: 4px;
+font-family: var(--font-serif);
+font-size: 0.95rem;
+background: var(--bg);
+color: var(--text);
+}
+
+.audit-btn {
+display: block;
+width: 100%;
+background: var(--accent);
+color: white;
+padding: 0.85rem 2rem;
+border: none;
+border-radius: 4px;
+font-family: var(--font-mono);
+font-size: 0.75rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+cursor: pointer;
+transition: 0.3s;
+}
+.audit-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.audit-btn-cta { background: var(--accent2); }
+
+.audit-scanner-result {
+margin-top: 1.5rem;
+padding: 1.5rem 2rem;
+border-radius: 8px;
+text-align: center;
+}
+.audit-scanner-result h4 {
+font-family: var(--font-mono);
+font-size: 0.8rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-bottom: 0.5rem;
+}
+.audit-scanner-result.riesgo-alto { background: #FFF5F5; border: 1px solid #FEB2B2; }
+.audit-scanner-result.riesgo-alto h4 { color: #9B2335; }
+.audit-scanner-result.riesgo-bajo { background: #F0FFF4; border: 1px solid #9AE6B4; }
+.audit-scanner-result.riesgo-bajo h4 { color: #276749; }
+
+.audit-pregunta {
+padding: 1.2rem 0;
+border-bottom: 1px solid var(--border);
+}
+.audit-pregunta p {
+font-size: 0.95rem;
+color: var(--text);
+margin-bottom: 0.8rem;
+}
+.audit-opciones { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.audit-opciones input[type="radio"] { display: none; }
+.audit-opciones label {
+background: var(--bg3);
+color: var(--text-muted);
+padding: 0.4rem 1rem;
+border-radius: 20px;
+cursor: pointer;
+font-family: var(--font-mono);
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+border: 1px solid var(--border);
+transition: 0.2s;
+}
+.audit-opciones input:checked + label {
+background: var(--accent);
+color: white;
+border-color: var(--accent);
+}
+
+.audit-resultado-final {
+margin-top: 2rem;
+padding: 2rem;
+border-radius: 8px;
+text-align: center;
+}
+.audit-resultado-final.resultado-bajo { background: #F0FFF4; border: 1px solid #9AE6B4; }
+.audit-resultado-final.resultado-alto { background: #FFF5F5; border: 1px solid #FEB2B2; }
+.audit-resultado-final h3 {
+font-family: var(--font-mono);
+font-size: 0.9rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-bottom: 0.5rem;
+}
+.audit-resultado-final.resultado-bajo h3 { color: #276749; }
+.audit-resultado-final.resultado-alto h3 { color: #9B2335; }
+
+.audit-alerta {
+background: var(--bg2);
+border-left: 3px solid var(--accent2);
+padding: 0.8rem 1rem;
+border-radius: 0 4px 4px 0;
+font-size: 0.85rem;
+text-align: left;
+margin-top: 1rem;
+color: var(--text-muted);
+}
+
 /* RESPONSIVE */
 @media (max-width: 968px) {
 .news-container {
@@ -892,15 +1030,16 @@ section { padding: 4rem 1.5rem; }
 <li><a href="#asistente">Asistente IA</a></li>
 <li><a href="#noticias">Noticias</a></li>
 <li><a href="#autora">Autora</a></li>
+<li><a href="#auditoria">Auditoría</a></li>
 </ul>
-<a href="https://tally.so/r/A78ReB" target="_blank" class="nav-cta">INICIAR AUDITORÍA</a>
+<a href="#auditoria" class="nav-cta">INICIAR AUDITORÍA</a>
 </nav>
 
 <!-- HERO -->
 <section id="inicio">
 <span class="hero-tag">Protocolo v3.0 · CTS & Legaltech</span>
 <h1 class="hero-title">¿Tu IA cumple con la normativa?<br><em>Verifícalo ahora.</em></h1>
-<a href="https://tally.so/r/A78ReB" target="_blank" class="hero-cta">INICIAR AUDITORÍA</a>
+<a href="#auditoria" class="hero-cta">INICIAR AUDITORÍA</a>
 <p class="hero-subtitle">
 La inteligencia artificial ya está tomando decisiones que afectan derechos, procesos legales y vidas cotidianas. Pero hoy, auditar esos sistemas sigue siendo difícil, técnico y, muchas veces, inaccesible.<br><br>
 <strong>El Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos cambia eso.</strong>
@@ -974,7 +1113,7 @@ PACSEJ es un sistema de auditoría sociotécnica que permite evaluar si una herr
 <div class="protocolo-card-icon">🚀</div>
 <h3>Auditar antes de implementar no es opcional</h3>
 <p>Si vas a usar inteligencia artificial en contextos jurídicos, necesitas saber si puedes confiar en ella.<br>PACSEJ te permite hacerlo de forma clara, estructurada y basada en evidencia.</p>
-<a href="https://tally.so/r/A78ReB" target="_blank" class="btn-white">INICIAR AUDITORÍA AHORA →</a>
+<a href="#auditoria" class="btn-white">INICIAR AUDITORÍA AHORA →</a>
 </div>
 
 </div>
@@ -1343,11 +1482,50 @@ coproducción (Jasanoff), punto de vista feminista (Harding) y cosmotécnica (Hu
 </div>
 </section>
 
+<!-- AUDITORÍA DIRECTA -->
+<section id="auditoria" class="section section-divider">
+<span class="section-label">07. Auditoría Directa</span>
+<h2 class="section-title">Audita tu sistema<br><em>aquí y ahora.</em></h2>
+<p class="section-intro">Sin formularios externos. Sin registro. Diagnóstico inmediato según el protocolo PACSEJ v3.0 y el marco EU AI Act.</p>
+
+<!-- FASE 1: Escáner Rápido -->
+<div class="audit-fase" id="audit-fase1">
+<div class="audit-fase-label">Fase 1 — Escáner Rápido de Riesgo (EU AI Act)</div>
+<div class="audit-scanner">
+<label>1. ¿El sistema toma decisiones sobre perfiles o predice riesgos?</label>
+<select id="aq1">
+<option value="0">No</option>
+<option value="high">Sí</option>
+</select>
+<label>2. ¿El algoritmo es transparente (se puede explicar cómo decide)?</label>
+<select id="aq2">
+<option value="0">Sí</option>
+<option value="med">No (Caja Negra)</option>
+</select>
+<label>3. ¿Hay supervisión humana en las decisiones finales?</label>
+<select id="aq3">
+<option value="0">Sí</option>
+<option value="high">No (totalmente automatizado)</option>
+</select>
+<button class="audit-btn" onclick="evaluarEscaner()">ANALIZAR RIESGO INICIAL</button>
+</div>
+<div id="audit-scanner-result" style="display:none;"></div>
+</div>
+
+<!-- FASE 2: Auditoría Completa -->
+<div id="audit-fase2" style="display:none; margin-top: 3rem;">
+<div class="audit-fase-label">Fase 2 — Auditoría Ciudadana PACSEJ (10 preguntas)</div>
+<div id="audit-preguntas-container"></div>
+<button class="audit-btn" onclick="calcularResultado()" style="margin-top: 1.5rem;">VER RESULTADO Y DIAGNÓSTICO DE SESGORITMOS</button>
+<div id="audit-resultado-final" style="display:none;"></div>
+</div>
+</section>
+
 <!-- CTA FINAL -->
 <section class="cta-section">
 <h2>¿Tu sistema cumple con los estándares?</h2>
 <p>Aplica el protocolo PACSEJ en 30 minutos · 16-18 preguntas · Diagnóstico inmediato</p>
-<a href="https://tally.so/r/A78ReB" target="_blank" class="btn-large">REALIZAR EL TEST AHORA</a>
+<a href="#auditoria" class="btn-large">REALIZAR EL TEST AHORA</a>
 </section>
 
 <!-- FOOTER -->
@@ -1465,6 +1643,92 @@ if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', loadNews);
 } else {
 loadNews();
+}
+
+// ——— AUDITORÍA DIRECTA PACSEJ ———
+const auditPreguntas = [
+    "¿Sabes qué nombre tiene el programa y para qué se usa exactamente?",
+    "¿Te explicaron cómo toma las decisiones el sistema?",
+    "¿Entendiste quién es el responsable si hay un error o resultado injusto?",
+    "¿Se invitó a ciudadanos u organizaciones a probar o revisar el sistema?",
+    "¿El sistema decide sobre derechos o situaciones que afectan a miles de personas?",
+    "¿Puedes hablar con una persona real para corregir errores del sistema?",
+    "¿El sistema es revisado periódicamente para detectar sesgos o errores?",
+    "¿Se evaluó el sistema para evitar discriminación por género, raza u otras categorías?",
+    "¿Existe un canal claro y accesible para presentar reclamos?",
+    "¿Expertos independientes han certificado que el sistema es seguro y justo?"
+];
+
+function evaluarEscaner() {
+    const q1 = document.getElementById('aq1').value;
+    const q3 = document.getElementById('aq3').value;
+    const resDiv = document.getElementById('audit-scanner-result');
+    const esAltoRiesgo = (q1 === 'high' || q3 === 'high');
+
+    resDiv.className = 'audit-scanner-result ' + (esAltoRiesgo ? 'riesgo-alto' : 'riesgo-bajo');
+    resDiv.innerHTML = `
+        <h4>${esAltoRiesgo ? '⚠️ RIESGO ALTO DETECTADO' : '✅ RIESGO MÍNIMO / MEDIO'}</h4>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.2rem;">
+          ${esAltoRiesgo
+            ? 'Este sistema presenta características de alto riesgo según el EU AI Act. Se recomienda completar la auditoría.'
+            : 'Riesgo inicial bajo. Continúa con la auditoría completa para obtener un diagnóstico detallado.'}
+        </p>
+        <button class="audit-btn audit-btn-cta" onclick="mostrarFase2()">CONTINUAR — AUDITORÍA COMPLETA PACSEJ →</button>
+    `;
+    resDiv.style.display = 'block';
+}
+
+function mostrarFase2() {
+    const fase2 = document.getElementById('audit-fase2');
+    fase2.style.display = 'block';
+    const container = document.getElementById('audit-preguntas-container');
+    container.innerHTML = auditPreguntas.map((p, i) => `
+        <div class="audit-pregunta">
+            <p><strong>${i + 1}.</strong> ${p}</p>
+            <div class="audit-opciones">
+                <input type="radio" name="ap${i}" value="4" id="ap${i}s">
+                <label for="ap${i}s">Sí</label>
+                <input type="radio" name="ap${i}" value="1" id="ap${i}n">
+                <label for="ap${i}n">No</label>
+                <input type="radio" name="ap${i}" value="0" id="ap${i}x">
+                <label for="ap${i}x">No sé</label>
+            </div>
+        </div>
+    `).join('');
+    window.scrollTo({ top: fase2.offsetTop - 80, behavior: 'smooth' });
+}
+
+function calcularResultado() {
+    const checked = document.querySelectorAll('#audit-preguntas-container input[type="radio"]:checked');
+    let score = 0;
+    let opacidad = 0;
+    checked.forEach(c => {
+        score += parseInt(c.value);
+        if (c.value === '0') opacidad++;
+    });
+
+    const pct = (score / 40) * 100;
+    const esAlto = pct < 66;
+    const resDiv = document.getElementById('audit-resultado-final');
+    resDiv.className = 'audit-resultado-final ' + (esAlto ? 'resultado-alto' : 'resultado-bajo');
+
+    let alertas = '';
+    if (opacidad > 0) {
+        alertas += `<div class="audit-alerta">⚠️ <strong>Sesgoritmo de Opacidad:</strong> ${opacidad} respuesta(s) "No sé" indica falta de transparencia. Esto puede constituir un sesgoritmo tipo 3 (Explicabilidad y Transparencia).</div>`;
+    }
+    if (esAlto && score < 20) {
+        alertas += `<div class="audit-alerta" style="border-color:#9B2335;">🔴 <strong>Riesgo Inaceptable:</strong> El puntaje (${pct.toFixed(0)}%) sugiere múltiples vulneraciones. Consulta el Marco Regulatorio PACSEJ.</div>`;
+    }
+
+    resDiv.innerHTML = `
+        <h3>${esAlto ? '🔴 RIESGO ALTO / INACEPTABLE' : '🟢 RIESGO BAJO / LIMITADO'}</h3>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin:0.5rem 0 1rem;">
+          Puntaje PACSEJ: <strong>${pct.toFixed(0)}%</strong> (${score}/40 puntos) · ${checked.length}/10 preguntas respondidas
+        </p>
+        ${alertas || '<div class="audit-alerta" style="border-color:var(--accent3);">✅ No se detectaron sesgoritmos críticos en las respuestas proporcionadas.</div>'}
+    `;
+    resDiv.style.display = 'block';
+    window.scrollTo({ top: resDiv.offsetTop - 80, behavior: 'smooth' });
 }
 </script>
 
