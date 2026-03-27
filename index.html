@@ -11,19 +11,19 @@
 
 <style>
 :root {
---bg: #FFFFFF;           
---bg2: #F8FAFC;          
---bg3: #F1F5F9;          
---surface: #FFFFFF;      
---border: #E2E8F0;       
---text: #1A365D;
---text-muted: #4A5568;   
---accent: #2B6CB0;
---accent2: #ED8936;
---accent3: #4FD1C5;
+--bg: #FFFFFF;
+--bg2: #F0F9F4;
+--bg3: #E3F0EC;
+--surface: #FFFFFF;
+--border: #C3D8D0;
+--text: #1A3830;
+--text-muted: #3D6E62;
+--accent: #166534;
+--accent2: #1D4ED8;
+--accent3: #0D9488;
 
---risk-low: #276749;
---risk-lim: #2B6CB0;
+--risk-low: #166534;
+--risk-lim: #1D4ED8;
 --risk-high: #B7791F;
 --risk-crit: #9B2335;
 
@@ -1027,6 +1027,207 @@ nav, .hero-cta, .cta-section, footer,
 body { background: white; }
 }
 
+/* AUDIT INTRO MANUAL */
+.audit-manual {
+background: var(--bg3);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.5rem 2rem;
+margin-bottom: 2rem;
+max-width: 780px;
+margin-left: auto;
+margin-right: auto;
+}
+.audit-manual-steps { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+.audit-manual-step {
+flex: 1;
+min-width: 180px;
+background: var(--bg);
+border: 1px solid var(--border);
+border-radius: 6px;
+padding: 0.8rem 1rem;
+font-size: 0.82rem;
+}
+.audit-manual-step strong {
+display: block;
+font-family: var(--font-mono);
+font-size: 0.65rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--accent);
+margin-bottom: 0.3rem;
+}
+
+/* RESULT MOCKUP */
+.result-mockup {
+max-width: 780px;
+margin: 2rem auto 0;
+}
+.result-mockup-label {
+font-family: var(--font-mono);
+font-size: 0.65rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--text-muted);
+text-align: center;
+margin-bottom: 0.8rem;
+}
+.result-mockup-card {
+background: var(--bg2);
+border: 2px solid var(--border);
+border-radius: 8px;
+padding: 1.5rem;
+pointer-events: none;
+user-select: none;
+}
+.result-mockup-card .audit-badge { font-size: 0.65rem; padding: 0.4rem 1.4rem; }
+.result-mockup-card .sesgo-tag { font-size: 0.68rem; margin: 0.8rem 0; }
+.result-mockup-card .audit-action-box { font-size: 0.8rem; padding: 1rem; }
+
+/* CASOS DE USO */
+.casos-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.5rem;
+margin-top: 2rem;
+}
+.caso-card {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.8rem;
+border-top: 4px solid var(--border);
+transition: 0.3s;
+}
+.caso-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.caso-card.caso-jueza { border-top-color: var(--accent3); }
+.caso-card.caso-abogado { border-top-color: var(--accent); }
+.caso-card.caso-ciudadana { border-top-color: var(--accent2); }
+.caso-card.caso-futuro { border-top-color: var(--risk-high); }
+.caso-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.caso-perfil {
+font-family: var(--font-mono);
+font-size: 0.65rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--text-muted);
+margin-bottom: 0.3rem;
+}
+.caso-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--text); }
+.caso-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6; }
+.caso-hallazgo {
+background: var(--bg3);
+border-left: 3px solid var(--accent);
+padding: 0.6rem 0.9rem;
+border-radius: 0 4px 4px 0;
+font-size: 0.82rem;
+margin-bottom: 0.6rem;
+}
+.caso-resultado {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+margin-top: 1rem;
+padding: 0.5rem 0.8rem;
+border-radius: 4px;
+display: inline-block;
+}
+.caso-resultado.r-bajo { background: #F0FFF4; color: var(--risk-low); border: 1px solid var(--risk-low); }
+.caso-resultado.r-alto { background: #FFF5F5; color: var(--risk-crit); border: 1px solid var(--risk-crit); }
+.caso-resultado.r-futuro { background: #FFFBEB; color: var(--risk-high); border: 1px solid var(--risk-high); }
+
+/* RED DE COLABORACIÓN */
+.red-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 1.2rem;
+margin-top: 2rem;
+}
+.red-card {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.4rem;
+text-align: center;
+transition: 0.3s;
+}
+.red-card:hover { border-color: var(--accent3); transform: translateY(-2px); }
+.red-card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.red-card h4 {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--text);
+margin-bottom: 0.3rem;
+}
+.red-card p { font-size: 0.8rem; color: var(--text-muted); }
+.red-tag {
+display: inline-block;
+background: var(--bg3);
+border: 1px solid var(--border);
+padding: 0.2rem 0.6rem;
+border-radius: 20px;
+font-family: var(--font-mono);
+font-size: 0.6rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+color: var(--accent);
+margin-top: 0.4rem;
+}
+
+/* AUTORA ACTUALIZADA */
+.author-uah-logo {
+display: flex;
+align-items: center;
+gap: 0.8rem;
+margin-bottom: 1.2rem;
+padding: 0.8rem 1rem;
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 6px;
+width: fit-content;
+}
+.uah-wordmark {
+font-family: Georgia, serif;
+font-style: italic;
+font-weight: bold;
+font-size: 2rem;
+color: var(--text);
+line-height: 1;
+}
+.uah-divider {
+width: 1px;
+height: 40px;
+background: var(--border);
+}
+.uah-name {
+font-family: var(--font-mono);
+font-size: 0.65rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+color: var(--text-muted);
+line-height: 1.5;
+}
+.author-director {
+background: var(--bg3);
+border-left: 3px solid var(--accent3);
+padding: 0.7rem 1rem;
+border-radius: 0 4px 4px 0;
+font-size: 0.85rem;
+margin: 1rem 0;
+color: var(--text-muted);
+}
+.author-interdisciplinar {
+font-size: 0.88rem;
+color: var(--text-muted);
+font-style: italic;
+border-top: 1px solid var(--border);
+padding-top: 0.8rem;
+margin-top: 0.8rem;
+}
+
 /* RESPONSIVE */
 @media (max-width: 968px) {
 .news-container {
@@ -1059,31 +1260,114 @@ section { padding: 4rem 1.5rem; }
 <nav>
 <a href="#inicio" class="nav-logo">PACSEJ</a>
 <ul class="nav-links">
+<li><a href="#auditoria">Auditoría</a></li>
 <li><a href="#que-es">¿Qué es?</a></li>
+<li><a href="#casos-uso">Casos de Uso</a></li>
+<li><a href="#red-colaboracion">Colaboración</a></li>
 <li><a href="#taxonomia">Taxonomía</a></li>
 <li><a href="#marco">Marco Legal</a></li>
-<li><a href="#asistente">Asistente IA</a></li>
-<li><a href="#noticias">Noticias</a></li>
 <li><a href="#autora">Autora</a></li>
-<li><a href="#auditoria">Auditoría</a></li>
 </ul>
-<a href="#auditoria" class="nav-cta">INICIAR AUDITORÍA</a>
+<a href="#auditoria" class="nav-cta">INICIAR AUDITORÍA CRÍTICA</a>
 </nav>
 
 <!-- HERO -->
 <section id="inicio">
 <span class="hero-tag">Protocolo v3.0 · CTS & Legaltech</span>
 <h1 class="hero-title">¿Tu IA cumple con la normativa?<br><em>Verifícalo ahora.</em></h1>
-<a href="#auditoria" class="hero-cta">INICIAR AUDITORÍA</a>
+<a href="#auditoria" class="hero-cta">INICIAR AUDITORÍA CRÍTICA v3.0</a>
 <p class="hero-subtitle">
 La inteligencia artificial ya está tomando decisiones que afectan derechos, procesos legales y vidas cotidianas. Pero hoy, auditar esos sistemas sigue siendo difícil, técnico y, muchas veces, inaccesible.<br><br>
 <strong>El Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos cambia eso.</strong>
 </p>
 </section>
 
+<!-- AUDITORÍA CIUDADANA -->
+<section id="auditoria" class="section section-divider">
+<span class="section-label">01. Auditoría Ciudadana</span>
+<h2 class="section-title">Cuestionario PACSEJ<br><em>Ciudadano v3.0</em></h2>
+<p class="section-intro">Herramienta de auditoría gratuita, sin registro, sin expertos técnicos. En 15 minutos obtienes un diagnóstico de sesgos y un plan de acción concreto.</p>
+
+<!-- MANUAL DE USO -->
+<div class="audit-manual">
+<p style="font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:0.5rem;">¿Qué vas a encontrar aquí?</p>
+<div class="audit-manual-steps">
+<div class="audit-manual-step"><strong>Paso 1 — Elige módulo</strong>ChatGPT / Trabajo / Justicia / Ayuda social</div>
+<div class="audit-manual-step"><strong>Paso 2 — Responde</strong>10 preguntas comunes + 6–8 específicas de tu caso</div>
+<div class="audit-manual-step"><strong>Paso 3 — Diagnóstico</strong>Nivel de riesgo, sesgoritmos detectados y plan de acción</div>
+<div class="audit-manual-step"><strong>Paso 4 — Descarga</strong>Reporte PDF listo para usar como evidencia legal</div>
+</div>
+</div>
+
+<!-- MOCKUP RESULTADO (preview) -->
+<div class="result-mockup">
+<p class="result-mockup-label">Ejemplo de diagnóstico generado por PACSEJ</p>
+<div class="result-mockup-card">
+<div style="text-align:center;">
+<div class="audit-badge b-high" style="pointer-events:none;">RIESGO ALTO</div>
+<h3 style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin:0.4rem 0 0;color:var(--text);">Sistema de Caja Negra — Puntaje: 42%</h3>
+</div>
+<div class="sesgo-tag s-high">⚠️ PELIGRO — Sesgos críticos: Opacidad Algorítmica · Discriminación Directa/Proxies · Feedback Loop Negativo</div>
+<div class="audit-action-box">
+<h4 class="h-accent" style="font-size:0.68rem;">🛠️ Plan de Acción y Defensa:</h4>
+<ul style="font-size:0.8rem;padding-left:1.2rem;margin:0.4rem 0;">
+<li><strong>Exige supervisión humana obligatoria</strong> antes de aceptar cualquier decisión.</li>
+<li>Apela toda decisión automática que te afecte.</li>
+<li>Documenta cada error con fecha y pantallazos.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="audit-inner" style="margin-top:2.5rem;">
+<!-- SELECTOR DE MÓDULO -->
+<div class="audit-module-selector">
+<p>Paso 1 — Elige el módulo que deseas auditar:</p>
+<select id="audit-module-choice">
+<option value="A">Módulo A: IAs que responden dudas (ChatGPT, buscadores legales)</option>
+<option value="B">Módulo B: IA en el Trabajo (apps de reparto, selección de personal)</option>
+<option value="C">Módulo C: IA en Juicios o Policías (vigilancia, predicción de reincidencia)</option>
+<option value="D">Módulo D: IA para Bonos y Ayuda Social</option>
+</select>
+<button class="audit-btn" onclick="cargarCuestionario()">CARGAR PREGUNTAS</button>
+</div>
+
+<!-- PREGUNTAS -->
+<div id="audit-questions-area" style="display:none;">
+<div class="audit-section-title">Sección 1 — Núcleo Común: Transparencia y Gobernanza</div>
+<div id="audit-nucleo-container"></div>
+<div class="audit-section-title" id="audit-modulo-titulo">Sección 2 — Módulo Específico</div>
+<div id="audit-modulo-container"></div>
+<button class="audit-btn audit-btn-gen" onclick="calcularRiesgo()">GENERAR REPORTE DE SESGOS Y RIESGOS</button>
+</div>
+
+<!-- RESULTADO -->
+<div class="audit-result-area" id="audit-result-area">
+<div style="text-align:center;">
+<div id="audit-result-badge" class="audit-badge"></div>
+<h3 id="audit-result-label" style="font-family:var(--font-mono);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin:0.3rem 0 0;"></h3>
+</div>
+<div id="audit-sesgo-tag" class="sesgo-tag"></div>
+<div class="audit-action-box">
+<h4 class="h-accent">🛠️ Plan de Acción y Defensa:</h4>
+<div id="audit-plan"></div>
+<hr>
+<h4 class="h-primary">⚖️ Contactos de Denuncia (Chile):</h4>
+<ul>
+<li><strong>SERNAC:</strong> 800 700 100 (Consumidores)</li>
+<li><strong>Inspección del Trabajo:</strong> 600 450 4000 (Trabajadores)</li>
+<li><strong>ONG Derechos Digitales:</strong> contacto@derechosdigitales.org</li>
+<li><strong>Defensoría Penal Pública:</strong> 800 39 2000 (Justicia)</li>
+</ul>
+</div>
+<button class="audit-btn audit-btn-pdf" onclick="window.print()">🖨️ Descargar Reporte Profesional (PDF)</button>
+</div>
+</div>
+</section>
+
 <!-- QUÉ ES -->
 <section id="que-es" class="section-divider">
-<span class="section-label">01. El Protocolo</span>
+<span class="section-label">02. El Protocolo</span>
 <h2 class="section-title">🔍 Un protocolo abierto para auditar,<br>clasificar y corregir sistemas de IA.</h2>
 <p class="section-intro">
 PACSEJ es un sistema de auditoría sociotécnica que permite evaluar si una herramienta de inteligencia artificial está realmente preparada para operar en contextos jurídicos. A través de un test estructurado, cualquier persona —no solo expertos técnicos— puede analizar un sistema y obtener un diagnóstico claro.
@@ -1154,9 +1438,105 @@ PACSEJ es un sistema de auditoría sociotécnica que permite evaluar si una herr
 </div>
 </section>
 
+<!-- CASOS DE USO -->
+<section id="casos-uso" class="section section-divider">
+<span class="section-label">03. Casos de Uso</span>
+<h2 class="section-title">PACSEJ en acción.<br><em>Tres escenarios reales.</em></h2>
+<p class="section-intro">PACSEJ no es solo teoría académica. Hoy mismo puede usarse para auditar sistemas de IA que ya operan en Chile y detectar riesgos antes de que causen daño.</p>
+
+<div class="casos-grid">
+
+<div class="caso-card caso-jueza">
+<div class="caso-icon">⚖️</div>
+<div class="caso-perfil">Caso 1 — Poder Judicial</div>
+<h3>Jueza Claudia, Tribunal de Garantía</h3>
+<p>Recibe propuesta para implementar "JusticIA Predict", un software de predicción de riesgo de reincidencia similar a COMPAS. Antes de aprobarlo, usa PACSEJ Módulo C.</p>
+<div class="caso-hallazgo">🔍 Hallazgo: Algoritmo entrenado con datos 2015–2020 de alta concentración policial en La Pintana y Puente Alto. Sin validación desagregada por grupo socioeconómico.</div>
+<div class="caso-resultado r-alto">⚠️ RIESGO ALTO — No adoptar · Score: 2.1/5.0</div>
+<p style="margin-top:0.8rem;font-size:0.82rem;"><strong>Impacto:</strong> Protege derechos de 2.000+ personas procesadas/año. Genera precedente para exigir auditoría previa en tribunales.</p>
+</div>
+
+<div class="caso-card caso-abogado">
+<div class="caso-icon">👔</div>
+<div class="caso-perfil">Caso 2 — Derecho Laboral</div>
+<h3>Roberto, Abogado Laboralista</h3>
+<p>Representa a 15 repartidores desvinculados por "bajo rendimiento" algorítmico. Todos mayores de 45 años con responsabilidades de cuidado. Usa PACSEJ Módulo B para construir el caso.</p>
+<div class="caso-hallazgo">🔍 Hallazgo: Algoritmo usa "disponibilidad horaria" como proxy de edad. Feedback loop: trabajadores con score bajo en mes 1 tienen 80% probabilidad de score bajo en mes 3.</div>
+<div class="caso-resultado r-alto">🔴 RIESGO CRÍTICO — Score: 1.8/5.0</div>
+<p style="margin-top:0.8rem;font-size:0.82rem;"><strong>Resultado:</strong> Informe PACSEJ como peritaje técnico. Multa de 150 UTM. 15 trabajadores reintegrados con compensación.</p>
+</div>
+
+<div class="caso-card caso-ciudadana">
+<div class="caso-icon">👤</div>
+<div class="caso-perfil">Caso 3 — Ciudadanía</div>
+<h3>María, solicitante de subsidio</h3>
+<p>Rechazada automáticamente por sistema digital del MINVU. Mensaje: "No cumple requisitos. Intente en 6 meses." Usa PACSEJ Ciudadano (Módulo D) para entender por qué.</p>
+<div class="caso-hallazgo">🔍 Hallazgo: Sistema rechaza automáticamente a trabajadores informales (60% de la fuerza laboral chilena). Sin explicación de criterios ni canal humano de corrección.</div>
+<div class="caso-resultado r-alto">🚨 RIESGO INACEPTABLE — Score: 26.5%</div>
+<p style="margin-top:0.8rem;font-size:0.82rem;"><strong>Resultado:</strong> Denuncia en SERNAC con informe PACSEJ. Error corregido. 340 familias adicionales reciben subsidio.</p>
+</div>
+
+<div class="caso-card caso-futuro">
+<div class="caso-icon">🚀</div>
+<div class="caso-perfil">Escenario Futuro — 2027</div>
+<h3>Auditoría Preventiva Nacional</h3>
+<p>El Congreso aprueba Ley de Auditoría Algorítmica Obligatoria. Toda institución pública que use IA en decisiones sobre derechos debe auditar con PACSEJ antes de implementar.</p>
+<div class="caso-hallazgo">📊 Proyección 2027–2030: 50+ sistemas auditados · 12 rechazados por riesgo crítico · 31 mejorados tras auditoría · ~500.000 personas protegidas</div>
+<div class="caso-resultado r-futuro">ROI estimado: 400x — $5M CLP auditoría vs. $2.000M CLP en demandas evitadas</div>
+</div>
+
+</div>
+</section>
+
+<!-- RED DE COLABORACIÓN -->
+<section id="red-colaboracion" class="section section-divider">
+<span class="section-label">04. Red de Colaboración</span>
+<h2 class="section-title">Validación internacional.<br><em>Alcance global.</em></h2>
+<p class="section-intro">PACSEJ ha sido construido en diálogo con referentes académicos e instituciones de primer nivel. Esta red de colaboración es la que le da peso y rigor al protocolo.</p>
+
+<div class="red-grid">
+<div class="red-card">
+<div class="red-card-icon">🎓</div>
+<h4>Stanford University</h4>
+<p>HAI — Human-Centered Artificial Intelligence. Referente en gobernanza de IA y derechos fundamentales.</p>
+<span class="red-tag">Academia Internacional</span>
+</div>
+<div class="red-card">
+<div class="red-card-icon">🏢</div>
+<h4>Microsoft</h4>
+<p>Responsible AI Division. Estándares de equidad, transparencia y rendición de cuentas algorítmica.</p>
+<span class="red-tag">Industria Tech</span>
+</div>
+<div class="red-card">
+<div class="red-card-icon">📊</div>
+<h4>Deloitte Chile</h4>
+<p>Prácticas de auditoría tecnológica y compliance regulatorio para sistemas de IA en sector público.</p>
+<span class="red-tag">Consultoría</span>
+</div>
+<div class="red-card">
+<div class="red-card-icon">⚖️</div>
+<h4>Consejo de Estado de España</h4>
+<p>Marco jurídico comparado para la adopción de IA en administración pública y sistemas judiciales.</p>
+<span class="red-tag">Marco Legal</span>
+</div>
+<div class="red-card">
+<div class="red-card-icon">🌐</div>
+<h4>ONG Derechos Digitales</h4>
+<p>Organización latinoamericana de referencia en derechos humanos digitales y vigilancia algorítmica.</p>
+<span class="red-tag">Sociedad Civil</span>
+</div>
+<div class="red-card">
+<div class="red-card-icon">🏛️</div>
+<h4>Universidad Alberto Hurtado</h4>
+<p>Proyecto de tesis del Magíster en CTS. Investigación interdisciplinaria con respaldo institucional.</p>
+<span class="red-tag">Institución Patrocinante</span>
+</div>
+</div>
+</section>
+
 <!-- TAXONOMÍA -->
 <section id="taxonomia" class="section-divider">
-<span class="section-label">02. Taxonomía de Sesgoritmos Jurídicos</span>
+<span class="section-label">05. Taxonomía de Sesgoritmos Jurídicos</span>
 <h2 class="section-title">Los cuatro sesgoritmos.<br>Una tipología crítica.</h2>
 <p class="section-intro">
 A partir del análisis de casos judicializados internacionales, esta investigación propone una tipología 
@@ -1265,7 +1645,7 @@ como nuevo régimen epistémico donde la máquina —y no el jurista— determin
 
 <!-- MARCO REGULATORIO -->
 <section id="marco" class="section-divider">
-<span class="section-label">03. Marco Regulatorio</span>
+<span class="section-label">06. Marco Regulatorio</span>
 <h2 class="section-title">La arquitectura jurídica de la gobernanza algorítmica.</h2>
 
 <div class="reg-intro-box">
@@ -1415,7 +1795,7 @@ auditoría técnica PACSEJ.
 
 <!-- ASISTENTE IA -->
 <section id="asistente" class="section-divider">
-<span class="section-label">04. Asistente IA</span>
+<span class="section-label">07. Asistente IA</span>
 <h2 class="section-title">Tu consultor de gobernanza algorítmica.<br>Disponible 24/7.</h2>
 <p class="section-intro">
 El asistente PACSEJ está diseñado para responder las preguntas prácticas que los operadores jurídicos 
@@ -1450,7 +1830,7 @@ En desarrollo — Suscríbete para acceso anticipado a la versión beta
 <!-- NOTICIAS -->
 <section id="noticias" class="news-section">
 <div class="news-header">
-<span class="section-label">05. Actualidad</span>
+<span class="section-label">08. Actualidad</span>
 <h2>Noticias y Desarrollos en IA</h2>
 <p>
 Seguimiento automático de noticias sobre inteligencia artificial, auditoría algorítmica 
@@ -1493,78 +1873,40 @@ analiza cómo imaginarios neocoloniales moldean adopción de IA en la región.
 
 <!-- AUTORA -->
 <section id="autora" class="author-section">
-<span class="section-label">06. Autora</span>
+<span class="section-label">09. Autora</span>
 <div class="author-content">
 <div class="author-img">👤</div>
 <div class="author-info">
-<h3>Paola A. Robayo Galán</h3>
-<div class="author-title">Investigadora CTS · Legaltech</div>
+
+<div class="author-uah-logo">
+<span class="uah-wordmark">uah</span>
+<div class="uah-divider"></div>
+<span class="uah-name">Universidad<br>Alberto Hurtado</span>
+</div>
+
+<h3>Paola Robayo G.</h3>
+<div class="author-title">Investigadora CTS · Legaltech · Making and Doing</div>
+
 <p class="author-bio">
-Candidata a Magíster en Ciencia, Tecnología y Sociedad en Universidad Alberto Hurtado. 
-Su investigación se centra en la intersección entre derecho, tecnología y justicia social, 
-con énfasis en auditoría crítica de sistemas algorítmicos desde perspectivas del Sur Global.
+PACSEJ nació como resultado de la tesis con enfoque <em>making and doing</em> realizada por la investigadora
+<strong>Paola Robayo G.</strong>, candidata a Magíster en Ciencia, Tecnología y Sociedad,
+bajo la dirección del <strong>Dr. Claudio Ramos Zincke</strong>, Profesor de Sociología de la
+Universidad Alberto Hurtado.
 </p>
-<p class="author-bio">
-PACSEJ es su proyecto de tesis, que propone herramientas de gobernanza algorítmica accesibles 
-para operadores jurídicos sin formación técnica en machine learning, integrando teorías de 
-coproducción (Jasanoff), punto de vista feminista (Harding) y cosmotécnica (Hui).
+
+<div class="author-director">
+<strong>Dirección académica:</strong> Dr. Claudio Ramos Zincke<br>
+Profesor de Sociología · Universidad Alberto Hurtado · Santiago, Chile
+</div>
+
+<p class="author-interdisciplinar">
+PACSEJ es el resultado de unir la <strong>sociología crítica</strong> —que analiza las relaciones de poder inscriptas en la tecnología— con la <strong>ingeniería de software</strong> —que formaliza esos análisis en herramientas funcionales y auditables—. La intersección entre ambas disciplinas permite producir un protocolo que no solo diagnostica sesgos, sino que genera evidencia legal accionable.
 </p>
+
 <div class="author-links">
-<a href="mailto:contacto@pacsej.cl" class="author-link">Contacto</a>
+<a href="mailto:probayo@alumnos.uahurtado.cl" class="author-link">probayo@alumnos.uahurtado.cl</a>
 <a href="tesis.html" class="author-link">Marco Teórico Completo</a>
 </div>
-</div>
-</div>
-</section>
-
-<!-- AUDITORÍA CIUDADANA -->
-<section id="auditoria" class="section section-divider">
-<span class="section-label">07. Auditoría Ciudadana</span>
-<h2 class="section-title">Cuestionario PACSEJ<br><em>Ciudadano v3.0</em></h2>
-<p class="section-intro">¿Qué tan segura es la IA que estás usando? Elige el módulo que corresponde a tu situación y obtén un diagnóstico inmediato de sesgos y riesgos legales.</p>
-
-<div class="audit-inner">
-<!-- SELECTOR DE MÓDULO -->
-<div class="audit-module-selector">
-<p>Paso 1 — Elige el módulo que deseas auditar:</p>
-<select id="audit-module-choice">
-<option value="A">Módulo A: IAs que responden dudas (ChatGPT, buscadores legales)</option>
-<option value="B">Módulo B: IA en el Trabajo (apps de reparto, selección de personal)</option>
-<option value="C">Módulo C: IA en Juicios o Policías (vigilancia, predicción de reincidencia)</option>
-<option value="D">Módulo D: IA para Bonos y Ayuda Social</option>
-</select>
-<button class="audit-btn" onclick="cargarCuestionario()">CARGAR PREGUNTAS</button>
-</div>
-
-<!-- PREGUNTAS -->
-<div id="audit-questions-area" style="display:none;">
-<div class="audit-section-title">Sección 1 — Núcleo Común: Transparencia y Gobernanza</div>
-<div id="audit-nucleo-container"></div>
-<div class="audit-section-title" id="audit-modulo-titulo">Sección 2 — Módulo Específico</div>
-<div id="audit-modulo-container"></div>
-<button class="audit-btn audit-btn-gen" onclick="calcularRiesgo()">GENERAR REPORTE DE SESGOS Y RIESGOS</button>
-</div>
-
-<!-- RESULTADO -->
-<div class="audit-result-area" id="audit-result-area">
-<div style="text-align:center;">
-<div id="audit-result-badge" class="audit-badge"></div>
-<h3 id="audit-result-label" style="font-family:var(--font-mono);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin:0.3rem 0 0;"></h3>
-</div>
-<div id="audit-sesgo-tag" class="sesgo-tag"></div>
-<div class="audit-action-box">
-<h4 class="h-accent">🛠️ Plan de Acción y Defensa:</h4>
-<div id="audit-plan"></div>
-<hr>
-<h4 class="h-primary">⚖️ Contactos de Denuncia (Chile):</h4>
-<ul>
-<li><strong>SERNAC:</strong> 800 700 100 (Consumidores)</li>
-<li><strong>Inspección del Trabajo:</strong> 600 450 4000 (Trabajadores)</li>
-<li><strong>ONG Derechos Digitales:</strong> contacto@derechosdigitales.org</li>
-<li><strong>Defensoría Penal Pública:</strong> 800 39 2000 (Justicia)</li>
-</ul>
-</div>
-<button class="audit-btn audit-btn-pdf" onclick="window.print()">🖨️ Descargar Reporte Profesional (PDF)</button>
 </div>
 </div>
 </section>
@@ -1580,12 +1922,20 @@ coproducción (Jasanoff), punto de vista feminista (Harding) y cosmotécnica (Hu
 <footer>
 <div class="footer-main">PACSEJ — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos</div>
 <div class="footer-sub">
-Desarrollado por <strong>Paola A. Robayo Galán</strong><br>
-Tesis de Maestría en Ciencia, Tecnología y Sociedad<br>
-Universidad Alberto Hurtado · Santiago, Chile
+Desarrollado por <strong>Paola Robayo G.</strong><br>
+Tesis de Magíster en Ciencia, Tecnología y Sociedad · Enfoque <em>Making and Doing</em><br>
+Universidad Alberto Hurtado · Santiago, Chile<br>
+Dirección: Dr. Claudio Ramos Zincke
+</div>
+<div class="footer-sub" style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-muted);">
+🏛️ Proyecto postulado para ser financiado por la Vicerrectoría de Investigación e Innovación de la Universidad Alberto Hurtado — Concurso FIIA 2026
 </div>
 <div class="footer-legal">
-© 2026 · Supervisión académica: Leandro Rodríguez Medina
+<span style="margin-right:1.5rem;">🔓 Código Abierto (Open Source) — GitHub</span>
+<span style="margin-right:1.5rem;">🛡️ Cumple GDPR / Ley 19.628 de Protección de Datos</span>
+<span>⚖️ Eje: Derechos Humanos y Tecnologías</span>
+<br><br>
+© 2026 · Supervisión académica: Dr. Claudio Ramos Zincke
 </div>
 </footer>
 
@@ -1598,17 +1948,17 @@ const feeds = [
 {
 name: 'MIT Tech Review AI',
 url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.technologyreview.com/topic/artificial-intelligence/feed',
-color: '#ED8936'
+color: '#166534'
 },
 {
 name: 'AI Ethics',
 url: 'https://api.rss2json.com/v1/api.json?rss_url=https://ainowinstitute.org/feed',
-color: '#4FD1C5'
+color: '#0D9488'
 },
 {
 name: 'The Verge AI',
 url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.theverge.com/ai-artificial-intelligence/rss/index.xml',
-color: '#2B6CB0'
+color: '#1D4ED8'
 }
 ];
 
