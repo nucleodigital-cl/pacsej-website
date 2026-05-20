@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>PACSEJ — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos</title>
+<title>PACSEJ Ciudadano — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,6 +145,222 @@ transition: 0.3s;
 box-shadow: 0 4px 20px rgba(237,137,54,0.35);
 }
 .hero-cta:hover { background: #DD6B20; transform: translateY(-3px); box-shadow: 0 8px 28px rgba(237,137,54,0.45); }
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; align-items: center; }
+.hero-cta-secondary {
+display: inline-block;
+background: transparent;
+color: var(--accent);
+padding: 1rem 2rem;
+text-decoration: none;
+font-family: var(--font-mono);
+font-size: 0.9rem;
+font-weight: bold;
+border-radius: 6px;
+border: 2px solid var(--accent);
+letter-spacing: 0.06em;
+transition: 0.3s;
+}
+.hero-cta-secondary:hover { background: var(--bg2); transform: translateY(-2px); }
+
+.sistema-cards-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.2rem;
+margin-top: 2rem;
+}
+.sistema-card {
+background: white;
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.5rem;
+cursor: pointer;
+transition: 0.25s;
+border-top: 4px solid var(--accent2);
+}
+.sistema-card:hover, .sistema-card.active {
+border-color: var(--accent);
+box-shadow: 0 6px 20px rgba(22,101,52,0.12);
+transform: translateY(-2px);
+}
+.sistema-card h3 {
+font-family: var(--font-mono);
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--accent);
+margin-bottom: 0.6rem;
+}
+.sistema-card .sistema-ejemplo { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.sistema-card .sistema-riesgo {
+font-size: 0.85rem;
+padding: 0.6rem 0.8rem;
+background: var(--bg2);
+border-radius: 4px;
+border-left: 3px solid var(--risk-high);
+}
+
+.audit-no-se-hint {
+background: #FFFBEB;
+border: 1px solid #F6E05E;
+border-radius: 8px;
+padding: 1rem 1.2rem;
+margin: 1rem 0 1.5rem;
+font-size: 0.92rem;
+color: var(--text);
+}
+.audit-no-se-hint strong { color: #B7791F; }
+
+.diagnostico-detalle {
+margin-top: 1rem;
+padding: 1rem 0;
+border-top: 1px dashed var(--border);
+}
+.diagnostico-detalle h5 {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--accent);
+margin: 0.8rem 0 0.3rem;
+}
+.diagnostico-detalle p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+
+.semaforo-tabla {
+width: 100%;
+border-collapse: collapse;
+margin-top: 1.5rem;
+font-size: 0.9rem;
+}
+.semaforo-tabla th, .semaforo-tabla td {
+border: 1px solid var(--border);
+padding: 0.75rem 1rem;
+text-align: left;
+vertical-align: top;
+}
+.semaforo-tabla th {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+text-transform: uppercase;
+background: var(--bg2);
+}
+.semaforo-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
+.semaforo-dot.verde { background: var(--risk-low); }
+.semaforo-dot.amarillo { background: #CA8A04; }
+.semaforo-dot.naranjo { background: var(--risk-high); }
+.semaforo-dot.rojo { background: var(--risk-crit); }
+
+.aviso-etico-box {
+background: var(--bg3);
+border: 2px solid var(--accent);
+border-radius: 8px;
+padding: 1.8rem 2rem;
+margin-top: 1.5rem;
+}
+.aviso-etico-box p { margin: 0; font-size: 1.05rem; line-height: 1.7; }
+
+.pasos-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 1rem;
+margin-top: 2rem;
+}
+.paso-card {
+background: white;
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.2rem;
+text-align: center;
+}
+.paso-num {
+font-family: var(--font-mono);
+font-size: 1.4rem;
+color: var(--accent2);
+font-weight: bold;
+margin-bottom: 0.5rem;
+}
+.paso-card h4 {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+color: var(--accent);
+margin-bottom: 0.4rem;
+}
+.paso-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+.accion-post-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.2rem;
+margin-top: 1.5rem;
+}
+.accion-post-card {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.4rem;
+}
+.accion-post-card h4 {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+color: var(--accent);
+margin-bottom: 0.5rem;
+}
+.instituciones-lista { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.instituciones-lista li {
+font-size: 0.9rem;
+padding: 0.35rem 0;
+padding-left: 1rem;
+position: relative;
+color: var(--text-muted);
+}
+.instituciones-lista li::before { content: "→"; position: absolute; left: 0; color: var(--accent2); }
+
+.sesgoritmo-tipos-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin-top: 2rem; }
+.sesgoritmo-tipo-card {
+background: white;
+border: 1px solid var(--border);
+border-left: 4px solid var(--accent3);
+border-radius: 8px;
+padding: 1.5rem;
+}
+.sesgoritmo-tipo-card h4 { font-family: var(--font-inst); font-size: 1.4rem; margin-bottom: 0.5rem; }
+.sesgoritmo-pregunta {
+margin-top: 0.8rem;
+padding: 0.7rem 1rem;
+background: var(--bg2);
+border-radius: 4px;
+font-style: italic;
+font-size: 0.95rem;
+color: var(--text);
+}
+
+.triada-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.2rem;
+margin-top: 2rem;
+}
+.triada-card {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.5rem;
+}
+.triada-card h4 {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+color: var(--accent);
+margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+.sistema-cards-grid, .accion-post-grid, .pasos-grid, .triada-grid { grid-template-columns: 1fr; }
+.pasos-grid { grid-template-columns: 1fr 1fr; }
+}
 
 /* PROTOCOLO SECTION */
 .protocolo-grid {
@@ -999,7 +1215,7 @@ text-transform: uppercase;
 margin-bottom: 0.5rem;
 }
 .audit-badge.b-low { background: var(--risk-low); }
-.audit-badge.b-lim { background: var(--risk-lim); }
+.audit-badge.b-lim { background: #CA8A04; }
 .audit-badge.b-high { background: var(--risk-high); }
 .audit-badge.b-crit { background: var(--risk-crit); }
 
@@ -1014,7 +1230,7 @@ font-weight: bold;
 letter-spacing: 0.04em;
 }
 .sesgo-tag.s-low { background: #F0FFF4; border-color: var(--risk-low); color: var(--risk-low); }
-.sesgo-tag.s-lim { background: #EBF8FF; border-color: var(--risk-lim); color: var(--risk-lim); }
+.sesgo-tag.s-lim { background: #FFFBEB; border-color: #CA8A04; color: #92400E; }
 .sesgo-tag.s-high { background: #FFFBEB; border-color: var(--risk-high); color: var(--risk-high); }
 .sesgo-tag.s-crit { background: #FFF5F5; border-color: var(--risk-crit); color: var(--risk-crit); }
 
@@ -1294,24 +1510,26 @@ section { padding: 4rem 1.5rem; }
 <a href="#inicio" class="nav-logo">PACSEJ</a>
 <ul class="nav-links">
 <li><a href="#auditoria">Auditoría</a></li>
-<li><a href="#que-es">¿Qué es?</a></li>
-<li><a href="#casos-uso">Casos de Uso</a></li>
-
-<li><a href="#taxonomia">Taxonomía</a></li>
-<li><a href="#marco">Marco Legal</a></li>
+<li><a href="#que-es">PACSEJ</a></li>
+<li><a href="#que-auditar">Sistemas</a></li>
+<li><a href="#sesgoritmo">Sesgoritmo</a></li>
+<li><a href="tesis.html">Tesis</a></li>
 <li><a href="#autora">Autora</a></li>
 </ul>
-<a href="#auditoria" class="nav-cta">INICIAR AUDITORÍA CRÍTICA</a>
+<a href="#auditoria" class="nav-cta">Iniciar auditoría ciudadana</a>
 </nav>
 
 <!-- HERO -->
 <section id="inicio">
-<span class="hero-tag">Protocolo v3.0 · CTS & Legaltech</span>
-<h1 class="hero-title">¿Tu IA cumple con la normativa?<br><em>Verifícalo ahora.</em></h1>
-<a href="#auditoria" class="hero-cta">INICIAR AUDITORÍA CRÍTICA v3.0</a>
+<span class="hero-tag">PACSEJ Ciudadano · Protocolo v3.0</span>
+<h1 class="hero-title">¿Una plataforma tomó una decisión<br>que <em>afectó tus derechos?</em></h1>
+<div class="hero-actions">
+<a href="#auditoria" class="hero-cta">Iniciar auditoría ciudadana</a>
+<a href="#sesgoritmo" class="hero-cta-secondary">Entender qué es un sesgoritmo</a>
+</div>
 <p class="hero-subtitle">
-La inteligencia artificial ya está tomando decisiones que afectan derechos, procesos legales y vidas cotidianas. Pero hoy, auditar esos sistemas sigue siendo difícil, técnico y, muchas veces, inaccesible.<br><br>
-<strong>El Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos cambia eso.</strong>
+PACSEJ te ayuda a identificar si una decisión automatizada presenta opacidad, sesgos o falta de revisión humana, mediante un diagnóstico ciudadano comprensible.<br><br>
+<strong>PACSEJ es un protocolo ciudadano para identificar riesgos algorítmicos en plataformas y sistemas de IA que afectan derechos fundamentales.</strong> Está pensado para personas sin formación técnica ni jurídica.
 </p>
 </section>
 
@@ -1319,7 +1537,7 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <section id="auditoria" class="section section-divider">
 <span class="section-label">01. Auditoría Ciudadana</span>
 <h2 class="section-title">Cuestionario PACSEJ<br><em>Ciudadano v3.0</em></h2>
-<p class="section-intro">Herramienta de auditoría gratuita, sin registro, sin expertos técnicos. En 15 minutos obtienes un diagnóstico de sesgos y un plan de acción concreto.</p>
+<p class="section-intro">Herramienta gratuita, sin registro y sin necesitar ser abogada ni ingeniera. En unos 15 minutos obtienes un diagnóstico en semáforo y orientación sobre qué puedes hacer después.</p>
 
 <!-- GRID: MANUAL + MOCKUP lado a lado -->
 <div class="audit-intro-grid">
@@ -1331,7 +1549,7 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <div class="audit-manual-step"><strong>Paso 1 — Elige módulo</strong>ChatGPT / Trabajo / Justicia / Ayuda social</div>
 <div class="audit-manual-step"><strong>Paso 2 — Responde</strong>10 preguntas comunes + 6–8 específicas de tu caso</div>
 <div class="audit-manual-step"><strong>Paso 3 — Diagnóstico</strong>Nivel de riesgo, sesgoritmos detectados y plan de acción</div>
-<div class="audit-manual-step"><strong>Paso 4 — Descarga</strong>Reporte PDF listo para usar como evidencia legal</div>
+<div class="audit-manual-step"><strong>Paso 4 — Descarga</strong>Guarda tu reporte en PDF o captura de pantalla</div>
 </div>
 </div>
 
@@ -1341,7 +1559,7 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <div class="result-mockup-card">
 <div style="text-align:center;">
 <div class="audit-badge b-high" style="pointer-events:none;">RIESGO ALTO</div>
-<h3 style="font-family:var(--font-mono);font-size:0.88rem;text-transform:uppercase;letter-spacing:0.08em;margin:0.4rem 0 0;color:var(--text);">Sistema de Caja Negra — Puntaje: 42%</h3>
+<h3 style="font-family:var(--font-mono);font-size:0.88rem;text-transform:uppercase;letter-spacing:0.08em;margin:0.4rem 0 0;color:var(--text);">Existen señales relevantes de sesgo u opacidad</h3>
 </div>
 <div class="sesgo-tag s-high">⚠️ PELIGRO — Sesgos críticos: Opacidad Algorítmica · Discriminación Directa/Proxies · Feedback Loop Negativo</div>
 <div class="audit-action-box">
@@ -1370,14 +1588,40 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 
 <!-- SELECTOR DE MÓDULO -->
 <div class="audit-module-selector">
-<p>Paso 1 — Elige el módulo que deseas auditar:</p>
-<select id="audit-module-choice">
-<option value="A">Módulo A: IAs que responden dudas (ChatGPT, buscadores legales)</option>
-<option value="B">Módulo B: IA en el Trabajo (apps de reparto, selección de personal)</option>
-<option value="C">Módulo C: IA en Juicios o Policías (vigilancia, predicción de reincidencia)</option>
-<option value="D">Módulo D: IA para Bonos y Ayuda Social</option>
+<p>Paso 1 — ¿Qué tipo de sistema quieres auditar?</p>
+<div class="sistema-cards-grid" id="sistema-cards-audit">
+<div class="sistema-card" data-module="A" onclick="seleccionarModulo('A', this)">
+<h3>Chatbots o plataformas legales</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> ChatGPT, asistentes jurídicos, buscadores de jurisprudencia.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> respuestas falsas, citas inventadas, sesgos interpretativos.</p>
+</div>
+<div class="sistema-card" data-module="B" onclick="seleccionarModulo('B', this)">
+<h3>Plataformas laborales</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> apps de reparto, evaluación de desempeño, selección automatizada.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> penalización injusta, despidos algorítmicos, discriminación laboral.</p>
+</div>
+<div class="sistema-card" data-module="C" onclick="seleccionarModulo('C', this)">
+<h3>Sistemas judiciales o de riesgo</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> scoring judicial, predicción de reincidencia, priorización de casos.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> opacidad, secreto comercial, afectación del debido proceso.</p>
+</div>
+<div class="sistema-card" data-module="D" onclick="seleccionarModulo('D', this)">
+<h3>Beneficios sociales o acceso a recursos</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> subsidios, créditos, registros sociales, detección de fraude.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> exclusión injusta, variables proxy, falta de revisión humana.</p>
+</div>
+</div>
+<select id="audit-module-choice" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
+<option value="A">Chatbots o plataformas legales</option>
+<option value="B">Plataformas laborales</option>
+<option value="C">Sistemas judiciales o de riesgo</option>
+<option value="D">Beneficios sociales o acceso a recursos</option>
 </select>
-<button class="audit-btn" onclick="cargarCuestionario()">CARGAR PREGUNTAS</button>
+<button class="audit-btn" onclick="cargarCuestionario()">Cargar preguntas del módulo</button>
+</div>
+
+<div class="audit-no-se-hint">
+<strong>¿Por qué “No sé” también cuenta?</strong> Si no puedes responder una pregunta, eso puede ser una señal de que el sistema es opaco: no te explicó cómo decide. En PACSEJ, <em>No sé</em> es información válida y relevante.
 </div>
 
 <!-- PREGUNTAS -->
@@ -1386,7 +1630,7 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <div id="audit-nucleo-container"></div>
 <div class="audit-section-title" id="audit-modulo-titulo">Sección 2 — Módulo Específico</div>
 <div id="audit-modulo-container"></div>
-<button class="audit-btn audit-btn-gen" onclick="calcularRiesgo()">GENERAR REPORTE DE SESGOS Y RIESGOS</button>
+<button class="audit-btn audit-btn-gen" onclick="calcularRiesgo()">Generar diagnóstico ciudadano</button>
 </div>
 
 <!-- RESULTADO -->
@@ -1396,487 +1640,270 @@ La inteligencia artificial ya está tomando decisiones que afectan derechos, pro
 <h3 id="audit-result-label" style="font-family:var(--font-mono);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin:0.3rem 0 0;"></h3>
 </div>
 <div id="audit-sesgo-tag" class="sesgo-tag"></div>
+<div id="audit-diagnostico-detalle" class="diagnostico-detalle"></div>
 <div class="audit-action-box">
-<h4 class="h-accent">🛠️ Plan de Acción y Defensa:</h4>
+<h4 class="h-accent">Qué puedes hacer ahora</h4>
 <div id="audit-plan"></div>
 <hr>
-<h4 class="h-primary">⚖️ Contactos de Denuncia (Chile):</h4>
+<h4 class="h-primary">Instituciones a las que podrías acudir (Chile)</h4>
 <ul>
-<li><strong>SERNAC:</strong> 800 700 100 (Consumidores)</li>
-<li><strong>Inspección del Trabajo:</strong> 600 450 4000 (Trabajadores)</li>
+<li><strong>SERNAC:</strong> 800 700 100</li>
+<li><strong>Inspección del Trabajo:</strong> 600 450 4000</li>
+<li><strong>Contraloría General de la República</strong></li>
+<li><strong>Defensoría Penal Pública:</strong> 800 39 2000</li>
+<li><strong>Defensoría de la Niñez</strong></li>
+<li><strong>Agencia de Protección de Datos Personales</strong> (si corresponde)</li>
 <li><strong>ONG Derechos Digitales:</strong> contacto@derechosdigitales.org</li>
-<li><strong>Defensoría Penal Pública:</strong> 800 39 2000 (Justicia)</li>
 </ul>
 </div>
-<button class="audit-btn audit-btn-pdf" onclick="window.print()">🖨️ Descargar Reporte Profesional (PDF)</button>
+<button class="audit-btn audit-btn-pdf" onclick="window.print()">Descargar reporte (PDF / imprimir)</button>
+<p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--text-muted);"><a href="#despues-diagnostico">Ver guía completa: ¿Qué hacer con tu diagnóstico?</a></p>
 </div>
 </div>
 </section>
 
-<!-- QUÉ ES -->
+<!-- QUÉ ES PACSEJ -->
 <section id="que-es" class="section-divider">
-<span class="section-label">02. El Protocolo</span>
-<h2 class="section-title">🔍 Un protocolo abierto para auditar,<br>clasificar y corregir sistemas de IA.</h2>
+<span class="section-label">02. Qué es PACSEJ</span>
+<h2 class="section-title">Protocolo ciudadano de<br><em>auditoría crítica</em></h2>
 <p class="section-intro">
-PACSEJ es un sistema de auditoría sociotécnica que permite evaluar si una herramienta de inteligencia artificial está realmente preparada para operar en contextos jurídicos. A través de un test estructurado, cualquier persona —no solo expertos técnicos— puede analizar un sistema y obtener un diagnóstico claro.
+PACSEJ no es una herramienta de cumplimiento para empresas. Es un protocolo ciudadano, académico y crítico para que personas afectadas por plataformas o sistemas algorítmicos puedan identificar riesgos, comprenderlos y saber qué hacer después.
 </p>
 
-<div class="protocolo-grid">
+<div class="triada-grid">
+<div class="triada-card">
+<h4>Sujeto</h4>
+<p>Ciudadana o ciudadano común, sin formación técnica ni jurídica, que fue afectado por una decisión automatizada.</p>
+</div>
+<div class="triada-card">
+<h4>Objeto</h4>
+<p>El sistema o plataforma de IA que incide en tus derechos: trabajo, subsidio, justicia, consumo o acceso a recursos.</p>
+</div>
+<div class="triada-card">
+<h4>Objetivo</h4>
+<p>Un diagnóstico accionable en lenguaje claro, con educación crítica sobre cómo funcionan los sesgoritmos.</p>
+</div>
+</div>
 
-<!-- CARD 1: Qué evalúa -->
+<div class="protocolo-grid" style="margin-top:2.5rem;">
 <div class="protocolo-card">
-<div class="protocolo-card-icon">⚖️</div>
-<h3>¿Qué evalúa PACSEJ?</h3>
-<p>El protocolo verifica si un sistema de IA:</p>
-<ul>
-<li>Cumple con estándares de equidad y no discriminación</li>
-<li>Garantiza transparencia y trazabilidad de sus decisiones</li>
-<li>Permite supervisión humana efectiva</li>
-<li>Se adecua a la normativa vigente en Chile (IA, ciberseguridad y protección de datos)</li>
-</ul>
+<div class="protocolo-card-icon">🔍</div>
+<h3>Qué hace el protocolo</h3>
+<p>Te guía con preguntas sencillas (Sí / No / No sé) para detectar opacidad, sesgos y falta de revisión humana en el sistema que te afectó.</p>
 </div>
-
-<!-- CARD 2: El resultado -->
 <div class="protocolo-card">
-<div class="protocolo-card-icon">📊</div>
-<h3>De la opacidad a la decisión informada</h3>
-<p>El resultado no es un informe técnico incomprensible. PACSEJ traduce problemas complejos en una clasificación simple y accionable:</p>
-<div class="resultado-badges">
-<span class="badge badge-verde">🟢 Cumple</span>
-<span class="badge badge-amarillo">🟡 Cumple parcialmente</span>
-<span class="badge badge-rojo">🔴 No cumple</span>
+<div class="protocolo-card-icon">🚦</div>
+<h3>Qué recibes</h3>
+<p>Un resultado en semáforo de cuatro niveles, con explicación del problema, por qué importa, qué derecho podría estar en juego y pasos concretos a seguir.</p>
 </div>
-<p>Y cuando un sistema falla, no te deja solo: genera recomendaciones concretas para corregirlo, alineadas con estándares regulatorios y buenas prácticas internacionales.</p>
+<div class="protocolo-card protocolo-highlight full-width">
+<div class="protocolo-card-icon">⚠️</div>
+<h3>PACSEJ no reemplaza asesoría legal</h3>
+<p>PACSEJ entrega una orientación ciudadana y académica sobre riesgos algorítmicos. No reemplaza asesoría jurídica profesional ni constituye una decisión legal vinculante.</p>
+<a href="#auditoria" class="btn-white" style="margin-top:1rem;">Iniciar auditoría ciudadana →</a>
 </div>
-
-<!-- CARD 3: No solo técnica -->
-<div class="protocolo-card protocolo-highlight">
-<div class="protocolo-card-icon">🧠</div>
-<h3>No es solo una herramienta técnica</h3>
-<p>PACSEJ parte de una premisa fundamental: los sesgos no son errores aislados. Son el resultado de cómo se diseñan, entrenan e implementan los sistemas.</p>
-<p>Por eso, la auditoría no solo evalúa código, sino también:</p>
-<ul>
-<li>Decisiones de diseño</li>
-<li>Datos utilizados en el entrenamiento</li>
-<li>Contextos de uso y aplicación</li>
-<li>Impactos diferenciados en distintos grupos</li>
-</ul>
-</div>
-
-<!-- CARD 4: Contexto chileno -->
-<div class="protocolo-card">
-<div class="protocolo-card-icon">🇨🇱</div>
-<h3>Diseñado para Chile, con estándares globales</h3>
-<p>El protocolo integra un marco regulatorio multinivel:</p>
-<ul>
-<li>Exigencias regulatorias emergentes en Chile</li>
-<li>Principios de derechos fundamentales</li>
-<li>Estándares internacionales de gobernanza de IA, incluyendo sistemas de alto riesgo (EU AI Act)</li>
-</ul>
-</div>
-
-<!-- CARD 5: CTA final -->
-<div class="protocolo-card protocolo-cta-box full-width">
-<div class="protocolo-card-icon">🚀</div>
-<h3>Auditar antes de implementar no es opcional</h3>
-<p>Si vas a usar inteligencia artificial en contextos jurídicos, necesitas saber si puedes confiar en ella.<br>PACSEJ te permite hacerlo de forma clara, estructurada y basada en evidencia.</p>
-<a href="#auditoria" class="btn-white">INICIAR AUDITORÍA AHORA →</a>
-</div>
-
 </div>
 </section>
 
-<!-- CASOS DE USO -->
-<section id="casos-uso" class="section section-divider">
-<span class="section-label">03. Casos de Uso</span>
-<h2 class="section-title">PACSEJ en acción.<br><em>Tres escenarios reales.</em></h2>
-<p class="section-intro">PACSEJ no es solo teoría académica. Hoy mismo puede usarse para auditar sistemas de IA que ya operan en Chile y detectar riesgos antes de que causen daño.</p>
+<!-- QUÉ PUEDES AUDITAR -->
+<section id="que-auditar" class="section section-divider">
+<span class="section-label">03. Qué puedes auditar</span>
+<h2 class="section-title">¿Qué tipo de sistema<br>quieres auditar?</h2>
+<p class="section-intro">Elige el tipo de plataforma que te afectó. No necesitas saber de leyes ni de programación: solo identificar en qué área de tu vida apareció la decisión automatizada.</p>
 
-<div class="casos-grid">
-
-<div class="caso-card caso-jueza">
-<div class="caso-icon">⚖️</div>
-<div class="caso-perfil">Caso 1 — Poder Judicial</div>
-<h3>Jueza Claudia, Tribunal de Garantía</h3>
-<p>Recibe propuesta para implementar "JusticIA Predict", un software de predicción de riesgo de reincidencia similar a COMPAS. Antes de aprobarlo, usa PACSEJ Módulo C.</p>
-<div class="caso-hallazgo">🔍 Hallazgo: Algoritmo entrenado con datos 2015–2020 de alta concentración policial en La Pintana y Puente Alto. Sin validación desagregada por grupo socioeconómico.</div>
-<div class="caso-resultado r-alto">⚠️ RIESGO ALTO — No adoptar · Score: 2.1/5.0</div>
-<p style="margin-top:0.8rem;font-size:0.82rem;"><strong>Impacto:</strong> Protege derechos de 2.000+ personas procesadas/año. Genera precedente para exigir auditoría previa en tribunales.</p>
+<div class="sistema-cards-grid" id="sistema-cards-landing">
+<div class="sistema-card" data-module="A" onclick="irAuditoriaModulo('A', this)">
+<h3>Chatbots o plataformas legales</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> ChatGPT, asistentes jurídicos, buscadores de jurisprudencia.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> respuestas falsas, citas inventadas, sesgos interpretativos.</p>
 </div>
-
-<div class="caso-card caso-abogado">
-<div class="caso-icon">👔</div>
-<div class="caso-perfil">Caso 2 — Derecho Laboral</div>
-<h3>Roberto, Abogado Laboralista</h3>
-<p>Representa a 15 repartidores desvinculados por "bajo rendimiento" algorítmico. Todos mayores de 45 años con responsabilidades de cuidado. Usa PACSEJ Módulo B para construir el caso.</p>
-<div class="caso-hallazgo">🔍 Hallazgo: Algoritmo usa "disponibilidad horaria" como proxy de edad. Feedback loop: trabajadores con score bajo en mes 1 tienen 80% probabilidad de score bajo en mes 3.</div>
-<div class="caso-resultado r-alto">🔴 RIESGO CRÍTICO — Score: 1.8/5.0</div>
-<p style="margin-top:0.8rem;font-size:0.82rem;"><strong>Resultado:</strong> Informe PACSEJ como peritaje técnico. Multa de 150 UTM. 15 trabajadores reintegrados con compensación.</p>
+<div class="sistema-card" data-module="B" onclick="irAuditoriaModulo('B', this)">
+<h3>Plataformas laborales</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> apps de reparto, evaluación de desempeño, selección automatizada.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> penalización injusta, despidos algorítmicos, discriminación laboral.</p>
 </div>
-
-<div class="caso-card caso-ciudadana">
-<div class="caso-icon">👤</div>
-<div class="caso-perfil">Caso 3 — Ciudadanía</div>
-<h3>María, solicitante de subsidio</h3>
-<p>Rechazada automáticamente por sistema digital del MINVU. Mensaje: "No cumple requisitos. Intente en 6 meses." Usa PACSEJ Ciudadano (Módulo D) para entender por qué.</p>
-<div class="caso-hallazgo">🔍 Hallazgo: Sistema rechaza automáticamente a trabajadores informales (60% de la fuerza laboral chilena). Sin explicación de criterios ni canal humano de corrección.</div>
-<div class="caso-resultado r-alto">🚨 RIESGO INACEPTABLE — Score: 26.5%</div>
-<p style="margin-top:0.8rem;font-size:0.82rem;"><strong>Resultado:</strong> Denuncia en SERNAC con informe PACSEJ. Error corregido. 340 familias adicionales reciben subsidio.</p>
+<div class="sistema-card" data-module="C" onclick="irAuditoriaModulo('C', this)">
+<h3>Sistemas judiciales o de riesgo</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> scoring judicial, predicción de reincidencia, priorización de casos.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> opacidad, secreto comercial, afectación del debido proceso.</p>
 </div>
-
-<div class="caso-card caso-futuro">
-<div class="caso-icon">🚀</div>
-<div class="caso-perfil">Escenario Futuro — 2027</div>
-<h3>Auditoría Preventiva Nacional</h3>
-<p>El Congreso aprueba Ley de Auditoría Algorítmica Obligatoria. Toda institución pública que use IA en decisiones sobre derechos debe auditar con PACSEJ antes de implementar.</p>
-<div class="caso-hallazgo">📊 Proyección 2027–2030: 50+ sistemas auditados · 12 rechazados por riesgo crítico · 31 mejorados tras auditoría · ~500.000 personas protegidas</div>
-<div class="caso-resultado r-futuro">ROI estimado: 400x — $5M CLP auditoría vs. $2.000M CLP en demandas evitadas</div>
+<div class="sistema-card" data-module="D" onclick="irAuditoriaModulo('D', this)">
+<h3>Beneficios sociales o acceso a recursos</h3>
+<p class="sistema-ejemplo"><strong>Ejemplo:</strong> subsidios, créditos, registros sociales, detección de fraude.</p>
+<p class="sistema-riesgo"><strong>Riesgo:</strong> exclusión injusta, variables proxy, falta de revisión humana.</p>
 </div>
-
 </div>
 </section>
 
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona" class="section-divider">
+<span class="section-label">04. Cómo funciona</span>
+<h2 class="section-title">Cinco pasos<br><em>para tu diagnóstico</em></h2>
+<div class="pasos-grid">
+<div class="paso-card"><div class="paso-num">1</div><h4>Elegir sistema</h4><p>Identifica qué tipo de plataforma te afectó (chatbot, trabajo, justicia o beneficio social).</p></div>
+<div class="paso-card"><div class="paso-num">2</div><h4>Responder</h4><p>Contesta el núcleo común y las preguntas de tu módulo. Solo: Sí, No o No sé.</p></div>
+<div class="paso-card"><div class="paso-num">3</div><h4>Diagnóstico</h4><p>Recibes un semáforo de riesgo con explicación en lenguaje ciudadano.</p></div>
+<div class="paso-card"><div class="paso-num">4</div><h4>Guardar</h4><p>Descarga el reporte en PDF o guarda capturas como evidencia.</p></div>
+<div class="paso-card"><div class="paso-num">5</div><h4>Actuar</h4><p>Sigue la guía de qué pedir, a quién acudir y cómo documentar tu caso.</p></div>
+</div>
+<p style="text-align:center;margin-top:2rem;"><a href="#auditoria" class="hero-cta" style="margin-top:0;">Iniciar auditoría ciudadana</a></p>
+</section>
 
-<!-- TAXONOMÍA -->
-<section id="taxonomia" class="section-divider">
-<span class="section-label">04. Taxonomía de Sesgoritmos Jurídicos</span>
-<h2 class="section-title">Los cuatro sesgoritmos.<br>Una tipología crítica.</h2>
+
+<!-- QUÉ ES UN SESGORITMO -->
+<section id="sesgoritmo" class="section-divider">
+<span class="section-label">05. Sesgoritmo</span>
+<h2 class="section-title">¿Qué es un<br><em>sesgoritmo?</em></h2>
 <p class="section-intro">
-A partir del análisis de casos judicializados internacionales, esta investigación propone una tipología 
-que va más allá de las clasificaciones técnicas convencionales. Cada sesgoritmo representa una forma 
-particular de coproducción sociotécnica donde se materializan valores, relaciones de poder y visiones 
-específicas sobre qué cuenta como "justo", "legal" o "verdadero" (Jasanoff, 2004).
+Un sesgoritmo es un sistema algorítmico que parece neutral, pero que puede reproducir desigualdades, ocultar decisiones importantes o afectar derechos fundamentales sin que la persona pueda entenderlo o impugnarlo.
 </p>
 
-<div class="taxonomy-grid">
-<!-- SESGO 1 -->
-<div class="sesgo-card">
-<div class="sesgo-number">Sesgoritmo 01</div>
-<h3 class="sesgo-title">Estructural o Institucional</h3>
-<p class="sesgo-def">
-Emerge cuando los algoritmos reproducen y amplifican desigualdades sistémicas incorporadas en 
-estructuras institucionales y datos históricos. No se origina en el código sino en decisiones sobre 
-qué datos son relevantes, qué patrones deben identificarse y qué grupos son considerados "de riesgo".
-</p>
-<div class="sesgo-case">
-<strong>Caso paradigmático: SyRI (Países Bajos)</strong>
-El sistema SyRI convirtió la pobreza en un problema de vigilancia automatizada, siendo anulado por 
-el Tribunal de Distrito de La Haya por violar derechos fundamentales. El algoritmo cruzaba 17 bases 
-de datos estatales para identificar "fraude" en subsidios sociales, pero en la práctica vigilaba 
-desproporcionadamente a barrios de bajos ingresos y población migrante.
+<div class="sesgoritmo-tipos-grid">
+<div class="sesgoritmo-tipo-card">
+<h4>Sesgoritmo de datos</h4>
+<p><strong>Definición breve:</strong> El sistema aprende de datos históricos que ya reflejan discriminación o exclusión.</p>
+<p><strong>Ejemplo cotidiano:</strong> Un beneficio social rechaza más solicitudes de ciertos barrios porque en el pasado hubo más fiscalización allí.</p>
+<p class="sesgoritmo-pregunta"><strong>Pregunta ciudadana:</strong> ¿Los datos con los que me evaluaron representan a personas como yo de forma justa?</p>
 </div>
-<p class="sesgo-cts">
-Manifiesta cómo la coproducción entre Estado, tecnología y políticas de bienestar puede erosionar 
-derechos fundamentales bajo el imaginario de la eficiencia administrativa (Jasanoff, 2004).
-</p>
+<div class="sesgoritmo-tipo-card">
+<h4>Sesgoritmo de diseño</h4>
+<p><strong>Definición breve:</strong> Quienes crearon el sistema eligieron reglas o variables que favorecen a unos y perjudican a otros.</p>
+<p><strong>Ejemplo cotidiano:</strong> Una app laboral premia “disponibilidad total” y castiga a quien cuida hijos o familiares.</p>
+<p class="sesgoritmo-pregunta"><strong>Pregunta ciudadana:</strong> ¿Las reglas del sistema consideran mi vida real o un modelo ideal que no me representa?</p>
 </div>
-
-<!-- SESGO 2 -->
-<div class="sesgo-card">
-<div class="sesgo-number">Sesgoritmo 02</div>
-<h3 class="sesgo-title">Laboral o de Productividad Algorítmica</h3>
-<p class="sesgo-def">
-Se produce cuando la IA traduce la lógica empresarial de rendimiento en métricas aparentemente neutras 
-que penalizan desproporcionadamente a trabajadores en situaciones vulnerables. El algoritmo actúa como 
-mediador de relaciones de poder entre capital y trabajo.
-</p>
-<div class="sesgo-case">
-<strong>Caso paradigmático: Riders (Italia)</strong>
-En el caso Deliveroo/Italia, el algoritmo disciplinaba digitalmente a los riders mediante sistemas 
-automatizados de evaluación que penalizaban ausencias sin distinguir sus causas. Un trabajador enfermo 
-o que ejercía su derecho a huelga era tratado algorítmicamente igual que uno que incumplía deliberadamente, 
-resultando en exclusión del sistema de asignación de pedidos.
+<div class="sesgoritmo-tipo-card">
+<h4>Sesgoritmo de implementación</h4>
+<p><strong>Definición breve:</strong> El sistema se usa de forma distinta a como fue pensado, o sin supervisión humana cuando debería haberla.</p>
+<p><strong>Ejemplo cotidiano:</strong> Un chatbot legal lo usa un funcionario para decidir tu trámite sin revisar si la respuesta es correcta.</p>
+<p class="sesgoritmo-pregunta"><strong>Pregunta ciudadana:</strong> ¿Hay una persona responsable que revise la decisión antes de que me afecte?</p>
 </div>
-<p class="sesgo-cts">
-Ilustra la construcción social de la tecnología (SCOT): diferentes grupos sociales relevantes interpretan 
-el mismo algoritmo de formas contradictorias según sus intereses—eficiencia para empresas, control para 
-trabajadores, discriminación para jueces (Bijker & Pinch, 1987).
-</p>
+<div class="sesgoritmo-tipo-card">
+<h4>Sesgoritmo de representación</h4>
+<p><strong>Definición breve:</strong> Algunos grupos quedan fuera, invisibles o mal clasificados en el sistema.</p>
+<p><strong>Ejemplo cotidiano:</strong> El registro digital no reconoce familias diversas o trabajos informales.</p>
+<p class="sesgoritmo-pregunta"><strong>Pregunta ciudadana:</strong> ¿El sistema entiende mi situación o me deja fuera por cómo está hecho?</p>
 </div>
-
-<!-- SESGO 3 -->
-<div class="sesgo-card">
-<div class="sesgo-number">Sesgoritmo 03</div>
-<h3 class="sesgo-title">Explicabilidad y Transparencia</h3>
-<p class="sesgo-def">
-Asociado a la opacidad técnica que impide comprender, auditar o cuestionar decisiones algorítmicas. 
-Esta opacidad crea lo que Doyle (2023) denomina "infraestructura de irresponsabilidad": nadie puede 
-explicar por qué el algoritmo decide como lo hace.
-</p>
-<div class="sesgo-case">
-<strong>Caso paradigmático: SCHUFA (Alemania)</strong>
-El sistema SCHUFA de scoring crediticio operaba como caja negra: negaba créditos sin explicar los 
-criterios algorítmicos empleados. El Tribunal de Justicia de la UE (caso C-634/21) determinó que 
-esta falta de transparencia violaba el derecho a la explicabilidad establecido en el RGPD, sentando 
-precedente sobre la obligación de revelar la lógica automatizada que afecta derechos de las personas.
-</div>
-<p class="sesgo-cts">
-La explicabilidad no es solo un requisito técnico: es una práctica de legitimación social fundamental 
-para el funcionamiento democrático del derecho. Sin explicación, no hay derecho a defensa (Hildebrandt, 2015).
-</p>
-</div>
-
-<!-- SESGO 4 -->
-<div class="sesgo-card">
-<div class="sesgo-number">Sesgoritmo 04</div>
-<h3 class="sesgo-title">Sesgoritmo Epistémico o de Autoridad Automatizada</h3>
-<p class="sesgo-def">
-Ocurre cuando la autoridad cognitiva del juez o abogado se desplaza hacia la máquina. El algoritmo
-actúa como nuevo actor epistémico capaz de generar enunciados que adquieren fuerza normativa,
-transformando quién tiene derecho a producir verdad jurídica.
-</p>
-<div class="sesgo-case">
-<strong>Caso paradigmático: Sentencia T-323/24 — Corte Constitucional de Colombia</strong>
-Juez de Cali usó ChatGPT 3.5 para "extender argumentos" de sentencia sobre copagos de menor con
-autismo, transcribiendo literalmente preguntas y respuestas del sistema como fundamento del fallo.
-La Corte Constitucional estableció que la IA puede asistir (corrección, síntesis) pero no sustituir
-el razonamiento indelegable del juez: interpretar hechos, valorar pruebas, motivar decisiones.
-Advirtió que las "alucinaciones" configuran falsedad en la motivación judicial y vulneran el debido
-proceso. El caso evidencia desplazamiento epistémico: el output algorítmico adquiere fuerza normativa
-sin que el juez conozca los sesgos o limitaciones del entrenamiento.
-</div>
-<p class="sesgo-cts">
-<strong>Dimensión CTS:</strong> Los sistemas generativos importan ontologías jurídicas anglo-americanas
-(corpus common law) que se exportan como estándares universales, suprimiendo saberes plurales y
-produciendo colonialidad algorítmica (Harding, 1991; Yuk Hui, 2016). La autoridad automatizada opera
-como nuevo régimen epistémico donde la máquina —y no el jurista— determina qué cuenta como
-"fundamento válido" (Jasanoff, 2006).
-</p>
+<div class="sesgoritmo-tipo-card">
+<h4>Sesgoritmo epistémico</h4>
+<p><strong>Definición breve:</strong> La máquina parece “saber más” que las personas y sus respuestas se tratan como verdad sin cuestionarlas.</p>
+<p><strong>Ejemplo cotidiano:</strong> Una plataforma entrega una respuesta legal convincente pero inventada, y nadie la corrige.</p>
+<p class="sesgoritmo-pregunta"><strong>Pregunta ciudadana:</strong> ¿Puedo cuestionar o corregir lo que el sistema afirma sobre mi caso?</p>
 </div>
 </div>
+<p style="margin-top:2rem;text-align:center;"><a href="tesis.html" class="hero-cta-secondary">Ver respaldo académico en la tesis →</a></p>
 </section>
 
-<!-- MARCO REGULATORIO -->
+<!-- CÓMO INTERPRETAR TU RESULTADO -->
+<section id="interpretar" class="section-divider">
+<span class="section-label">06. Tu resultado</span>
+<h2 class="section-title">Cómo interpretar<br><em>tu diagnóstico</em></h2>
+<p class="section-intro">PACSEJ usa un semáforo de cuatro niveles. No es una sentencia judicial: es una guía para entender riesgos y decidir qué hacer.</p>
+
+<table class="semaforo-tabla">
+<thead>
+<tr><th>Resultado</th><th>Color</th><th>Mensaje ciudadano</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Riesgo bajo</strong></td>
+<td><span class="semaforo-dot verde"></span>Verde</td>
+<td>El sistema parece cumplir estándares básicos de transparencia y revisión. Mantén vigilancia.</td>
+</tr>
+<tr>
+<td><strong>Riesgo limitado</strong></td>
+<td><span class="semaforo-dot amarillo"></span>Amarillo</td>
+<td>Hay brechas de transparencia que conviene revisar. Pide explicaciones por escrito.</td>
+</tr>
+<tr>
+<td><strong>Riesgo alto</strong></td>
+<td><span class="semaforo-dot naranjo"></span>Naranjo</td>
+<td>Existen señales relevantes de sesgo u opacidad. Documenta y exige revisión humana.</td>
+</tr>
+<tr>
+<td><strong>Riesgo inaceptable</strong></td>
+<td><span class="semaforo-dot rojo"></span>Rojo</td>
+<td>El sistema presenta fallas graves o no es auditable. Considera denuncia y apoyo colectivo.</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-top:1.5rem;color:var(--text-muted);">Cada diagnóstico incluye: qué problema se detectó, por qué importa, qué derecho podría estar comprometido, qué puedes hacer y a dónde podrías acudir.</p>
+</section>
+
+<!-- QUÉ HACER CON TU DIAGNÓSTICO -->
+<section id="despues-diagnostico" class="section-divider">
+<span class="section-label">07. Después del diagnóstico</span>
+<h2 class="section-title">¿Qué hacer con<br><em>tu diagnóstico?</em></h2>
+
+<div class="accion-post-grid">
+<div class="accion-post-card">
+<h4>Guarda tu reporte</h4>
+<p>Descárgalo como PDF (botón imprimir del navegador) o toma capturas de pantalla con fecha visible.</p>
+</div>
+<div class="accion-post-card">
+<h4>Solicita una explicación</h4>
+<p>Pide por escrito qué datos, criterios o variables se usaron para la decisión que te afectó.</p>
+</div>
+<div class="accion-post-card">
+<h4>Pide revisión humana</h4>
+<p>Especialmente si la decisión afectó trabajo, subsidio, crédito, salud, justicia o un beneficio social.</p>
+</div>
+<div class="accion-post-card">
+<h4>Documenta el caso</h4>
+<p>Guarda fechas, correos, pantallazos, respuestas automáticas y documentos que recibiste.</p>
+</div>
+</div>
+
+<h3 style="margin-top:2.5rem;font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;color:var(--accent);">Acude a una institución pertinente</h3>
+<ul class="instituciones-lista">
+<li><strong>SERNAC</strong> — consumo y servicios digitales</li>
+<li><strong>Inspección del Trabajo</strong> — despidos y evaluación algorítmica laboral</li>
+<li><strong>Contraloría General de la República</strong> — actos de administración pública</li>
+<li><strong>Defensoría Penal Pública</strong> — procesos penales y scoring de riesgo</li>
+<li><strong>Defensoría de la Niñez</strong> — cuando afecta a niñas, niños o adolescentes</li>
+<li><strong>Agencia de Protección de Datos Personales</strong> — si involucra datos personales</li>
+<li><strong>ONG Derechos Digitales</strong> y organizaciones similares — apoyo y orientación</li>
+</ul>
+</section>
+
+<!-- MARCO TEÓRICO / TESIS -->
 <section id="marco" class="section-divider">
-<span class="section-label">05. Marco Regulatorio</span>
-<h2 class="section-title">La arquitectura jurídica de la gobernanza algorítmica.</h2>
-
-<div class="reg-intro-box">
-<h3>¿Por qué importa el marco regulatorio?</h3>
-<p>
-Los sistemas de IA en contextos jurídicos no operan en vacío normativo. Están sujetos a múltiples 
-capas regulatorias: desde el EU AI Act que los clasifica como sistemas de alto riesgo, hasta el GDPR 
-que regula el tratamiento de datos personales, pasando por legislaciones nacionales y marcos éticos 
-internacionales. <strong>Conocer qué puede exigirse a un proveedor de IA es el primer paso para una 
-gobernanza responsable.</strong>
-</p>
-</div>
-
-<!-- PILAR NACIONAL CHILE -->
-<div class="reg-section">
-<div class="reg-section-header">
-<div class="reg-section-number">01</div>
-<div class="reg-section-title">
-<h3>Marco Nacional — Chile</h3>
-<p>Legislación aplicable en territorio chileno</p>
-</div>
-</div>
-
-<div class="reg-grid">
-<!-- LEY 19.628 -->
-<div class="reg-card primary">
-<h4 class="reg-card-title">Ley sobre Protección de la Vida Privada</h4>
-<div class="reg-card-ref">Ley N° 19.628 — En proceso de reforma</div>
-<p class="reg-card-desc">
-Base del tratamiento de datos personales en Chile. La reforma en trámite incorporará derechos
-ARCO alineados con estándares GDPR.
-</p>
-</div>
-
-<!-- CONSTITUCIÓN -->
-<div class="reg-card">
-<h4 class="reg-card-title">Constitución Política de Chile</h4>
-<div class="reg-card-ref">Art. 19 N° 4 — Rango constitucional</div>
-<p class="reg-card-desc">
-El derecho a la protección de datos personales tiene rango constitucional en Chile desde la
-reforma de 2018, elevando su jerarquía normativa.
-</p>
-</div>
-
-<!-- POLÍTICA NACIONAL IA -->
-<div class="reg-card">
-<h4 class="reg-card-title">Política Nacional de Inteligencia Artificial</h4>
-<div class="reg-card-ref">Actualización 2024-2025 — Soft law</div>
-<p class="reg-card-desc">
-Establece principios éticos que tribunales chilenos están comenzando a citar como estándar de
-diligencia en casos de responsabilidad por uso de IA.
-</p>
-</div>
-</div>
-</div>
-
-<!-- PILAR EUROPEO -->
-<div class="reg-section">
-<div class="reg-section-header">
-<div class="reg-section-number">02</div>
-<div class="reg-section-title">
-<h3>Pilar Europeo</h3>
-<p>El estándar más avanzado de gobernanza de IA a nivel mundial</p>
-</div>
-</div>
-
-<div class="reg-grid">
-<!-- EU AI ACT -->
-<div class="reg-card primary">
-<h4 class="reg-card-title">Reglamento de Inteligencia Artificial (EU AI Act)</h4>
-<div class="reg-card-ref">Reglamento (UE) 2024/1689 — Vigente desde 2024</div>
-<p class="reg-card-desc">
-El eje central de la regulación global. Clasifica sistemas según riesgo: prohibido, alto, limitado
-y mínimo. Los sistemas de IA en administración de justicia son <strong>alto riesgo por defecto</strong>
-(Anexo III).
-</p>
-<div class="reg-card-key">Artículos clave:</div>
-<ul class="reg-card-list">
-<li><strong>Art. 6 y Anexo III:</strong> Clasificación de sistemas de alto riesgo en contextos jurídicos</li>
-<li><strong>Art. 13:</strong> Transparencia e información obligatoria a usuarios</li>
-<li><strong>Art. 14:</strong> Supervisión humana efectiva</li>
-<li><strong>Art. 10:</strong> Gobernanza de datos y requisitos de calidad</li>
-</ul>
-</div>
-
-<!-- GDPR -->
-<div class="reg-card">
-<h4 class="reg-card-title">GDPR — Protección de Datos</h4>
-<div class="reg-card-ref">Reglamento (UE) 2016/679 — Vigente desde 2018</div>
-<p class="reg-card-desc">
-Regula el tratamiento de datos personales y establece el derecho a no ser objeto de decisiones
-basadas únicamente en tratamiento automatizado.
-</p>
-<div class="reg-card-key">Artículos relevantes:</div>
-<ul class="reg-card-list">
-<li><strong>Art. 22:</strong> Derecho a no ser objeto de decisiones automatizadas</li>
-<li><strong>Art. 15:</strong> Derecho de acceso y explicación de la lógica aplicada</li>
-<li><strong>Art. 35:</strong> Evaluación de impacto (DPIA) obligatoria</li>
-</ul>
-</div>
-</div>
-</div>
-
-<!-- MARCOS ÉTICOS -->
-<div class="reg-section">
-<div class="reg-section-header">
-<div class="reg-section-number">03</div>
-<div class="reg-section-title">
-<h3>Marcos Éticos Internacionales</h3>
-<p>Soft law que opera como estándar interpretativo</p>
-</div>
-</div>
-
-<div class="reg-grid">
-<!-- UNESCO -->
-<div class="reg-card primary">
-<h4 class="reg-card-title">Recomendación UNESCO sobre Ética de la IA</h4>
-<div class="reg-card-ref">Adoptada 2021 — 193 Estados miembro</div>
-<p class="reg-card-desc">
-El estándar global más completo para derechos humanos y tecnología. Vinculante políticamente 
-para Estados que la adoptaron (incluido Chile).
-</p>
-</div>
-
-<!-- OCDE -->
-<div class="reg-card">
-<h4 class="reg-card-title">Principios OCDE sobre IA</h4>
-<div class="reg-card-ref">Adoptados 2019</div>
-<p class="reg-card-desc">
-Fundamentales para gobernanza corporativa. Chile es miembro de OCDE y estos principios informan 
-política pública nacional.
-</p>
-</div>
-
-<!-- IEEE -->
-<div class="reg-card">
-<h4 class="reg-card-title">Estándares IEEE P7000</h4>
-<div class="reg-card-ref">Familia de estándares técnicos</div>
-<p class="reg-card-desc">
-Conjunto de estándares técnicos que operacionalizan principios éticos en código. Ideal para 
-auditoría técnica PACSEJ.
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ASISTENTE IA -->
-<section id="asistente" class="section-divider">
-<span class="section-label">06. Asistente IA</span>
-<h2 class="section-title">Tu consultor de gobernanza algorítmica.<br>Disponible 24/7.</h2>
+<span class="section-label">08. Marco teórico</span>
+<h2 class="section-title">Respaldo académico<br><em>de PACSEJ Ciudadano</em></h2>
 <p class="section-intro">
-El asistente PACSEJ está diseñado para responder las preguntas prácticas que los operadores jurídicos 
-necesitan resolver cuando implementan, contratan o impugnan sistemas de inteligencia artificial.
+PACSEJ nace de una tesis de Magíster en Ciencia, Tecnología y Sociedad en la Universidad Alberto Hurtado. La versión ciudadana traduce ese marco a herramientas comprensibles, sin perder rigor crítico.
 </p>
+<div class="protocolo-card full-width" style="max-width:720px;margin:2rem auto;">
+<p><strong>Título:</strong> Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos (PACSEJ) — enfoque making and doing.</p>
+<p style="margin-top:0.8rem;"><strong>Autora:</strong> Paola Andrea Robayo Galán · <strong>Universidad:</strong> Alberto Hurtado · <strong>Programa:</strong> Magíster en Ciencia, Tecnología y Sociedad</p>
+<p style="margin-top:1rem;"><a href="tesis.html" class="hero-cta" style="margin-top:0.5rem;display:inline-block;">Leer marco teórico y descargar tesis</a></p>
+</div>
+</section>
 
-<div class="ai-container">
-<div class="ai-header">
-<span>Asistente PACSEJ · Gobernanza de IA Jurídica</span>
-<span class="ai-status">Beta · Próximamente</span>
+<!-- AVISO ÉTICO Y PRIVACIDAD -->
+<section id="privacidad" class="section-divider">
+<span class="section-label">09. Ética y privacidad</span>
+<h2 class="section-title">Aviso ético<br>y privacidad</h2>
+
+<div class="aviso-etico-box">
+<p><strong>PACSEJ no reemplaza asesoría legal.</strong> PACSEJ entrega una orientación ciudadana y académica sobre riesgos algorítmicos. No reemplaza asesoría jurídica profesional ni constituye una decisión legal vinculante.</p>
 </div>
-<div class="ai-chat">
-<div class="chat-bubble ai">
-Hola. Soy el asistente PACSEJ. Puedo ayudarte con preguntas sobre gobernanza de IA, obligaciones 
-del proveedor y remediación de sesgoritmos en contextos jurídicos.
+
+<div class="protocolo-grid" style="margin-top:2rem;">
+<div class="protocolo-card">
+<h3>Implementación liviana y soberana</h3>
+<p>PACSEJ funciona en HTML, CSS y JavaScript nativo, sin depender de Typeform ni Google Forms. Tu reporte se exporta en PDF local o impresión del navegador.</p>
 </div>
-<div class="chat-bubble user">
-¿Qué cláusulas debo incluir en el contrato con mi proveedor de IA para predicción de riesgo penal?
-</div>
-<div class="chat-bubble ai">
-Según el Art. 13 del EU AI Act, los sistemas de alto riesgo deben garantizar transparencia hacia 
-los usuarios. Para contratos debes exigir: (1) documentación técnica completa, (2) logs de auditoría 
-accesibles, (3) métricas de sesgo desagregadas por grupo protegido...
-</div>
-</div>
-<div class="ai-footer">
-En desarrollo — Suscríbete para acceso anticipado a la versión beta
+<div class="protocolo-card">
+<h3>Datos personales</h3>
+<p>No capturamos datos personales sin tu consentimiento explícito. Las respuestas del cuestionario se procesan en tu dispositivo. Si en el futuro se recopilaran datos agregados para investigación, se pedirá permiso claro y separado.</p>
 </div>
 </div>
 </section>
 
-<!-- NOTICIAS -->
-<section id="noticias" class="news-section">
-<div class="news-header">
-<span class="section-label">07. Actualidad</span>
-<h2>Noticias y Desarrollos en IA</h2>
-<p>
-Seguimiento automático de noticias sobre inteligencia artificial, auditoría algorítmica 
-y gobernanza tecnológica desde fuentes académicas y periodísticas de referencia.
-</p>
-</div>
-
-<div class="news-container">
-<!-- COLUMNA IZQUIERDA: FEED AUTOMÁTICO -->
-<div class="news-feed">
-<h3>📰 Últimas Noticias</h3>
-<div id="news-feed-container">
-<div class="loading">Cargando noticias recientes...</div>
-</div>
-</div>
-
-<!-- COLUMNA DERECHA: ANÁLISIS CTS -->
-<aside class="analysis-box">
-<h3>Análisis CTS</h3>
-<p>Perspectivas críticas sobre desarrollos recientes en gobernanza de IA desde Ciencia, Tecnología y Sociedad.</p>
-
-<div class="analysis-item">
-<h4>🔍 Tema destacado</h4>
-<p>
-El AI Act europeo entró en vigencia pero la implementación revela tensiones entre 
-compliance técnico y transformación democrática real de relaciones de poder algorítmico.
-</p>
-</div>
-
-<div class="analysis-item">
-<h4>📚 Lectura recomendada</h4>
-<p>
-<strong>"Algorithmic Governmentality in Latin America"</strong> (Ricaurte et al., 2024) 
-analiza cómo imaginarios neocoloniales moldean adopción de IA en la región.
-</p>
-</div>
-</aside>
-</div>
-</section>
 
 <!-- AUTORA -->
 <section id="autora" class="author-section">
-<span class="section-label">08. Autora</span>
+<span class="section-label">10. Autora y contacto</span>
 <div class="author-content">
 <div class="author-img">👤</div>
 <div class="author-info">
@@ -1887,14 +1914,13 @@ analiza cómo imaginarios neocoloniales moldean adopción de IA en la región.
 <span class="uah-name">Universidad<br>Alberto Hurtado</span>
 </div>
 
-<h3>Paola Robayo G.</h3>
-<div class="author-title">Investigadora CTS · Legaltech · Making and Doing</div>
+<h3>Paola Andrea Robayo Galán</h3>
+<div class="author-title">Magíster en Ciencia, Tecnología y Sociedad · Making and Doing</div>
 
 <p class="author-bio">
-PACSEJ nació como resultado de la tesis con enfoque <em>making and doing</em> realizada por la investigadora
-<strong>Paola Robayo G.</strong>, candidata a Magíster en Ciencia, Tecnología y Sociedad,
-bajo la dirección del <strong>Dr. Claudio Ramos Zincke</strong>, Profesor de Sociología de la
-Universidad Alberto Hurtado.
+PACSEJ Ciudadano nació de la tesis con enfoque <em>making and doing</em> de
+<strong>Paola Andrea Robayo Galán</strong>, en el Magíster en Ciencia, Tecnología y Sociedad de la
+Universidad Alberto Hurtado, bajo la dirección del <strong>Dr. Claudio Ramos Zincke</strong>.
 </p>
 
 <div class="author-director">
@@ -1903,7 +1929,7 @@ Profesor de Sociología · Universidad Alberto Hurtado · Santiago, Chile
 </div>
 
 <p class="author-interdisciplinar">
-PACSEJ es el resultado de unir la <strong>sociología crítica</strong> —que analiza las relaciones de poder inscriptas en la tecnología— con la <strong>ingeniería de software</strong> —que formaliza esos análisis en herramientas funcionales y auditables—. La intersección entre ambas disciplinas permite producir un protocolo que no solo diagnostica sesgos, sino que genera evidencia legal accionable.
+La versión ciudadana traduce investigación crítica en herramientas que cualquier persona pueda usar para entender cómo una plataforma o sistema algorítmico puede afectar sus derechos, sin necesitar ser abogada ni ingeniera.
 </p>
 
 <div class="author-links">
@@ -1916,136 +1942,30 @@ PACSEJ es el resultado de unir la <strong>sociología crítica</strong> —que a
 
 <!-- CTA FINAL -->
 <section class="cta-section">
-<h2>¿Tu sistema cumple con los estándares?</h2>
-<p>Aplica el protocolo PACSEJ en 30 minutos · 16-18 preguntas · Diagnóstico inmediato</p>
-<a href="#auditoria" class="btn-large">REALIZAR EL TEST AHORA</a>
+<h2>¿Una plataforma afectó tus derechos?</h2>
+<p>Diagnóstico ciudadano en semáforo · Sin registro · En tu propio dispositivo</p>
+<a href="#auditoria" class="btn-large">Iniciar auditoría ciudadana</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="footer-main">PACSEJ — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos</div>
+<div class="footer-main">PACSEJ Ciudadano — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos</div>
 <div class="footer-sub">
-Desarrollado por <strong>Paola Robayo G.</strong><br>
-Tesis de Magíster en Ciencia, Tecnología y Sociedad · Enfoque <em>Making and Doing</em><br>
+Desarrollado por <strong>Paola Andrea Robayo Galán</strong><br>
+Magíster en Ciencia, Tecnología y Sociedad · Enfoque <em>Making and Doing</em><br>
 Universidad Alberto Hurtado · Santiago, Chile<br>
 Dirección: Dr. Claudio Ramos Zincke
 </div>
-<div class="footer-sub" style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-muted);">
-🏛️ Proyecto postulado para ser financiado por la Vicerrectoría de Investigación e Innovación de la Universidad Alberto Hurtado — Concurso FIIA 2026
-</div>
 <div class="footer-legal">
-<span style="margin-right:1.5rem;">🔓 Código Abierto (Open Source) — GitHub</span>
-<span style="margin-right:1.5rem;">🛡️ Cumple GDPR / Ley 19.628 de Protección de Datos</span>
-<span>⚖️ Eje: Derechos Humanos y Tecnologías</span>
+<span style="margin-right:1.5rem;">🔓 Código abierto</span>
+<span style="margin-right:1.5rem;">🔒 Sin captura de datos personales sin consentimiento</span>
+<span>⚖️ Orientación ciudadana — no es asesoría legal</span>
 <br><br>
-© 2026 · Supervisión académica: Dr. Claudio Ramos Zincke
+© 2026 · <a href="tesis.html" style="color:var(--accent);">Marco teórico y tesis</a>
 </div>
 </footer>
 
-<!-- JAVASCRIPT PARA NOTICIAS AUTOMÁTICAS -->
 <script>
-async function loadNews() {
-const feedContainer = document.getElementById('news-feed-container');
-
-const feeds = [
-{
-name: 'MIT Tech Review AI',
-url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.technologyreview.com/topic/artificial-intelligence/feed',
-color: '#166534'
-},
-{
-name: 'AI Ethics',
-url: 'https://api.rss2json.com/v1/api.json?rss_url=https://ainowinstitute.org/feed',
-color: '#0D9488'
-},
-{
-name: 'The Verge AI',
-url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.theverge.com/ai-artificial-intelligence/rss/index.xml',
-color: '#1D4ED8'
-}
-];
-
-try {
-const responses = await Promise.all(
-feeds.map(feed => 
-fetch(feed.url)
-.then(res => res.json())
-.then(data => ({
-...feed,
-items: data.items || []
-}))
-.catch(() => ({ ...feed, items: [] }))
-)
-);
-
-let allNews = [];
-responses.forEach(feed => {
-feed.items.slice(0, 3).forEach(item => {
-allNews.push({
-title: item.title,
-link: item.link,
-date: new Date(item.pubDate),
-source: feed.name,
-color: feed.color,
-excerpt: stripHtml(item.description || item.content || '').slice(0, 150) + '...'
-});
-});
-});
-
-allNews.sort((a, b) => b.date - a.date);
-allNews = allNews.slice(0, 8);
-
-if (allNews.length === 0) {
-feedContainer.innerHTML = '<div class="loading">No se pudieron cargar noticias. Intentá recargar la página.</div>';
-return;
-}
-
-feedContainer.innerHTML = allNews.map(news => `
-<div class="news-item">
-<div class="news-item-date">${formatDate(news.date)}</div>
-<div class="news-item-title">
-<a href="${news.link}" target="_blank" rel="noopener">${news.title}</a>
-</div>
-<div class="news-item-source" style="color: ${news.color}">${news.source}</div>
-<div class="news-item-excerpt">${news.excerpt}</div>
-</div>
-`).join('');
-
-} catch (error) {
-console.error('Error cargando noticias:', error);
-feedContainer.innerHTML = '<div class="loading">Error al cargar noticias. Por favor recargá la página.</div>';
-}
-}
-
-function stripHtml(html) {
-const tmp = document.createElement('div');
-tmp.innerHTML = html;
-return tmp.textContent || tmp.innerText || '';
-}
-
-function formatDate(date) {
-const now = new Date();
-const diffTime = Math.abs(now - date);
-const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-if (diffDays === 0) return 'Hoy';
-if (diffDays === 1) return 'Ayer';
-if (diffDays < 7) return `Hace ${diffDays} días`;
-if (diffDays < 30) return `Hace ${Math.floor(diffDays / 7)} semanas`;
-
-return date.toLocaleDateString('es-ES', { 
-year: 'numeric', 
-month: 'long', 
-day: 'numeric' 
-});
-}
-
-if (document.readyState === 'loading') {
-document.addEventListener('DOMContentLoaded', loadNews);
-} else {
-loadNews();
-}
-
 // ——— AUDITORÍA CIUDADANA PACSEJ v3.0 ———
 const nucleoData = [
     {id:"NC1", p:"¿Sabes qué nombre tiene el programa y para qué se usa exactamente?", s:"Transparencia Básica"},
@@ -2100,25 +2020,44 @@ const modulosData = {
     ]
 };
 
+function seleccionarModulo(mod, cardEl) {
+    document.getElementById('audit-module-choice').value = mod;
+    document.querySelectorAll('#sistema-cards-audit .sistema-card').forEach(c => c.classList.remove('active'));
+    if (cardEl) cardEl.classList.add('active');
+}
+
+function irAuditoriaModulo(mod) {
+    const auditCard = document.querySelector('#sistema-cards-audit .sistema-card[data-module="' + mod + '"]');
+    seleccionarModulo(mod, auditCard);
+    document.getElementById('auditoria').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(cargarCuestionario, 500);
+}
+
 function renderPreguntas(data, containerId) {
     document.getElementById(containerId).innerHTML = data.map(q => `
         <div class="audit-question" data-sesgo="${q.s}">
             <p><strong>${q.id}.</strong> ${q.p}</p>
             <div class="audit-options">
                 <input type="radio" name="${q.id}" value="4" id="${q.id}s">
-                <label for="${q.id}s">Sí (4 pts)</label>
+                <label for="${q.id}s">Sí</label>
                 <input type="radio" name="${q.id}" value="1" id="${q.id}n">
-                <label for="${q.id}n">No (1 pt)</label>
+                <label for="${q.id}n">No</label>
                 <input type="radio" name="${q.id}" value="0" id="${q.id}x">
-                <label for="${q.id}x">No sé (0 pts)</label>
+                <label for="${q.id}x">No sé</label>
             </div>
         </div>
     `).join('');
 }
 
 function cargarCuestionario() {
-    const choice = document.getElementById('audit-module-choice').value;
-    const selectedText = document.getElementById('audit-module-choice').options[document.getElementById('audit-module-choice').selectedIndex].text;
+    const select = document.getElementById('audit-module-choice');
+    const choice = select.value;
+    const activeCard = document.querySelector('#sistema-cards-audit .sistema-card.active');
+    if (!activeCard) {
+        alert('Primero elige qué tipo de sistema quieres auditar (una de las cuatro tarjetas).');
+        return;
+    }
+    const selectedText = select.options[select.selectedIndex].text;
     renderPreguntas(nucleoData, 'audit-nucleo-container');
     renderPreguntas(modulosData[choice], 'audit-modulo-container');
     document.getElementById('audit-modulo-titulo').innerText = 'Sección 2 — ' + selectedText;
@@ -2152,30 +2091,50 @@ function calcularRiesgo() {
 
     resArea.style.display = 'block';
 
+    const detalle = document.getElementById('audit-diagnostico-detalle');
+    const noSeCount = Array.from(checked).filter(r => r.value === '0').length;
+    const opacidadNota = noSeCount > 2 ? '<p>Varias respuestas “No sé” sugieren <strong>opacidad del sistema</strong>: no te explicó cómo decide.</p>' : '';
+
     if (pct >= 90) {
         badge.className = 'audit-badge b-low'; badge.innerText = 'RIESGO BAJO';
-        label.innerText = 'Cumplimiento Óptimo — Puntaje: ' + Math.round(pct) + '%';
+        label.innerText = 'El sistema parece cumplir estándares básicos';
         sesgoTag.className = 'sesgo-tag s-low';
-        sesgoTag.innerHTML = '✅ CUMPLIMIENTO ÓPTIMO: El sistema parece respetar tus derechos. Mantener vigilancia activa.';
-        plan.innerHTML = '<ul><li>Sigue exigiendo explicaciones ante cada decisión importante.</li><li>Guarda evidencia de tus interacciones con el sistema.</li><li>Re-audita si el sistema cambia de función o de proveedor.</li><li>Recuerda: un riesgo bajo hoy puede escalar a ALTO mañana.</li></ul>';
+        sesgoTag.innerHTML = '🟢 Riesgo bajo — Señales detectadas: ' + (topSesgos || 'ninguna crítica');
+        detalle.innerHTML = opacidadNota +
+            '<h5>Qué problema se detectó</h5><p>Pocas señales de opacidad o sesgo en tus respuestas.</p>' +
+            '<h5>Por qué importa</h5><p>Aun con riesgo bajo, conviene vigilar porque los sistemas cambian.</p>' +
+            '<h5>Derecho que podría estar en juego</h5><p>Transparencia, debido proceso y no discriminación.</p>';
+        plan.innerHTML = '<ul><li>Sigue pidiendo explicaciones por escrito ante decisiones importantes.</li><li>Guarda evidencia de tus interacciones con el sistema.</li><li>Vuelve a auditar si cambia el proveedor o las reglas.</li></ul>';
     } else if (pct >= 66) {
         badge.className = 'audit-badge b-lim'; badge.innerText = 'RIESGO LIMITADO';
-        label.innerText = 'Deficiencias de Transparencia — Puntaje: ' + Math.round(pct) + '%';
+        label.innerText = 'Hay brechas de transparencia que conviene revisar';
         sesgoTag.className = 'sesgo-tag s-lim';
-        sesgoTag.innerHTML = '🟡 ATENCIÓN — Sesgos detectados: ' + topSesgos;
-        plan.innerHTML = '<ul><li>Exige transparencia proactiva sobre el funcionamiento del sistema.</li><li>Verifica que haya una persona supervisando todas las decisiones.</li><li>Reporta omisiones de información a la entidad responsable.</li><li>Solicita acceso a los criterios de evaluación por escrito.</li></ul>';
+        sesgoTag.innerHTML = '🟡 Riesgo limitado — Señales: ' + topSesgos;
+        detalle.innerHTML = opacidadNota +
+            '<h5>Qué problema se detectó</h5><p>Faltan explicaciones claras o canales de reclamo efectivos.</p>' +
+            '<h5>Por qué importa</h5><p>Sin transparencia no puedes defenderte ni corregir errores.</p>' +
+            '<h5>Derecho que podría estar en juego</h5><p>Acceso a información, tutela administrativa y protección de datos.</p>';
+        plan.innerHTML = '<ul><li>Pide por escrito los criterios y datos usados en tu caso.</li><li>Exige que una persona revise la decisión antes de que te afecte.</li><li>Documenta cada respuesta automática o rechazo.</li></ul>';
     } else if (pct >= 36) {
         badge.className = 'audit-badge b-high'; badge.innerText = 'RIESGO ALTO';
-        label.innerText = 'Sistema de Caja Negra — Puntaje: ' + Math.round(pct) + '%';
+        label.innerText = 'Existen señales relevantes de sesgo u opacidad';
         sesgoTag.className = 'sesgo-tag s-high';
-        sesgoTag.innerHTML = '⚠️ PELIGRO — Sesgos críticos: ' + topSesgos;
-        plan.innerHTML = '<ul><li><strong>Exige supervisión humana obligatoria</strong> antes de aceptar cualquier decisión.</li><li>Apela toda decisión automática que te afecte.</li><li>Busca asesoría legal especializada en derechos digitales.</li><li>Documenta cada error detectado con fecha y pantallazos.</li></ul>';
+        sesgoTag.innerHTML = '🟠 Riesgo alto — Señales: ' + topSesgos;
+        detalle.innerHTML = opacidadNota +
+            '<h5>Qué problema se detectó</h5><p>El sistema opera como caja negra o con señales de discriminación.</p>' +
+            '<h5>Por qué importa</h5><p>Puede afectar tu trabajo, beneficio, proceso o acceso a recursos sin explicación.</p>' +
+            '<h5>Derecho que podría estar en juego</h5><p>Igualdad, debido proceso, trabajo digno o acceso a prestaciones sociales.</p>';
+        plan.innerHTML = '<ul><li><strong>Pide revisión humana</strong> antes de aceptar la decisión.</li><li>Apela o reclama por los canales oficiales.</li><li>Guarda pantallazos, fechas y correos.</li><li>Considera acudir a una institución de la lista (SERNAC, Inspección del Trabajo, etc.).</li></ul>';
     } else {
         badge.className = 'audit-badge b-crit'; badge.innerText = 'RIESGO INACEPTABLE';
-        label.innerText = 'Amenaza Crítica a Derechos — Puntaje: ' + Math.round(pct) + '%';
+        label.innerText = 'El sistema presenta fallas graves o no es auditable';
         sesgoTag.className = 'sesgo-tag s-crit';
-        sesgoTag.innerHTML = '🚨 ALERTA CRÍTICA — Sesgoritmos: ' + topSesgos;
-        plan.innerHTML = '<ul><li><strong>Deja de usar el sistema de inmediato</strong> hasta nueva evaluación.</li><li>Denuncia ante el SERNAC e Inspección del Trabajo (ver contactos).</li><li>Organiza una acción colectiva con otras personas afectadas.</li><li>Exige la suspensión del sistema por vía legal o administrativa.</li></ul>';
+        sesgoTag.innerHTML = '🔴 Riesgo inaceptable — Señales: ' + topSesgos;
+        detalle.innerHTML = opacidadNota +
+            '<h5>Qué problema se detectó</h5><p>Múltiples fallas graves: opacidad, sesgo o ausencia de control humano.</p>' +
+            '<h5>Por qué importa</h5><p>La decisión automatizada puede ser injusta y difícil de impugnar.</p>' +
+            '<h5>Derecho que podría estar en juego</h5><p>Dignidad, no discriminación, debido proceso y acceso a la justicia.</p>';
+        plan.innerHTML = '<ul><li>Documenta todo y guarda este reporte en PDF.</li><li>Pide revisión humana urgente si aún puedes apelar.</li><li>Acude a la institución pertinente (ver lista en el reporte).</li><li>Busca apoyo en ONG de derechos digitales o asesoría legal si lo necesitas.</li></ul>';
     }
 
     window.scrollTo({ top: resArea.offsetTop - 80, behavior: 'smooth' });
