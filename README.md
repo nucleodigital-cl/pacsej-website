@@ -1,2 +1,2 @@
 # pacsej-website
-Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos - Sitio web oficial
+Protocolo de Auditoría Ciudadana de Sesgoritmos Jurídicos - Sitio web oficial

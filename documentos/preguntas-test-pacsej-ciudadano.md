@@ -1,5 +1,5 @@
 # Preguntas del Test PACSEJ Ciudadano
-## Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos — Versión ciudadana
+## Protocolo de Auditoría Ciudadana de Sesgoritmos Jurídicos — Versión ciudadana
 
 **Autora:** Paola Andrea Robayo Galán  
 **Institución:** Universidad Alberto Hurtado — Magíster en Ciencia, Tecnología y Sociedad  
@@ -215,4 +215,4 @@ Estas cinco preguntas aparecen en la plataforma como **preguntas orientadoras** 
 
 ---
 
-*Documento generado a partir del código fuente de la plataforma PACSEJ Ciudadano. Para citar: Robayo Galán, P. A. (2026). PACSEJ Ciudadano — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos. Universidad Alberto Hurtado.*
+*Documento generado a partir del código fuente de la plataforma PACSEJ Ciudadano. Para citar: Robayo Galán, P. A. (2026). PACSEJ Ciudadano — Protocolo de Auditoría Ciudadana de Sesgoritmos Jurídicos. Universidad Alberto Hurtado.*
