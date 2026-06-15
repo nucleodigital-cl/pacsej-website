@@ -211,6 +211,72 @@ color: var(--text);
 }
 .audit-no-se-hint strong { color: #B7791F; }
 
+.audit-download-box {
+background: var(--bg2);
+border: 2px solid var(--accent);
+border-radius: 10px;
+padding: 1.5rem 1.8rem;
+margin: 1.5rem 0 2rem;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 1.2rem 1.5rem;
+}
+.audit-download-icon {
+font-size: 2rem;
+line-height: 1;
+flex-shrink: 0;
+}
+.audit-download-text { flex: 1; min-width: 220px; }
+.audit-download-text h3 {
+font-family: var(--font-serif);
+font-size: 1.15rem;
+color: var(--text);
+margin: 0 0 0.35rem;
+}
+.audit-download-text p {
+margin: 0;
+font-size: 0.9rem;
+color: var(--text-muted);
+line-height: 1.5;
+}
+.audit-download-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+flex-shrink: 0;
+}
+.audit-download-btn {
+display: inline-block;
+background: var(--accent);
+color: white;
+padding: 0.75rem 1.25rem;
+border-radius: 4px;
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+text-decoration: none;
+transition: 0.3s;
+border: none;
+cursor: pointer;
+white-space: nowrap;
+}
+.audit-download-btn:hover {
+opacity: 0.9;
+transform: translateY(-1px);
+color: white;
+}
+.audit-download-btn-secondary {
+background: transparent;
+color: var(--accent);
+border: 1px solid var(--accent);
+}
+.audit-download-btn-secondary:hover {
+background: var(--accent);
+color: white;
+}
+
 .diagnostico-detalle {
 margin-top: 1rem;
 padding: 1rem 0;
@@ -1510,6 +1576,7 @@ section { padding: 4rem 1.5rem; }
 <a href="#inicio" class="nav-logo">PACSEJ</a>
 <ul class="nav-links">
 <li><a href="#auditoria">Auditoría</a></li>
+<li><a href="documentos/preguntas-test-pacsej-ciudadano.html">Preguntas</a></li>
 <li><a href="#que-es">PACSEJ</a></li>
 <li><a href="#que-auditar">Sistemas</a></li>
 <li><a href="#sesgoritmo">Sesgoritmo</a></li>
@@ -1538,6 +1605,19 @@ PACSEJ te ayuda a identificar si una decisión automatizada presenta opacidad, s
 <span class="section-label">01. Auditoría Ciudadana</span>
 <h2 class="section-title">Cuestionario PACSEJ<br><em>Ciudadano v3.0</em></h2>
 <p class="section-intro">Herramienta gratuita, sin registro y sin necesitar ser abogada ni ingeniera. En unos 15 minutos obtienes un diagnóstico en semáforo y orientación sobre qué puedes hacer después.</p>
+
+<!-- DESCARGA PREGUNTAS COMPLETAS -->
+<div class="audit-download-box" id="preguntas-completas">
+<div class="audit-download-icon" aria-hidden="true">📄</div>
+<div class="audit-download-text">
+<h3>Descarga aquí las preguntas completas</h3>
+<p>Consulta o descarga el cuestionario PACSEJ completo: 10 preguntas del núcleo común, los 4 módulos específicos y las preguntas ciudadanas. Ideal para tesis, investigación o documentación de la plataforma.</p>
+</div>
+<div class="audit-download-actions">
+<a href="documentos/preguntas-test-pacsej-ciudadano.html" class="audit-download-btn" target="_blank" rel="noopener">Ver preguntas completas</a>
+<a href="documentos/preguntas-test-pacsej-ciudadano.md" class="audit-download-btn audit-download-btn-secondary" download>Descargar texto (.md)</a>
+</div>
+</div>
 
 <!-- GRID: MANUAL + MOCKUP lado a lado -->
 <div class="audit-intro-grid">

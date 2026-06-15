@@ -29,19 +29,36 @@
     ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
     .note { background: #f8f8f0; border-left: 4px solid #c9a227; padding: 1rem; margin: 1.5rem 0; font-size: 0.92rem; }
-    .btn-bar { margin: 1.5rem 0; }
-    .btn-bar button {
+    .btn-bar { margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+    .btn-bar button, .btn-bar a.btn {
       background: #1A3830; color: white; border: none;
       padding: 0.6rem 1.2rem; cursor: pointer; font-size: 0.95rem; border-radius: 4px;
+      text-decoration: none; display: inline-block;
     }
-    .btn-bar button:hover { background: #2a5848; }
+    .btn-bar button:hover, .btn-bar a.btn:hover { background: #2a5848; color: white; }
+    .btn-bar a.btn-outline {
+      background: transparent; color: #1A3830; border: 1px solid #1A3830;
+    }
+    .btn-bar a.btn-outline:hover { background: #1A3830; color: white; }
+    .site-header {
+      background: #1A3830; color: white; padding: 0.75rem 1.5rem;
+      margin: -2rem -1.5rem 2rem; font-family: system-ui, sans-serif; font-size: 0.85rem;
+    }
+    .site-header a { color: #a7f3d0; text-decoration: none; }
+    .site-header a:hover { text-decoration: underline; }
     footer { margin-top: 3rem; font-size: 0.85rem; color: #666; border-top: 1px solid #ddd; padding-top: 1rem; }
   </style>
 </head>
 <body>
 
+<div class="site-header no-print">
+  <a href="../index.html">← Volver a PACSEJ Ciudadano</a>
+</div>
+
 <div class="btn-bar no-print">
   <button onclick="window.print()">Guardar como PDF / Imprimir</button>
+  <a href="../index.html#auditoria" class="btn btn-outline">Ir al cuestionario en línea</a>
+  <a href="preguntas-test-pacsej-ciudadano.md" class="btn btn-outline" download>Descargar texto (.md)</a>
 </div>
 
 <h1>Preguntas del Test PACSEJ Ciudadano</h1>
