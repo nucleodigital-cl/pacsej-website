@@ -785,29 +785,111 @@ font-weight: 600;
 /* AUTORA */
 .author-section {
 background: var(--bg2);
-padding: 6rem 3rem;
+padding: 0;
+}
+
+.site-closing-author {
+max-width: 720px;
+margin: 0 auto;
+padding: 5rem 3rem 4rem;
+text-align: center;
+}
+
+.site-closing-author .author-uah-logo {
+margin: 0 auto 1.5rem;
+}
+
+.site-closing-author h3 {
+font-family: var(--font-inst);
+font-size: 2.2rem;
+margin-bottom: 0.5rem;
+color: var(--accent);
+}
+
+.site-closing-author .author-title {
+margin-bottom: 1.5rem;
+}
+
+.site-closing-author .author-bio,
+.site-closing-author .author-interdisciplinar {
+font-size: 0.98rem;
+color: var(--text-muted);
+line-height: 1.85;
+margin-bottom: 1rem;
+text-align: center;
+}
+
+.site-closing-author .author-interdisciplinar {
+border-top: none;
+padding-top: 0;
+margin-top: 0;
+font-style: normal;
+}
+
+.site-closing-author .author-email {
+display: inline-block;
+margin-top: 1.5rem;
+font-family: var(--font-mono);
+font-size: 0.78rem;
+color: var(--accent);
+text-decoration: none;
+letter-spacing: 0.04em;
+transition: 0.3s;
+}
+
+.site-closing-author .author-email:hover {
+color: var(--accent3);
+}
+
+.site-closing-cta {
+background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 100%);
+color: white;
+text-align: center;
+padding: 4.5rem 3rem;
+}
+
+.site-closing-cta h2 {
+font-family: var(--font-inst);
+font-size: 2.2rem;
+margin-bottom: 1rem;
+line-height: 1.25;
+}
+
+.site-closing-cta p {
+font-size: 1.05rem;
+margin-bottom: 2rem;
+opacity: 0.95;
+}
+
+.site-closing-footer {
+padding: 2.5rem 3rem 3rem;
+text-align: center;
+background: white;
+border-top: 1px solid var(--border);
+}
+
+.site-closing-footer .footer-legal {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+color: var(--text-muted);
+line-height: 1.8;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.site-closing-footer .footer-copy {
+margin-top: 1.25rem;
+font-family: var(--font-mono);
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--text-muted);
 }
 
 .author-content {
 max-width: 1000px;
 margin: 0 auto;
-display: grid;
-grid-template-columns: 200px 1fr;
-gap: 3rem;
-align-items: start;
-}
-
-.author-img {
-width: 200px;
-height: 260px;
-background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 100%);
-border: 1px solid var(--border);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 4rem;
-color: white;
-opacity: 0.3;
+display: block;
 }
 
 .author-info h3 {
@@ -1067,7 +1149,7 @@ font-family: var(--font-mono);
 font-size: 0.8rem;
 }
 
-/* CTA SECTION */
+/* CTA SECTION (legacy — usar site-closing-cta) */
 .cta-section {
 background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 100%);
 color: white;
@@ -1525,23 +1607,6 @@ letter-spacing: 0.06em;
 color: var(--text-muted);
 line-height: 1.5;
 }
-.author-director {
-background: var(--bg3);
-border-left: 3px solid var(--accent3);
-padding: 0.7rem 1rem;
-border-radius: 0 4px 4px 0;
-font-size: 0.85rem;
-margin: 1rem 0;
-color: var(--text-muted);
-}
-.author-interdisciplinar {
-font-size: 0.88rem;
-color: var(--text-muted);
-font-style: italic;
-border-top: 1px solid var(--border);
-padding-top: 0.8rem;
-margin-top: 0.8rem;
-}
 
 /* RESPONSIVE */
 @media (max-width: 968px) {
@@ -1560,10 +1625,10 @@ nav { padding: 1rem; }
 section { padding: 4rem 1.5rem; }
 .hero-title { font-size: 2.8rem; }
 .reg-grid { grid-template-columns: 1fr; }
-.author-content { grid-template-columns: 1fr; text-align: center; }
-.author-img { margin: 0 auto; }
-.author-links { justify-content: center; }
-.protocolo-grid { grid-template-columns: 1fr; }
+.site-closing-author { padding: 4rem 1.5rem 3rem; }
+.site-closing-cta { padding: 3.5rem 1.5rem; }
+.site-closing-cta h2 { font-size: 1.75rem; }
+.site-closing-footer { padding: 2rem 1.5rem; }
 .protocolo-card.full-width { grid-column: 1; }
 .resultado-badges { flex-direction: column; align-items: flex-start; }
 }
@@ -1981,12 +2046,9 @@ PACSEJ nace de una tesis de Magíster en Ciencia, Tecnología y Sociedad en la U
 </section>
 
 
-<!-- AUTORA -->
+<!-- AUTORA + CTA + FOOTER UNIFICADO -->
 <section id="autora" class="author-section">
-<span class="section-label">10. Autora y contacto</span>
-<div class="author-content">
-<div class="author-img">👤</div>
-<div class="author-info">
+<div class="site-closing-author">
 
 <div class="author-uah-logo">
 <span class="uah-wordmark">uah</span>
@@ -1998,52 +2060,30 @@ PACSEJ nace de una tesis de Magíster en Ciencia, Tecnología y Sociedad en la U
 <div class="author-title">Magíster en Ciencia, Tecnología y Sociedad · Making and Doing</div>
 
 <p class="author-bio">
-PACSEJ Ciudadano nació de la tesis con enfoque <em>making and doing</em> de
-<strong>Paola Andrea Robayo Galán</strong>, en el Magíster en Ciencia, Tecnología y Sociedad de la
-Universidad Alberto Hurtado, bajo la dirección del <strong>Dr. Claudio Ramos Zincke</strong>.
+PACSEJ Ciudadano nació de la tesis con enfoque <em>making and doing</em> de Paola Andrea Robayo Galán, en el Magíster en Ciencia, Tecnología y Sociedad de la Universidad Alberto Hurtado, bajo la dirección del Dr. Claudio Ramos Zincke.
 </p>
-
-<div class="author-director">
-<strong>Dirección académica:</strong> Dr. Claudio Ramos Zincke<br>
-Profesor de Sociología · Universidad Alberto Hurtado · Santiago, Chile
-</div>
 
 <p class="author-interdisciplinar">
 La versión ciudadana traduce investigación crítica en herramientas que cualquier persona pueda usar para entender cómo una plataforma o sistema algorítmico puede afectar sus derechos, sin necesitar ser abogada ni ingeniera.
 </p>
 
-<div class="author-links">
-<a href="mailto:probayo@alumnos.uahurtado.cl" class="author-link">probayo@alumnos.uahurtado.cl</a>
-<a href="tesis.html" class="author-link">Marco Teórico Completo</a>
-</div>
-</div>
-</div>
-</section>
+<a href="mailto:probayo@alumnos.uahurtado.cl" class="author-email">probayo@alumnos.uahurtado.cl</a>
 
-<!-- CTA FINAL -->
-<section class="cta-section">
-<h2>¿Una plataforma afectó tus derechos?</h2>
+</div>
+
+<div class="site-closing-cta">
+<h2>¿Cómo saber si una IA, afectó tus derechos?</h2>
 <p>Diagnóstico ciudadano en semáforo · Sin registro · En tu propio dispositivo</p>
 <a href="#auditoria" class="btn-large">Iniciar auditoría ciudadana</a>
-</section>
+</div>
 
-<!-- FOOTER -->
-<footer>
-<div class="footer-main">PACSEJ Ciudadano — Protocolo de Auditoría Ciudadana de Sesgoritmos Jurídicos</div>
-<div class="footer-sub">
-Desarrollado por <strong>Paola Andrea Robayo Galán</strong><br>
-Magíster en Ciencia, Tecnología y Sociedad · Enfoque <em>Making and Doing</em><br>
-Universidad Alberto Hurtado · Santiago, Chile<br>
-Dirección: Dr. Claudio Ramos Zincke
-</div>
+<footer class="site-closing-footer">
 <div class="footer-legal">
-<span style="margin-right:1.5rem;">🔓 Código abierto</span>
-<span style="margin-right:1.5rem;">🔒 Sin captura de datos personales sin consentimiento</span>
-<span>⚖️ Orientación ciudadana — no es asesoría legal</span>
-<br><br>
-© 2026 · <a href="tesis.html" style="color:var(--accent);">Marco teórico y tesis</a>
+🔓 Código abierto &nbsp; 🔒 Sin captura de datos personales sin consentimiento &nbsp; ⚖️ Orientación ciudadana — no es asesoría legal
 </div>
+<div class="footer-copy">© 2026 · DERECHOS RESERVADOS.</div>
 </footer>
+</section>
 
 <script>
 // ——— AUDITORÍA CIUDADANA PACSEJ v3.0 ———
