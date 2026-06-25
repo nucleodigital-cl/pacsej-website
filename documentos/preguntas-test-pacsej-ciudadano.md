@@ -67,11 +67,11 @@ Estas 10 preguntas se aplican a **todos** los tipos de sistema, sin importar el 
 | NC1 | ¿Sabes qué nombre tiene el programa y para qué se usa exactamente? | Transparencia Básica |
 | NC2 | ¿Te explicaron de forma sencilla cómo toma las decisiones? | Opacidad Algorítmica |
 | NC3 | ¿Entendiste quién es responsable legal si el programa falla? | Opacidad Legal / Accountability |
-| NC4 | ¿Sabes si invitaron a ciudadanos a probar el sistema antes de lanzarlo? | Diseño Excluyente |
+| NC4 | ¿Te dijeron que ciudadanos participaron en probar el sistema antes de lanzarlo? | Diseño Excluyente |
 | NC5 | ¿Este sistema decide sobre la vida de miles de personas al mismo tiempo? | Escala Masiva (ADM) |
 | NC6 | ¿Puedes hablar con una persona real para corregir errores de inmediato? | Automatización sin Control Humano |
 | NC7 | ¿Te han avisado si el programa se revisa seguido (actualización)? | Deriva Temporal / Congelamiento |
-| NC8 | ¿Te informaron si ha sido evaluado para no discriminar (FRIA)? | Sesgo Estructural |
+| NC8 | ¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales, específicamente orientada a detectar riesgos de discriminación)? | Sesgo Estructural |
 | NC9 | ¿Existe un canal fácil (botón/correo) para reclamar? | Impotencia Ciudadana |
 | NC10 | ¿Expertos independientes han revisado este programa? | Autorregulación sin Escrutinio |
 
@@ -155,11 +155,11 @@ Estas cinco preguntas aparecen en la plataforma como **preguntas orientadoras** 
 1. (NC1) ¿Sabes qué nombre tiene el programa y para qué se usa exactamente?
 2. (NC2) ¿Te explicaron de forma sencilla cómo toma las decisiones?
 3. (NC3) ¿Entendiste quién es responsable legal si el programa falla?
-4. (NC4) ¿Sabes si invitaron a ciudadanos a probar el sistema antes de lanzarlo?
+4. (NC4) ¿Te dijeron que ciudadanos participaron en probar el sistema antes de lanzarlo?
 5. (NC5) ¿Este sistema decide sobre la vida de miles de personas al mismo tiempo?
 6. (NC6) ¿Puedes hablar con una persona real para corregir errores de inmediato?
 7. (NC7) ¿Te han avisado si el programa se revisa seguido (actualización)?
-8. (NC8) ¿Te informaron si ha sido evaluado para no discriminar (FRIA)?
+8. (NC8) ¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales, específicamente orientada a detectar riesgos de discriminación)?
 9. (NC9) ¿Existe un canal fácil (botón/correo) para reclamar?
 10. (NC10) ¿Expertos independientes han revisado este programa?
 
