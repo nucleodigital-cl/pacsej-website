@@ -2091,11 +2091,11 @@ const nucleoData = [
     {id:"NC1", p:"¿Sabes qué nombre tiene el programa y para qué se usa exactamente?", s:"Transparencia Básica"},
     {id:"NC2", p:"¿Te explicaron de forma sencilla cómo toma las decisiones?", s:"Opacidad Algorítmica"},
     {id:"NC3", p:"¿Entendiste quién es responsable legal si el programa falla?", s:"Opacidad Legal/Accountability"},
-    {id:"NC4", p:"¿Sabes si invitaron a ciudadanos a probar el sistema antes de lanzarlo?", s:"Diseño Excluyente"},
+    {id:"NC4", p:"¿Te dijeron que ciudadanos participaron en probar el sistema antes de lanzarlo?", s:"Diseño Excluyente"},
     {id:"NC5", p:"¿Este sistema decide sobre la vida de miles de personas al mismo tiempo?", s:"Escala Masiva (ADM)"},
     {id:"NC6", p:"¿Puedes hablar con una persona real para corregir errores de inmediato?", s:"Automatización sin Control Humano"},
-    {id:"NC7", p:"¿Te han avisado si el programa se revisa seguido (actualización)?", s:"Deriva Temporal/Congelamiento"},
-    {id:"NC8", p:"¿Te informaron si ha sido evaluado para no discriminar (FRIA)?", s:"Sesgo Estructural"},
+    {id:"NC7", p:"¿Te han avisado si el programa se revisa seguido (actualización)?", s:"Deriva Temporal/Congelamiento", soloSiNo: true},
+    {id:"NC8", p:"¿Te informaron si ha sido evaluado para no discriminar (FRIA)?", s:"Sesgo Estructural", soloSiNo: true},
     {id:"NC9", p:"¿Existe un canal fácil (botón/correo) para reclamar?", s:"Impotencia Ciudadana"},
     {id:"NC10", p:"¿Expertos independientes han revisado este programa?", s:"Autorregulación sin Escrutinio"}
 ];
@@ -2154,19 +2154,24 @@ function irAuditoriaModulo(mod) {
 }
 
 function renderPreguntas(data, containerId) {
-    document.getElementById(containerId).innerHTML = data.map(q => `
+    document.getElementById(containerId).innerHTML = data.map(q => {
+        const opcionesNo = q.soloSiNo
+            ? `<input type="radio" name="${q.id}" value="0" id="${q.id}n">
+               <label for="${q.id}n">No</label>`
+            : `<input type="radio" name="${q.id}" value="1" id="${q.id}n">
+               <label for="${q.id}n">No</label>
+               <input type="radio" name="${q.id}" value="0" id="${q.id}x">
+               <label for="${q.id}x">No sé</label>`;
+        return `
         <div class="audit-question" data-sesgo="${q.s}">
             <p><strong>${q.id}.</strong> ${q.p}</p>
             <div class="audit-options">
                 <input type="radio" name="${q.id}" value="4" id="${q.id}s">
                 <label for="${q.id}s">Sí</label>
-                <input type="radio" name="${q.id}" value="1" id="${q.id}n">
-                <label for="${q.id}n">No</label>
-                <input type="radio" name="${q.id}" value="0" id="${q.id}x">
-                <label for="${q.id}x">No sé</label>
+                ${opcionesNo}
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 }
 
 function cargarCuestionario() {
@@ -2212,7 +2217,7 @@ function calcularRiesgo() {
     resArea.style.display = 'block';
 
     const detalle = document.getElementById('audit-diagnostico-detalle');
-    const noSeCount = Array.from(checked).filter(r => r.value === '0').length;
+    const noSeCount = Array.from(checked).filter(r => r.id.endsWith('x')).length;
     const opacidadNota = noSeCount > 2 ? '<p>Varias respuestas “No sé” sugieren <strong>opacidad del sistema</strong>: no te explicó cómo decide.</p>' : '';
 
     if (pct >= 90) {
