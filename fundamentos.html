@@ -281,44 +281,86 @@ border-radius: 0 8px 8px 0;
 padding: 1.5rem;
 }
 
-/* Marco normativo 3 cols */
-.norma-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 1rem;
+/* Marco normativo — filas horizontales */
+.norma-stack {
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
 }
 
-.norma-col {
+.norma-row {
+display: flex;
+align-items: stretch;
+gap: 0;
 background: white;
 border: 1px solid var(--border);
-border-radius: 8px;
-padding: 1.2rem;
+border-radius: 10px;
+overflow: hidden;
+transition: 0.2s;
 }
 
-.norma-col-titulo {
+.norma-row:hover {
+box-shadow: 0 4px 18px rgba(22, 101, 52, 0.08);
+border-color: var(--accent);
+}
+
+.norma-row-head {
+flex: 0 0 148px;
+background: var(--bg2);
+border-right: 1px solid var(--border);
+padding: 1rem 1.1rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 0.35rem;
+}
+
+.norma-row-icon {
+font-size: 1.35rem;
+line-height: 1;
+}
+
+.norma-row-titulo {
 font-family: var(--font-mono);
-font-size: 0.72rem;
+font-size: 0.7rem;
 text-transform: uppercase;
 letter-spacing: 0.08em;
 color: var(--accent);
-margin-bottom: 0.8rem;
-padding-bottom: 0.5rem;
-border-bottom: 1px solid var(--border);
+font-weight: bold;
+line-height: 1.35;
 }
 
-.norma-col ul {
+.norma-row-body {
+flex: 1;
+padding: 1rem 1.2rem;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 0.5rem 1.2rem;
+}
+
+.norma-row-body ul {
 list-style: none;
+flex: 1;
+min-width: 200px;
 }
 
-.norma-col li {
-font-size: 0.85rem;
+.norma-row-body li {
+font-size: 0.86rem;
 color: var(--text);
-padding: 0.35rem 0;
-border-bottom: 1px dashed var(--border);
-line-height: 1.4;
+padding: 0.28rem 0;
+line-height: 1.45;
+position: relative;
+padding-left: 0.9rem;
 }
 
-.norma-col li:last-child { border-bottom: none; }
+.norma-row-body li::before {
+content: "→";
+position: absolute;
+left: 0;
+color: var(--accent2);
+font-size: 0.75rem;
+}
 
 .norma-badge {
 display: inline-block;
@@ -326,13 +368,97 @@ background: var(--accent);
 color: white;
 font-family: var(--font-mono);
 font-size: 0.62rem;
-padding: 0.15rem 0.5rem;
-border-radius: 3px;
-margin-top: 0.5rem;
+padding: 0.35rem 0.65rem;
+border-radius: 4px;
 letter-spacing: 0.06em;
+white-space: nowrap;
+align-self: center;
 }
 
-/* Casos cards */
+.norma-badge.crit {
+background: var(--risk-crit);
+}
+
+/* Auditoría retrospectiva */
+.retro-box {
+background: white;
+border: 1px solid var(--border);
+border-left: 4px solid var(--accent2);
+border-radius: 0 10px 10px 0;
+padding: 1.6rem 1.8rem;
+}
+
+.retro-box-lead {
+font-size: 1.05rem;
+color: var(--text);
+line-height: 1.75;
+margin-bottom: 1rem;
+}
+
+.retro-stats {
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+margin-bottom: 1.2rem;
+}
+
+.retro-stat {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+background: var(--bg2);
+color: var(--text-muted);
+padding: 0.35rem 0.7rem;
+border-radius: 4px;
+border: 1px solid var(--border);
+}
+
+.retro-highlight {
+background: var(--bg2);
+border-radius: 8px;
+padding: 1rem 1.2rem;
+margin-bottom: 1.2rem;
+font-size: 0.92rem;
+color: var(--text-muted);
+line-height: 1.65;
+}
+
+.retro-highlight strong { color: var(--text); }
+
+.retro-cta {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+background: var(--accent2);
+color: white;
+padding: 0.85rem 1.4rem;
+text-decoration: none;
+font-family: var(--font-mono);
+font-size: 0.72rem;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+border-radius: 6px;
+transition: 0.25s;
+}
+
+.retro-cta:hover {
+background: #1e40af;
+transform: translateY(-1px);
+color: white;
+}
+
+.retro-cta-secondary {
+display: inline-block;
+margin-left: 0.8rem;
+font-family: var(--font-mono);
+font-size: 0.72rem;
+color: var(--accent);
+text-decoration: none;
+}
+
+.retro-cta-secondary:hover { text-decoration: underline; }
+
+/* Casos cards (legacy — ya no usado en bloque principal) */
 .caso-card {
 background: white;
 border: 1px solid var(--border);
@@ -523,9 +649,25 @@ grid-template-columns: 1fr;
 padding: 2.5rem 1.5rem;
 }
 
-.norma-grid {
-grid-template-columns: 1fr;
+.norma-row {
+flex-direction: column;
 }
+
+.norma-row-head {
+flex: none;
+border-right: none;
+border-bottom: 1px solid var(--border);
+flex-direction: row;
+align-items: center;
+gap: 0.6rem;
+}
+
+.norma-row-body {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.retro-stats { flex-direction: column; }
 
 .preguntas-bloque { padding: 1.8rem 1.4rem; }
 .pregunta-item { font-size: 1.1rem; }
@@ -626,89 +768,77 @@ grid-template-columns: 1fr;
     <!-- Bloque 2: Marco normativo -->
     <div class="jur-bloque">
       <span class="jur-bloque-titulo">Marco normativo</span>
-      <div class="norma-grid">
-        <div class="norma-col">
-          <div class="norma-col-titulo">🇨🇱 Chile</div>
-          <ul>
-            <li>Ley N.° 21.663 — Ley Marco de Ciberseguridad (2024)</li>
-            <li>Ley N.° 21.719 — Protección de Datos Personales (2024)</li>
-            <li>Boletín 16821-19 — Regulación de IA (en trámite, segundo trámite legislativo, 2026)</li>
-          </ul>
+      <div class="norma-stack">
+
+        <div class="norma-row">
+          <div class="norma-row-head">
+            <span class="norma-row-icon">🇨🇱</span>
+            <span class="norma-row-titulo">Chile</span>
+          </div>
+          <div class="norma-row-body">
+            <ul>
+              <li>Ley N.° 21.663 — Ley Marco de Ciberseguridad (2024)</li>
+              <li>Ley N.° 21.719 — Protección de Datos Personales (2024)</li>
+              <li>Boletín 16821-19 — Regulación de IA (en trámite, segundo trámite legislativo, 2026)</li>
+            </ul>
+          </div>
         </div>
-        <div class="norma-col">
-          <div class="norma-col-titulo">🇪🇺 Unión Europea</div>
-          <ul>
-            <li>AI Act — Reglamento UE 2024/1689</li>
-            <li>Sistemas de alto riesgo: Anexo III</li>
-            <li>Artículos clave: 9–17, 26–27, 50, 86</li>
-          </ul>
-          <span class="norma-badge">PACSEJ: 96% alineación AI Act</span>
+
+        <div class="norma-row">
+          <div class="norma-row-head">
+            <span class="norma-row-icon">🇪🇺</span>
+            <span class="norma-row-titulo">Unión Europea</span>
+          </div>
+          <div class="norma-row-body">
+            <ul>
+              <li>AI Act — Reglamento UE 2024/1689</li>
+              <li>Sistemas de alto riesgo: Anexo III</li>
+              <li>Artículos clave: 9–17, 26–27, 50, 86</li>
+            </ul>
+            <span class="norma-badge">PACSEJ: 96% alineación AI Act</span>
+          </div>
         </div>
-        <div class="norma-col">
-          <div class="norma-col-titulo">⚖️ Jurisprudencia comparada</div>
-          <ul>
-            <li>5 casos con sentencia firme</li>
-            <li>4 jurisdicciones: EE.UU., Italia, Países Bajos, Colombia</li>
-            <li>16 aplicaciones retrospectivas</li>
-          </ul>
-          <span class="norma-badge" style="background:var(--risk-crit);">Tasa detección: 100% RIESGO INACEPTABLE</span>
+
+        <div class="norma-row">
+          <div class="norma-row-head">
+            <span class="norma-row-icon">⚖️</span>
+            <span class="norma-row-titulo">Jurisprudencia comparada</span>
+          </div>
+          <div class="norma-row-body">
+            <ul>
+              <li>5 casos con sentencia firme</li>
+              <li>4 jurisdicciones: EE.UU., Italia, Países Bajos, Colombia</li>
+              <li>16 aplicaciones retrospectivas del protocolo</li>
+            </ul>
+            <span class="norma-badge crit">100% detección de riesgo inaceptable</span>
+          </div>
         </div>
+
       </div>
     </div>
 
-    <!-- Bloque 3: Casos con sentencia firme -->
+    <!-- Bloque 3: Validación retrospectiva -->
     <div class="jur-bloque">
-      <span class="jur-bloque-titulo">Casos con sentencia firme</span>
+      <span class="jur-bloque-titulo">Validación retrospectiva del test</span>
 
-      <div class="caso-card">
-        <div class="caso-card-sistema">COMPAS</div>
-        <div class="caso-card-nombre">State v. Loomis, 881 N.W.2d 749 (Wis. 2016)</div>
-        <div class="caso-card-meta">
-          <span class="caso-tag">🇺🇸 EE.UU.</span>
-        </div>
-        <div class="caso-card-derecho">Debido proceso — secreto comercial como barrera de impugnación</div>
-        <span class="caso-score">Score PACSEJ: 9% → RIESGO INACEPTABLE</span>
-      </div>
+      <div class="retro-box">
+        <p class="retro-box-lead">
+          PACSEJ no se diseñó solo en el papel: se probó aplicando el cuestionario ciudadano de forma retrospectiva sobre <strong>15 casos reales</strong> documentados en la tesis — fuentes, pruebas y soporte empírico del protocolo.
+        </p>
 
-      <div class="caso-card">
-        <div class="caso-card-sistema">Deliveroo Frank</div>
-        <div class="caso-card-nombre">Tribunale di Bologna, Sentenza N. 2949/2020</div>
-        <div class="caso-card-meta">
-          <span class="caso-tag">🇮🇹 Italia</span>
+        <div class="retro-stats">
+          <span class="retro-stat">15 casos analizados</span>
+          <span class="retro-stat">5 con sentencia firme</span>
+          <span class="retro-stat">4 jurisdicciones</span>
+          <span class="retro-stat">16 aplicaciones retrospectivas</span>
         </div>
-        <div class="caso-card-derecho">Derecho al trabajo — penalización del cuidado como discriminación indirecta de género</div>
-        <span class="caso-score">Score PACSEJ: 10% → RIESGO INACEPTABLE</span>
-      </div>
 
-      <div class="caso-card">
-        <div class="caso-card-sistema">Sistema de fianzas Harris County</div>
-        <div class="caso-card-nombre">O'Donnell v. Harris County, 251 F. Supp. 3d 1052 (S.D. Tex. 2017)</div>
-        <div class="caso-card-meta">
-          <span class="caso-tag">🇺🇸 EE.UU.</span>
+        <div class="retro-highlight">
+          <strong>¿Para qué sirve este análisis?</strong> Confirmar la coherencia y pertinencia del test de auditoría ciudadana: ver si las preguntas que cualquier persona puede responder detectan los mismos riesgos que ya demostraron los tribunales y la investigación académica.
         </div>
-        <div class="caso-card-derecho">Igualdad ante la ley — encarcelamiento por insolvencia económica</div>
-        <span class="caso-score">Score PACSEJ: 3% → RIESGO INACEPTABLE</span>
-      </div>
 
-      <div class="caso-card">
-        <div class="caso-card-sistema">Reconocimiento facial</div>
-        <div class="caso-card-nombre">Arresto de Robert Williams (Detroit, 2020)</div>
-        <div class="caso-card-meta">
-          <span class="caso-tag">🇺🇸 EE.UU.</span>
-        </div>
-        <div class="caso-card-derecho">Libertad personal — error sistemático por subrepresentación racial</div>
-        <span class="caso-score">Score PACSEJ: 1.5% → RIESGO INACEPTABLE</span>
-      </div>
-
-      <div class="caso-card">
-        <div class="caso-card-sistema">ChatGPT</div>
-        <div class="caso-card-nombre">Mata v. Avianca, No. 22-cv-1461 (S.D.N.Y. 2023) · Sentencia T-323/24 (Corte Constitucional de Colombia)</div>
-        <div class="caso-card-meta">
-          <span class="caso-tag">🇺🇸 EE.UU.</span>
-          <span class="caso-tag">🇨🇴 Colombia</span>
-        </div>
-        <div class="caso-card-derecho">Debido proceso — jurisprudencia inventada como fundamento de decisiones judiciales</div>
-        <span class="caso-score">Score PACSEJ: 17% → RIESGO INACEPTABLE</span>
+        <a href="tesis.html" class="retro-cta">Consultar análisis retrospectivo en la tesis →</a>
+        <a href="tesis.html#validacion" class="retro-cta-secondary">Ver metodología de validación</a>
       </div>
     </div>
 
