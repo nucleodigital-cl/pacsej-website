@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fundamentos de PACSEJ — Marco CTS y Marco Jurídico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg: #FFFFFF;
+--bg2: #F0F9F4;
+--bg3: #E3F0EC;
+--surface: #FFFFFF;
+--border: #C3D8D0;
+--text: #1A3830;
+--text-muted: #3D6E62;
+--accent: #166534;
+--accent2: #1D4ED8;
+--accent3: #0D9488;
+
+--risk-low: #166534;
+--risk-lim: #1D4ED8;
+--risk-high: #B7791F;
+--risk-crit: #9B2335;
+
+--font-serif: 'Cormorant Garamond', Georgia, serif;
+--font-inst: 'Instrument Serif', serif;
+--font-mono: 'DM Mono', monospace;
+
+--col-cts-bg: #1E3A5F;
+--col-jur-bg: #F5F5F0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+background: var(--bg);
+color: var(--text);
+font-family: var(--font-serif);
+font-size: 19px;
+line-height: 1.7;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 2000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 3rem;
+background: rgba(255, 255, 255, 0.98);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+font-family: var(--font-mono);
+font-size: 1rem;
+font-weight: bold;
+color: var(--accent);
+text-decoration: none;
+letter-spacing: 0.1em;
+}
+
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+text-transform: uppercase;
+color: var(--text-muted);
+text-decoration: none;
+transition: 0.3s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+.nav-cta {
+background: var(--accent2);
+color: white;
+padding: 0.6rem 1.2rem;
+text-decoration: none;
+font-family: var(--font-mono);
+font-size: 0.75rem;
+font-weight: bold;
+border-radius: 4px;
+transition: 0.3s;
+}
+.nav-cta:hover { background: #DD6B20; }
+
+/* PAGE HERO */
+.page-hero {
+padding: 8rem 3rem 3rem;
+background: linear-gradient(to bottom, #FFFFFF, var(--bg2));
+border-bottom: 1px solid var(--border);
+}
+
+.page-hero-tag {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+color: var(--accent);
+border: 1px solid var(--accent);
+padding: 0.3rem 0.8rem;
+margin-bottom: 1.5rem;
+width: fit-content;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+}
+
+.page-hero h1 {
+font-family: var(--font-inst);
+font-size: clamp(2.2rem, 5vw, 4rem);
+line-height: 1.1;
+}
+
+.page-hero h1 em { color: var(--accent3); font-style: italic; }
+
+.page-hero-sub {
+font-family: var(--font-mono);
+font-size: 0.85rem;
+color: var(--text-muted);
+text-transform: uppercase;
+letter-spacing: 0.12em;
+margin-top: 1rem;
+}
+
+/* TWO-COLUMN LAYOUT */
+.fundamentos-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+min-height: calc(100vh - 200px);
+}
+
+/* CTS COLUMN */
+.col-cts {
+background: var(--col-cts-bg);
+color: #E8F0FE;
+padding: 3rem 2.5rem 4rem;
+}
+
+.col-title {
+font-family: var(--font-inst);
+font-size: 2rem;
+margin-bottom: 0.4rem;
+}
+
+.col-subtitle {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+opacity: 0.7;
+margin-bottom: 2.5rem;
+padding-bottom: 1.5rem;
+border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* CTS Cards */
+.cts-card {
+background: rgba(255,255,255,0.06);
+border: 1px solid rgba(255,255,255,0.12);
+border-radius: 8px;
+padding: 1.5rem;
+margin-bottom: 1.2rem;
+transition: 0.25s;
+}
+
+.cts-card:hover {
+background: rgba(255,255,255,0.1);
+transform: translateX(3px);
+}
+
+.cts-card-autor {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: #93C5FD;
+margin-bottom: 0.3rem;
+}
+
+.cts-card-concepto {
+font-family: var(--font-inst);
+font-size: 1.25rem;
+color: #FFFFFF;
+margin-bottom: 0.8rem;
+line-height: 1.2;
+}
+
+.cts-card-desc {
+font-size: 0.92rem;
+color: #CBD5E1;
+line-height: 1.6;
+margin-bottom: 1rem;
+}
+
+.cts-card-pregunta {
+background: rgba(147,197,253,0.1);
+border-left: 3px solid #93C5FD;
+border-radius: 0 4px 4px 0;
+padding: 0.6rem 0.9rem;
+font-family: var(--font-mono);
+font-size: 0.75rem;
+color: #BAE6FD;
+}
+
+.cts-card-pregunta strong {
+color: #E0F2FE;
+display: block;
+margin-bottom: 0.2rem;
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+}
+
+.col-cts-cta {
+margin-top: 2.5rem;
+padding-top: 2rem;
+border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-tesis {
+display: inline-block;
+background: transparent;
+color: #93C5FD;
+border: 1.5px solid #93C5FD;
+padding: 0.9rem 1.8rem;
+text-decoration: none;
+font-family: var(--font-mono);
+font-size: 0.8rem;
+font-weight: bold;
+border-radius: 6px;
+letter-spacing: 0.06em;
+transition: 0.3s;
+}
+.btn-tesis:hover {
+background: rgba(147,197,253,0.12);
+transform: translateY(-2px);
+}
+
+/* JURIDICO COLUMN */
+.col-jur {
+background: var(--col-jur-bg);
+padding: 3rem 2.5rem 4rem;
+border-left: 1px solid var(--border);
+}
+
+.col-jur .col-title { color: var(--text); }
+.col-jur .col-subtitle { color: var(--text-muted); border-bottom-color: var(--border); }
+
+/* Bloques jurídicos */
+.jur-bloque {
+margin-bottom: 2.5rem;
+}
+
+.jur-bloque-titulo {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: var(--accent);
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+border-bottom: 2px solid var(--accent);
+display: inline-block;
+}
+
+.jur-problema-texto {
+font-size: 1rem;
+color: var(--text);
+line-height: 1.75;
+background: white;
+border: 1px solid var(--border);
+border-left: 4px solid var(--accent2);
+border-radius: 0 8px 8px 0;
+padding: 1.5rem;
+}
+
+/* Marco normativo 3 cols */
+.norma-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
+}
+
+.norma-col {
+background: white;
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.2rem;
+}
+
+.norma-col-titulo {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--accent);
+margin-bottom: 0.8rem;
+padding-bottom: 0.5rem;
+border-bottom: 1px solid var(--border);
+}
+
+.norma-col ul {
+list-style: none;
+}
+
+.norma-col li {
+font-size: 0.85rem;
+color: var(--text);
+padding: 0.35rem 0;
+border-bottom: 1px dashed var(--border);
+line-height: 1.4;
+}
+
+.norma-col li:last-child { border-bottom: none; }
+
+.norma-badge {
+display: inline-block;
+background: var(--accent);
+color: white;
+font-family: var(--font-mono);
+font-size: 0.62rem;
+padding: 0.15rem 0.5rem;
+border-radius: 3px;
+margin-top: 0.5rem;
+letter-spacing: 0.06em;
+}
+
+/* Casos cards */
+.caso-card {
+background: white;
+border: 1px solid var(--border);
+border-left: 4px solid var(--risk-crit);
+border-radius: 0 8px 8px 0;
+padding: 1.1rem 1.3rem;
+margin-bottom: 0.9rem;
+transition: 0.2s;
+}
+
+.caso-card:hover {
+box-shadow: 0 4px 16px rgba(155,35,53,0.08);
+transform: translateX(2px);
+}
+
+.caso-card-sistema {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--risk-crit);
+margin-bottom: 0.3rem;
+}
+
+.caso-card-nombre {
+font-size: 0.9rem;
+color: var(--text);
+font-weight: 600;
+margin-bottom: 0.25rem;
+line-height: 1.3;
+}
+
+.caso-card-meta {
+display: flex;
+gap: 0.8rem;
+margin-bottom: 0.5rem;
+flex-wrap: wrap;
+}
+
+.caso-tag {
+font-family: var(--font-mono);
+font-size: 0.65rem;
+background: var(--bg2);
+color: var(--text-muted);
+padding: 0.2rem 0.5rem;
+border-radius: 3px;
+}
+
+.caso-card-derecho {
+font-size: 0.85rem;
+color: var(--text-muted);
+line-height: 1.4;
+margin-bottom: 0.6rem;
+}
+
+.caso-score {
+font-family: var(--font-mono);
+font-size: 0.75rem;
+font-weight: bold;
+color: var(--risk-crit);
+background: rgba(155,35,53,0.06);
+padding: 0.3rem 0.7rem;
+border-radius: 4px;
+display: inline-block;
+}
+
+/* Preguntas de investigación */
+.preguntas-bloque {
+background: var(--text);
+border-radius: 12px;
+padding: 2.5rem;
+margin-bottom: 2.5rem;
+}
+
+.preguntas-bloque .jur-bloque-titulo {
+color: var(--accent3);
+border-bottom-color: var(--accent3);
+}
+
+.pregunta-item {
+font-family: var(--font-inst);
+font-size: 1.3rem;
+color: #FFFFFF;
+line-height: 1.4;
+padding: 1.2rem 0;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.pregunta-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.pregunta-num {
+font-family: var(--font-mono);
+font-size: 0.65rem;
+color: var(--accent3);
+display: block;
+margin-bottom: 0.4rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+}
+
+/* Autora bloque */
+.autora-bloque {
+background: white;
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1.5rem;
+}
+
+.autora-nombre {
+font-family: var(--font-inst);
+font-size: 1.4rem;
+color: var(--text);
+margin-bottom: 0.3rem;
+}
+
+.autora-meta {
+font-family: var(--font-mono);
+font-size: 0.75rem;
+color: var(--text-muted);
+line-height: 1.8;
+}
+
+.autora-meta span { display: block; }
+
+.autora-validacion {
+margin-top: 1rem;
+padding-top: 1rem;
+border-top: 1px solid var(--border);
+font-family: var(--font-mono);
+font-size: 0.72rem;
+color: var(--text-muted);
+}
+
+.autora-validacion strong { color: var(--accent); }
+
+.autora-contacto {
+display: inline-block;
+margin-top: 0.8rem;
+font-family: var(--font-mono);
+font-size: 0.78rem;
+color: var(--accent2);
+text-decoration: none;
+}
+.autora-contacto:hover { text-decoration: underline; }
+
+/* FOOTER */
+footer {
+background: var(--text);
+color: rgba(255,255,255,0.8);
+padding: 3rem;
+text-align: center;
+}
+
+.footer-main {
+font-family: var(--font-mono);
+font-size: 0.85rem;
+letter-spacing: 0.08em;
+color: white;
+margin-bottom: 1rem;
+}
+
+.footer-sub {
+font-size: 0.9rem;
+line-height: 1.8;
+color: rgba(255,255,255,0.65);
+margin-bottom: 1.5rem;
+}
+
+.footer-legal {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+color: rgba(255,255,255,0.4);
+line-height: 2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+nav { padding: 1rem 1.5rem; }
+.nav-links { display: none; }
+
+.page-hero { padding: 6rem 1.5rem 2.5rem; }
+
+.fundamentos-grid {
+grid-template-columns: 1fr;
+}
+
+.col-cts, .col-jur {
+padding: 2.5rem 1.5rem;
+}
+
+.norma-grid {
+grid-template-columns: 1fr;
+}
+
+.preguntas-bloque { padding: 1.8rem 1.4rem; }
+.pregunta-item { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="index.html" class="nav-logo">PACSEJ</a>
+<ul class="nav-links">
+<li><a href="index.html#auditoria">Auditoría</a></li>
+<li><a href="index.html#que-es">PACSEJ</a></li>
+<li><a href="index.html#sesgoritmo">Sesgoritmo</a></li>
+<li><a href="fundamentos.html" class="active">Fundamentos</a></li>
+<li><a href="tesis.html">Tesis</a></li>
+<li><a href="index.html#autora">Autora</a></li>
+</ul>
+<a href="index.html#auditoria" class="nav-cta">Iniciar auditoría ciudadana</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+<div class="page-hero-tag">Respaldo teórico · PACSEJ</div>
+<h1>Fundamentos de <em>PACSEJ</em></h1>
+<p class="page-hero-sub">Marco CTS &amp; Marco Jurídico</p>
+</div>
+
+<!-- TWO-COLUMN CONTENT -->
+<div class="fundamentos-grid">
+
+  <!-- ======= COLUMNA IZQUIERDA: MARCO CTS ======= -->
+  <div class="col-cts">
+    <h2 class="col-title">📚 Marco CTS</h2>
+    <p class="col-subtitle">Ciencia, Tecnología y Sociedad</p>
+
+    <!-- Tarjeta 1 -->
+    <div class="cts-card">
+      <div class="cts-card-autor">Sheila Jasanoff (2004)</div>
+      <div class="cts-card-concepto">Coproducción sociotécnica</div>
+      <p class="cts-card-desc">Los algoritmos no describen la realidad — la coproducen junto con el orden social y jurídico. Las categorías que generan (alto riesgo, no elegible, baja confiabilidad) se naturalizan como datos objetivos cuando son construcciones normativas.</p>
+      <div class="cts-card-pregunta">
+        <strong>Pregunta PACSEJ</strong>
+        NC-8 — ¿Te informaron si ha sido evaluado para no discriminar?
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="cts-card">
+      <div class="cts-card-autor">Yuk Hui (2016, 2019)</div>
+      <div class="cts-card-concepto">Cosmotécnica</div>
+      <p class="cts-card-desc">No existe una técnica universal. Los sistemas algorítmicos importan ontologías jurídicas anglosajonas presentándolas como estándares neutros. Adoptar tecnología sin interrogar su origen es aceptar como universal lo que es particular.</p>
+      <div class="cts-card-pregunta">
+        <strong>Pregunta PACSEJ</strong>
+        A-4 — ¿El programa fue entrenado con las leyes de tu país?
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="cts-card">
+      <div class="cts-card-autor">Sandra Harding y Donna Haraway (1986, 1988, 1991)</div>
+      <div class="cts-card-concepto">Conocimiento situado / Standpoint</div>
+      <p class="cts-card-desc">No existe objetividad desde ningún lugar. La objetividad algorítmica es la perspectiva de grupos dominantes universalizada. Diseñar desde el sujeto más expuesto al daño produce conocimiento más completo.</p>
+      <div class="cts-card-pregunta">
+        <strong>Pregunta PACSEJ</strong>
+        C-2 — ¿Se comprobó que no falla más con personas de cierto color de piel?
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="cts-card">
+      <div class="cts-card-autor">Cathy O'Neil (2018)</div>
+      <div class="cts-card-concepto">Armas de Destrucción Matemática</div>
+      <p class="cts-card-desc">Los algoritmos más dañinos combinan opacidad estructural, escalabilidad masiva y daño diferencial — concentrando costos en quienes menos pueden resistirlos.</p>
+      <div class="cts-card-pregunta">
+        <strong>Pregunta PACSEJ</strong>
+        NC-2 — ¿Te explicaron de forma sencilla cómo toma las decisiones?
+      </div>
+    </div>
+
+    <div class="col-cts-cta">
+      <a href="tesis.html" class="btn-tesis">Leer tesis completa →</a>
+    </div>
+  </div>
+
+  <!-- ======= COLUMNA DERECHA: MARCO JURÍDICO ======= -->
+  <div class="col-jur">
+    <h2 class="col-title">⚖️ Marco Jurídico</h2>
+    <p class="col-subtitle">Derecho, regulación y jurisprudencia</p>
+
+    <!-- Bloque 1: El problema jurídico -->
+    <div class="jur-bloque">
+      <span class="jur-bloque-titulo">El problema jurídico</span>
+      <p class="jur-problema-texto">Los sesgoritmos jurídicos no son un problema técnico: son un problema de derechos. Cuando un algoritmo decide quién accede a un subsidio, quién es evaluado como riesgoso o quién pierde su empleo sin poder impugnar la decisión, está afectando valores que el ordenamiento jurídico protege: el derecho al trabajo, a la salud, a la igualdad ante la ley y al debido proceso. La lesión no ocurre porque el algoritmo falle — ocurre porque funciona exactamente como fue diseñado.</p>
+    </div>
+
+    <!-- Bloque 2: Marco normativo -->
+    <div class="jur-bloque">
+      <span class="jur-bloque-titulo">Marco normativo</span>
+      <div class="norma-grid">
+        <div class="norma-col">
+          <div class="norma-col-titulo">🇨🇱 Chile</div>
+          <ul>
+            <li>Ley N.° 21.663 — Ley Marco de Ciberseguridad (2024)</li>
+            <li>Ley N.° 21.719 — Protección de Datos Personales (2024)</li>
+            <li>Boletín 16821-19 — Regulación de IA (en trámite, segundo trámite legislativo, 2026)</li>
+          </ul>
+        </div>
+        <div class="norma-col">
+          <div class="norma-col-titulo">🇪🇺 Unión Europea</div>
+          <ul>
+            <li>AI Act — Reglamento UE 2024/1689</li>
+            <li>Sistemas de alto riesgo: Anexo III</li>
+            <li>Artículos clave: 9–17, 26–27, 50, 86</li>
+          </ul>
+          <span class="norma-badge">PACSEJ: 96% alineación AI Act</span>
+        </div>
+        <div class="norma-col">
+          <div class="norma-col-titulo">⚖️ Jurisprudencia comparada</div>
+          <ul>
+            <li>5 casos con sentencia firme</li>
+            <li>4 jurisdicciones: EE.UU., Italia, Países Bajos, Colombia</li>
+            <li>16 aplicaciones retrospectivas</li>
+          </ul>
+          <span class="norma-badge" style="background:var(--risk-crit);">Tasa detección: 100% RIESGO INACEPTABLE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloque 3: Casos con sentencia firme -->
+    <div class="jur-bloque">
+      <span class="jur-bloque-titulo">Casos con sentencia firme</span>
+
+      <div class="caso-card">
+        <div class="caso-card-sistema">COMPAS</div>
+        <div class="caso-card-nombre">State v. Loomis, 881 N.W.2d 749 (Wis. 2016)</div>
+        <div class="caso-card-meta">
+          <span class="caso-tag">🇺🇸 EE.UU.</span>
+        </div>
+        <div class="caso-card-derecho">Debido proceso — secreto comercial como barrera de impugnación</div>
+        <span class="caso-score">Score PACSEJ: 9% → RIESGO INACEPTABLE</span>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-card-sistema">Deliveroo Frank</div>
+        <div class="caso-card-nombre">Tribunale di Bologna, Sentenza N. 2949/2020</div>
+        <div class="caso-card-meta">
+          <span class="caso-tag">🇮🇹 Italia</span>
+        </div>
+        <div class="caso-card-derecho">Derecho al trabajo — penalización del cuidado como discriminación indirecta de género</div>
+        <span class="caso-score">Score PACSEJ: 10% → RIESGO INACEPTABLE</span>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-card-sistema">Sistema de fianzas Harris County</div>
+        <div class="caso-card-nombre">O'Donnell v. Harris County, 251 F. Supp. 3d 1052 (S.D. Tex. 2017)</div>
+        <div class="caso-card-meta">
+          <span class="caso-tag">🇺🇸 EE.UU.</span>
+        </div>
+        <div class="caso-card-derecho">Igualdad ante la ley — encarcelamiento por insolvencia económica</div>
+        <span class="caso-score">Score PACSEJ: 3% → RIESGO INACEPTABLE</span>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-card-sistema">Reconocimiento facial</div>
+        <div class="caso-card-nombre">Arresto de Robert Williams (Detroit, 2020)</div>
+        <div class="caso-card-meta">
+          <span class="caso-tag">🇺🇸 EE.UU.</span>
+        </div>
+        <div class="caso-card-derecho">Libertad personal — error sistemático por subrepresentación racial</div>
+        <span class="caso-score">Score PACSEJ: 1.5% → RIESGO INACEPTABLE</span>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-card-sistema">ChatGPT</div>
+        <div class="caso-card-nombre">Mata v. Avianca, No. 22-cv-1461 (S.D.N.Y. 2023) · Sentencia T-323/24 (Corte Constitucional de Colombia)</div>
+        <div class="caso-card-meta">
+          <span class="caso-tag">🇺🇸 EE.UU.</span>
+          <span class="caso-tag">🇨🇴 Colombia</span>
+        </div>
+        <div class="caso-card-derecho">Debido proceso — jurisprudencia inventada como fundamento de decisiones judiciales</div>
+        <span class="caso-score">Score PACSEJ: 17% → RIESGO INACEPTABLE</span>
+      </div>
+    </div>
+
+    <!-- Bloque 4: Preguntas de investigación -->
+    <div class="preguntas-bloque">
+      <span class="jur-bloque-titulo" style="color:var(--accent3);border-bottom-color:var(--accent3);">Preguntas de investigación abiertas</span>
+
+      <div class="pregunta-item">
+        <span class="pregunta-num">01 / Responsabilidad</span>
+        ¿Qué régimen de responsabilidad civil o administrativa corresponde cuando un sesgoritmo jurídico causa daño judicialmente probado?
+      </div>
+      <div class="pregunta-item">
+        <span class="pregunta-num">02 / Debido proceso</span>
+        ¿Cómo se articula el debido proceso cuando la evidencia es un algoritmo protegido por secreto comercial?
+      </div>
+      <div class="pregunta-item">
+        <span class="pregunta-num">03 / Derecho vigente</span>
+        ¿Puede el marco normativo chileno regular sistemas de IA de alto riesgo antes de que el Boletín 16821-19 sea promulgado, usando las herramientas del derecho vigente?
+      </div>
+    </div>
+
+    <!-- Bloque 5: Sobre la autora -->
+    <div class="jur-bloque">
+      <span class="jur-bloque-titulo">Sobre la autora</span>
+      <div class="autora-bloque">
+        <div class="autora-nombre">Paola Andrea Robayo Galán</div>
+        <div class="autora-meta">
+          <span>Universidad Alberto Hurtado</span>
+          <span>Magíster en Ciencia, Tecnología y Sociedad</span>
+          <span>Director: Dr. Claudio Ramos Zincke</span>
+        </div>
+        <div class="autora-validacion">
+          <strong>Validación externa:</strong> Stanford Law School · Consejo de Estado de España · CSIC Madrid
+        </div>
+        <a href="mailto:probayo@alumnos.uahurtado.cl" class="autora-contacto">probayo@alumnos.uahurtado.cl</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- fin col-jur -->
+
+</div>
+<!-- fin fundamentos-grid -->
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-main">PACSEJ Ciudadano — Protocolo de Auditoría Crítica de Sesgoritmos Jurídicos</div>
+<div class="footer-sub">
+Desarrollado por <strong>Paola Andrea Robayo Galán</strong><br>
+Magíster en Ciencia, Tecnología y Sociedad · Enfoque <em>Making and Doing</em><br>
+Universidad Alberto Hurtado · Santiago, Chile<br>
+Dirección: Dr. Claudio Ramos Zincke
+</div>
+<div class="footer-legal">
+<span style="margin-right:1.5rem;">🔓 Código abierto</span>
+<span style="margin-right:1.5rem;">🔒 Sin captura de datos personales sin consentimiento</span>
+<span>⚖️ Orientación ciudadana — no es asesoría legal</span>
+<br><br>
+© 2026 · <a href="index.html" style="color:var(--accent3);">Volver al sitio principal</a>
+· <a href="tesis.html" style="color:var(--accent3);">Marco teórico y tesis</a>
+</div>
+</footer>
+
+</body>
+</html>
