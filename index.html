@@ -2168,7 +2168,7 @@ function renderPreguntas(data, containerId) {
                <input type="radio" name="${q.id}" value="1" id="${q.id}x">
                <label for="${q.id}x">No sé</label>`;
         return `
-        <div class="audit-question" data-sesgo="${q.s}">
+        <div class="audit-question" data-id="${q.id}" data-sesgo="${q.s}">
             <p><strong>${q.id}.</strong> ${q.p}</p>
             <div class="audit-options">
                 <input type="radio" name="${q.id}" value="4" id="${q.id}s">
@@ -2203,11 +2203,16 @@ function calcularRiesgo() {
     const checked = document.querySelectorAll('#audit-questions-area input[type="radio"]:checked');
     if (checked.length < totalPreguntas) { alert('Responde todas las preguntas para generar un reporte válido.'); return; }
 
+    // Peso ×1,5 para preguntas críticas: NC2, NC4, NC8
+    const preguntasCriticas = ["NC2", "NC4", "NC8"];
+
     let score = 0;
     let sesgos = [];
     checked.forEach(r => {
         const val = parseInt(r.value);
-        score += val;
+        const preguntaId = r.closest('.audit-question').getAttribute('data-id');
+        const peso = preguntasCriticas.includes(preguntaId) ? 1.5 : 1;
+        score += val * peso;
         if (val < 4) sesgos.push(r.closest('.audit-question').getAttribute('data-sesgo'));
     });
 
