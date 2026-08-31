@@ -2157,14 +2157,15 @@ function irAuditoriaModulo(mod) {
     setTimeout(cargarCuestionario, 500);
 }
 
+// Sí = 4 puntos | No sé = 1 punto | No = 0 puntos
 function renderPreguntas(data, containerId) {
     document.getElementById(containerId).innerHTML = data.map(q => {
         const opcionesNo = q.soloSiNo
             ? `<input type="radio" name="${q.id}" value="0" id="${q.id}n">
                <label for="${q.id}n">No</label>`
-            : `<input type="radio" name="${q.id}" value="1" id="${q.id}n">
+            : `<input type="radio" name="${q.id}" value="0" id="${q.id}n">
                <label for="${q.id}n">No</label>
-               <input type="radio" name="${q.id}" value="0" id="${q.id}x">
+               <input type="radio" name="${q.id}" value="1" id="${q.id}x">
                <label for="${q.id}x">No sé</label>`;
         return `
         <div class="audit-question" data-sesgo="${q.s}">
