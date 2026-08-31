@@ -1662,7 +1662,7 @@ section { padding: 4rem 1.5rem; }
 </div>
 <p class="hero-subtitle">
 PACSEJ te ayuda a identificar si una decisión automatizada presenta opacidad, sesgos o falta de revisión humana, mediante un diagnóstico ciudadano comprensible.<br><br>
-<strong>PACSEJ es un protocolo ciudadano para identificar riesgos algorítmicos en plataformas y sistemas de IA que afectan derechos fundamentales.</strong> Está pensado para personas sin formación técnica ni jurídica.
+<strong>PACSEJ es un protocolo ciudadano para identificar riesgos algorítmicos en plataformas y sistemas automatizados que afectan derechos fundamentales.</strong> Está pensado para personas sin formación técnica ni jurídica.
 </p>
 </section>
 
@@ -1767,7 +1767,7 @@ PACSEJ te ayuda a identificar si una decisión automatizada presenta opacidad, s
 </div>
 
 <div class="audit-no-se-hint">
-<strong>¿Por qué “No sé” también cuenta?</strong> Si no puedes responder una pregunta, eso puede ser una señal de que el sistema es opaco: no te explicó cómo decide. En PACSEJ, <em>No sé</em> es información válida y relevante.
+<strong>Antes de responder:</strong> Si buscas la información y no la encuentras, responde <em>“No sé”</em>. Esa respuesta también es un resultado importante: significa que el sistema no te está informando algo que debería.
 </div>
 
 <!-- PREGUNTAS -->
@@ -1823,7 +1823,7 @@ PACSEJ no es una herramienta de cumplimiento para empresas. Es un protocolo ciud
 </div>
 <div class="triada-card">
 <h4>Objeto</h4>
-<p>El sistema o plataforma de IA que incide en tus derechos: trabajo, subsidio, justicia, consumo o acceso a recursos.</p>
+<p>El sistema o plataforma automatizada que incide en tus derechos: trabajo, subsidio, justicia, consumo o acceso a recursos.</p>
 </div>
 <div class="triada-card">
 <h4>Objetivo</h4>
@@ -2076,7 +2076,7 @@ La versión ciudadana traduce investigación crítica en herramientas que cualqu
 </div>
 
 <div class="site-closing-cta">
-<h2>¿Cómo saber si una IA, afectó tus derechos?</h2>
+<h2>¿Cómo saber si un sistema automatizado afectó tus derechos?</h2>
 <p>Diagnóstico ciudadano en semáforo · Sin registro · En tu propio dispositivo</p>
 <a href="#auditoria" class="btn-large">Iniciar auditoría ciudadana</a>
 </div>
@@ -2095,8 +2095,8 @@ const nucleoData = [
     {id:"NC1", p:"¿Sabes qué nombre tiene el programa y para qué se usa exactamente?", s:"Transparencia Básica"},
     {id:"NC2", p:"¿Te explicaron de forma sencilla cómo toma las decisiones?", s:"Opacidad Algorítmica"},
     {id:"NC3", p:"¿Entendiste quién es responsable legal si el programa falla?", s:"Opacidad Legal/Accountability"},
-    {id:"NC4", p:"¿Te dijeron que ciudadanos participaron en probar el sistema antes de lanzarlo?", s:"Diseño Excluyente"},
-    {id:"NC5", p:"¿Este sistema decide sobre la vida de miles de personas al mismo tiempo?", s:"Escala Masiva (ADM)"},
+    {id:"NC4", p:"¿En alguna parte dice de dónde viene la información que usa el sistema para tomar sus decisiones?", s:"Opacidad de Datos"},
+    {id:"NC5", p:"¿Este sistema toma decisiones sobre miles de personas de forma simultánea?", s:"Escala Masiva (ADM)"},
     {id:"NC6", p:"¿Puedes hablar con una persona real para corregir errores de inmediato?", s:"Automatización sin Control Humano"},
     {id:"NC7", p:"¿Te han avisado si el programa se revisa seguido (actualización)?", s:"Deriva Temporal/Congelamiento", soloSiNo: true},
     {id:"NC8", p:"¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales)?", s:"Sesgo Estructural", soloSiNo: true},
@@ -2108,7 +2108,7 @@ const modulosData = {
     A: [
         {id:"A1", p:"¿El programa cita fuentes (leyes/libros) de donde sacó la información?", s:"Epistémico (Alucinación)"},
         {id:"A2", p:"¿Te avisa si su información está al día (legislación vigente)?", s:"Anacronismo Legal"},
-        {id:"A3", p:"¿Queda registrado si un juez/funcionario usó esta IA en tu trámite?", s:"Opacidad de Uso Institucional"},
+        {id:"A3", p:"¿Queda registrado si un juez/funcionario usó este sistema automatizado en tu trámite?", s:"Opacidad de Uso Institucional"},
         {id:"A4", p:"¿El programa fue entrenado con las leyes de tu país?", s:"Colonialidad Digital"},
         {id:"A5", p:"¿Advierte que NO es consejo legal definitivo?", s:"Delegación Indebida de Autoridad"},
         {id:"A6", p:"¿Muestra distintas interpretaciones legítimas de una ley?", s:"Cierre del Pluralismo Interpretativo"}
@@ -2125,10 +2125,10 @@ const modulosData = {
     ],
     C: [
         {id:"C1", p:"¿Los datos vienen de épocas/barrios sin sesgo policial comprobado?", s:"Datos Históricos Discriminatorios"},
-        {id:"C2", p:"¿Se comprobó que no falla más con personas de cierto color de piel?", s:"Impacto Diferencial"},
+        {id:"C2", p:"¿Sabes si el sistema fue evaluado para verificar si funciona igual con personas de distinto color de piel?", s:"Impacto Diferencial"},
         {id:"C3", p:"¿Explica qué significa 'ser peligroso' para el algoritmo?", s:"Naturalización de Categorías"},
-        {id:"C4", p:"¿Se evaluó si afecta más a gente pobre sin defensa legal?", s:"Asimetría de Poder"},
-        {id:"C5", p:"¿Puede un juez ignorar la IA sin ser cuestionado por sus jefes?", s:"Autoridad Epistémica Bloqueada"},
+        {id:"C4", p:"¿Sabes si el sistema fue evaluado para verificar si sus resultados varían según el nivel socioeconómico de las personas?", s:"Asimetría de Poder"},
+        {id:"C5", p:"¿Puede un juez ignorar el sistema automatizado sin ser cuestionado por sus jefes?", s:"Autoridad Epistémica Bloqueada"},
         {id:"C6", p:"¿Considera causas estructurales (pobreza) y no solo antecedentes?", s:"Penalización de la Pobreza"},
         {id:"C7", p:"¿Se validó que sus predicciones ocurrieron realmente en el tiempo?", s:"Profecía Autocumplida"},
         {id:"C8", p:"¿Existe un plan para que el sistema aprenda de sus errores?", s:"Perpetuación de Errores"}
