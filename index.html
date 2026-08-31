@@ -2216,7 +2216,10 @@ function calcularRiesgo() {
         if (val < 4) sesgos.push(r.closest('.audit-question').getAttribute('data-sesgo'));
     });
 
-    const pct = (score / (totalPreguntas * 4)) * 100;
+    const nucleoMax = 46; // 7 preguntas × 4 + 3 preguntas × 6 (con peso ×1,5)
+    const moduloMax = modulosData[choice].length * 4; // preguntas del módulo, sin ponderación
+    const totalMax = nucleoMax + moduloMax;
+    const pct = (score / totalMax) * 100;
     const resArea = document.getElementById('audit-result-area');
     const badge = document.getElementById('audit-result-badge');
     const label = document.getElementById('audit-result-label');
