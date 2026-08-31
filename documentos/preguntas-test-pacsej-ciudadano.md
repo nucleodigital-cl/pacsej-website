@@ -38,7 +38,7 @@ Cada pregunta se responde con una de tres opciones:
 - **No**
 - **No sé**
 
-La opción **"No sé"** es información válida y relevante: indica que el sistema puede ser opaco porque no explicó cómo toma sus decisiones.
+La opción **"No sé"** es información válida y relevante: si buscas la información y no la encuentras, significa que el sistema no te está informando algo que debería.
 
 ### Tipos de sistema (módulos)
 
@@ -67,8 +67,8 @@ Estas 10 preguntas se aplican a **todos** los tipos de sistema, sin importar el 
 | NC1 | ¿Sabes qué nombre tiene el programa y para qué se usa exactamente? | Transparencia Básica |
 | NC2 | ¿Te explicaron de forma sencilla cómo toma las decisiones? | Opacidad Algorítmica |
 | NC3 | ¿Entendiste quién es responsable legal si el programa falla? | Opacidad Legal / Accountability |
-| NC4 | ¿Te dijeron que ciudadanos participaron en probar el sistema antes de lanzarlo? | Diseño Excluyente |
-| NC5 | ¿Este sistema decide sobre la vida de miles de personas al mismo tiempo? | Escala Masiva (ADM) |
+| NC4 | ¿En alguna parte dice de dónde viene la información que usa el sistema para tomar sus decisiones? | Opacidad de Datos |
+| NC5 | ¿Este sistema toma decisiones sobre miles de personas de forma simultánea? | Escala Masiva (ADM) |
 | NC6 | ¿Puedes hablar con una persona real para corregir errores de inmediato? | Automatización sin Control Humano |
 | NC7 | ¿Te han avisado si el programa se revisa seguido (actualización)? | Deriva Temporal / Congelamiento |
 | NC8 | ¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales, específicamente orientada a detectar riesgos de discriminación)? | Sesgo Estructural |
@@ -83,7 +83,7 @@ Estas 10 preguntas se aplican a **todos** los tipos de sistema, sin importar el 
 |----|----------|----------------------------|
 | A1 | ¿El programa cita fuentes (leyes/libros) de donde sacó la información? | Epistémico (Alucinación) |
 | A2 | ¿Te avisa si su información está al día (legislación vigente)? | Anacronismo Legal |
-| A3 | ¿Queda registrado si un juez/funcionario usó esta IA en tu trámite? | Opacidad de Uso Institucional |
+| A3 | ¿Queda registrado si un juez/funcionario usó este sistema automatizado en tu trámite? | Opacidad de Uso Institucional |
 | A4 | ¿El programa fue entrenado con las leyes de tu país? | Colonialidad Digital |
 | A5 | ¿Advierte que NO es consejo legal definitivo? | Delegación Indebida de Autoridad |
 | A6 | ¿Muestra distintas interpretaciones legítimas de una ley? | Cierre del Pluralismo Interpretativo |
@@ -110,10 +110,10 @@ Estas 10 preguntas se aplican a **todos** los tipos de sistema, sin importar el 
 | ID | Pregunta | Dimensión de sesgo asociada |
 |----|----------|----------------------------|
 | C1 | ¿Los datos vienen de épocas/barrios sin sesgo policial comprobado? | Datos Históricos Discriminatorios |
-| C2 | ¿Se comprobó que no falla más con personas de cierto color de piel? | Impacto Diferencial |
+| C2 | ¿Sabes si el sistema fue evaluado para verificar si funciona igual con personas de distinto color de piel? | Impacto Diferencial |
 | C3 | ¿Explica qué significa "ser peligroso" para el algoritmo? | Naturalización de Categorías |
-| C4 | ¿Se evaluó si afecta más a gente pobre sin defensa legal? | Asimetría de Poder |
-| C5 | ¿Puede un juez ignorar la IA sin ser cuestionado por sus jefes? | Autoridad Epistémica Bloqueada |
+| C4 | ¿Sabes si el sistema fue evaluado para verificar si sus resultados varían según el nivel socioeconómico de las personas? | Asimetría de Poder |
+| C5 | ¿Puede un juez ignorar el sistema automatizado sin ser cuestionado por sus jefes? | Autoridad Epistémica Bloqueada |
 | C6 | ¿Considera causas estructurales (pobreza) y no solo antecedentes? | Penalización de la Pobreza |
 | C7 | ¿Se validó que sus predicciones ocurrieron realmente en el tiempo? | Profecía Autocumplida |
 | C8 | ¿Existe un plan para que el sistema aprenda de sus errores? | Perpetuación de Errores |
@@ -155,8 +155,8 @@ Estas cinco preguntas aparecen en la plataforma como **preguntas orientadoras** 
 1. (NC1) ¿Sabes qué nombre tiene el programa y para qué se usa exactamente?
 2. (NC2) ¿Te explicaron de forma sencilla cómo toma las decisiones?
 3. (NC3) ¿Entendiste quién es responsable legal si el programa falla?
-4. (NC4) ¿Te dijeron que ciudadanos participaron en probar el sistema antes de lanzarlo?
-5. (NC5) ¿Este sistema decide sobre la vida de miles de personas al mismo tiempo?
+4. (NC4) ¿En alguna parte dice de dónde viene la información que usa el sistema para tomar sus decisiones?
+5. (NC5) ¿Este sistema toma decisiones sobre miles de personas de forma simultánea?
 6. (NC6) ¿Puedes hablar con una persona real para corregir errores de inmediato?
 7. (NC7) ¿Te han avisado si el programa se revisa seguido (actualización)?
 8. (NC8) ¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales, específicamente orientada a detectar riesgos de discriminación)?
@@ -167,7 +167,7 @@ Estas cinco preguntas aparecen en la plataforma como **preguntas orientadoras** 
 
 11. (A1) ¿El programa cita fuentes (leyes/libros) de donde sacó la información?
 12. (A2) ¿Te avisa si su información está al día (legislación vigente)?
-13. (A3) ¿Queda registrado si un juez/funcionario usó esta IA en tu trámite?
+13. (A3) ¿Queda registrado si un juez/funcionario usó este sistema automatizado en tu trámite?
 14. (A4) ¿El programa fue entrenado con las leyes de tu país?
 15. (A5) ¿Advierte que NO es consejo legal definitivo?
 16. (A6) ¿Muestra distintas interpretaciones legítimas de una ley?
@@ -186,10 +186,10 @@ Estas cinco preguntas aparecen en la plataforma como **preguntas orientadoras** 
 ### Módulo C — Sistemas judiciales o de riesgo (8)
 
 11. (C1) ¿Los datos vienen de épocas/barrios sin sesgo policial comprobado?
-12. (C2) ¿Se comprobó que no falla más con personas de cierto color de piel?
+12. (C2) ¿Sabes si el sistema fue evaluado para verificar si funciona igual con personas de distinto color de piel?
 13. (C3) ¿Explica qué significa "ser peligroso" para el algoritmo?
-14. (C4) ¿Se evaluó si afecta más a gente pobre sin defensa legal?
-15. (C5) ¿Puede un juez ignorar la IA sin ser cuestionado por sus jefes?
+14. (C4) ¿Sabes si el sistema fue evaluado para verificar si sus resultados varían según el nivel socioeconómico de las personas?
+15. (C5) ¿Puede un juez ignorar el sistema automatizado sin ser cuestionado por sus jefes?
 16. (C6) ¿Considera causas estructurales (pobreza) y no solo antecedentes?
 17. (C7) ¿Se validó que sus predicciones ocurrieron realmente en el tiempo?
 18. (C8) ¿Existe un plan para que el sistema aprenda de sus errores?
