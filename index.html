@@ -1774,6 +1774,8 @@ PACSEJ te ayuda a identificar si una decisión automatizada presenta opacidad, s
 <div id="audit-questions-area" style="display:none;">
 <div class="audit-section-title">Sección 1 — Núcleo Común: Transparencia y Gobernanza</div>
 <div id="audit-nucleo-container"></div>
+<div class="audit-section-title">Factor de escala (no puntúa)</div>
+<div id="audit-nc5-container"></div>
 <div class="audit-section-title" id="audit-modulo-titulo">Sección 2 — Módulo Específico</div>
 <div id="audit-modulo-container"></div>
 <button class="audit-btn audit-btn-gen" onclick="calcularRiesgo()">Generar diagnóstico ciudadano</button>
@@ -2091,18 +2093,23 @@ La versión ciudadana traduce investigación crítica en herramientas que cualqu
 
 <script>
 // ——— AUDITORÍA CIUDADANA PACSEJ v3.0 ———
+// Núcleo Común evaluable: 9 preguntas (NC2, NC4 y NC8 son críticas, peso ×1,5 vía preguntasCriticas).
+// NC5 (Escala Masiva) NO integra el cómputo agregado: se reporta aparte como factor de escala
+// contextual (ver nc5Data más abajo), conforme al Cap. IV §4.3 y Anexo B.7 de la tesis.
 const nucleoData = [
     {id:"NC1", p:"¿Sabes qué nombre tiene el programa y para qué se usa exactamente?", s:"Transparencia Básica"},
     {id:"NC2", p:"¿Te explicaron de forma sencilla cómo toma las decisiones?", s:"Opacidad Algorítmica"},
     {id:"NC3", p:"¿Entendiste quién es responsable legal si el programa falla?", s:"Opacidad Legal/Accountability"},
     {id:"NC4", p:"¿En alguna parte dice de dónde viene la información que usa el sistema para tomar sus decisiones?", s:"Opacidad de Datos"},
-    {id:"NC5", p:"¿Este sistema toma decisiones sobre miles de personas de forma simultánea?", s:"Escala Masiva (ADM)"},
     {id:"NC6", p:"¿Puedes hablar con una persona real para corregir errores de inmediato?", s:"Automatización sin Control Humano"},
     {id:"NC7", p:"¿Te han avisado si el programa se revisa seguido (actualización)?", s:"Deriva Temporal/Congelamiento", soloSiNo: true},
-    {id:"NC8", p:"¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales)?", s:"Sesgo Estructural"},
+    {id:"NC8", p:"¿Te informaron si ha sido evaluado para no discriminar (FRIA: evaluación de impacto en derechos fundamentales, específicamente orientada a detectar riesgos de discriminación)?", s:"Sesgo Estructural"},
     {id:"NC9", p:"¿Existe un canal fácil (botón/correo) para reclamar?", s:"Impotencia Ciudadana"},
     {id:"NC10", p:"¿Expertos independientes han revisado este programa?", s:"Autorregulación sin Escrutinio"}
 ];
+
+// NC5 se muestra por separado: no suma ni resta puntaje, solo agrava cualitativamente el diagnóstico.
+const nc5Data = {id:"NC5", p:"¿Este sistema toma decisiones sobre miles de personas de forma simultánea?", s:"Escala Masiva (ADM)"};
 
 const modulosData = {
     A: [
@@ -2179,6 +2186,21 @@ function renderPreguntas(data, containerId) {
     }).join('');
 }
 
+function renderNC5(containerId) {
+    document.getElementById(containerId).innerHTML = `
+        <div class="audit-question" data-id="${nc5Data.id}" data-sesgo="${nc5Data.s}">
+            <p><strong>${nc5Data.id}.</strong> ${nc5Data.p}</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin:-0.3rem 0 0.6rem;">Esta pregunta no suma ni resta puntos al diagnóstico: se usa solo para matizar la gravedad del resultado.</p>
+            <div class="audit-options">
+                <input type="radio" name="${nc5Data.id}" value="si" id="${nc5Data.id}s">
+                <label for="${nc5Data.id}s">Sí</label>
+                <input type="radio" name="${nc5Data.id}" value="no" id="${nc5Data.id}n">
+                <label for="${nc5Data.id}n">No</label>
+            </div>
+        </div>
+    `;
+}
+
 function cargarCuestionario() {
     const select = document.getElementById('audit-module-choice');
     const choice = select.value;
@@ -2189,6 +2211,7 @@ function cargarCuestionario() {
     }
     const selectedText = select.options[select.selectedIndex].text;
     renderPreguntas(nucleoData, 'audit-nucleo-container');
+    renderNC5('audit-nc5-container');
     renderPreguntas(modulosData[choice], 'audit-modulo-container');
     document.getElementById('audit-modulo-titulo').innerText = 'Sección 2 — ' + selectedText;
     document.getElementById('audit-result-area').style.display = 'none';
@@ -2200,8 +2223,10 @@ function cargarCuestionario() {
 function calcularRiesgo() {
     const choice = document.getElementById('audit-module-choice').value;
     const totalPreguntas = nucleoData.length + modulosData[choice].length;
-    const checked = document.querySelectorAll('#audit-questions-area input[type="radio"]:checked');
-    if (checked.length < totalPreguntas) { alert('Responde todas las preguntas para generar un reporte válido.'); return; }
+    // NC5 se valida como respondida (Sí/No) pero se excluye del cómputo de score y del total.
+    const nc5Checked = document.querySelector('#audit-nc5-container input[type="radio"]:checked');
+    const checked = document.querySelectorAll('#audit-nucleo-container input[type="radio"]:checked, #audit-modulo-container input[type="radio"]:checked');
+    if (!nc5Checked || checked.length < totalPreguntas) { alert('Responde todas las preguntas para generar un reporte válido.'); return; }
 
     // Peso ×1,5 para preguntas críticas: NC2, NC4, NC8
     const preguntasCriticas = ["NC2", "NC4", "NC8"];
@@ -2216,10 +2241,15 @@ function calcularRiesgo() {
         if (val < 4) sesgos.push(r.closest('.audit-question').getAttribute('data-sesgo'));
     });
 
-    const nucleoMax = 46; // 7 preguntas × 4 + 3 preguntas × 6 (con peso ×1,5)
+    // nucleoMax = 6 preguntas × 4 + 3 preguntas críticas × 4 × 1,5 = 24 + 18 = 42
+    const nucleoMax = 42;
     const moduloMax = modulosData[choice].length * 4; // preguntas del módulo, sin ponderación
     const totalMax = nucleoMax + moduloMax;
     const pct = (score / totalMax) * 100;
+    const escalaMasiva = nc5Checked.value === 'si';
+    const nc5Nota = escalaMasiva
+        ? '<p><strong>Factor de escala:</strong> este sistema afecta a escala masiva (decide sobre miles de personas a la vez), lo que agrava la severidad del diagnóstico aunque no cambia el puntaje.</p>'
+        : '';
     const resArea = document.getElementById('audit-result-area');
     const badge = document.getElementById('audit-result-badge');
     const label = document.getElementById('audit-result-label');
@@ -2238,7 +2268,7 @@ function calcularRiesgo() {
         label.innerText = 'El sistema parece cumplir estándares básicos';
         sesgoTag.className = 'sesgo-tag s-low';
         sesgoTag.innerHTML = '🟢 Riesgo bajo — Señales detectadas: ' + (topSesgos || 'ninguna crítica');
-        detalle.innerHTML = opacidadNota +
+        detalle.innerHTML = opacidadNota + nc5Nota +
             '<h5>Qué problema se detectó</h5><p>Pocas señales de opacidad o sesgo en tus respuestas.</p>' +
             '<h5>Por qué importa</h5><p>Aun con riesgo bajo, conviene vigilar porque los sistemas cambian.</p>' +
             '<h5>Derecho que podría estar en juego</h5><p>Transparencia, debido proceso y no discriminación.</p>';
@@ -2248,7 +2278,7 @@ function calcularRiesgo() {
         label.innerText = 'Hay brechas de transparencia que conviene revisar';
         sesgoTag.className = 'sesgo-tag s-lim';
         sesgoTag.innerHTML = '🟡 Riesgo limitado — Señales: ' + topSesgos;
-        detalle.innerHTML = opacidadNota +
+        detalle.innerHTML = opacidadNota + nc5Nota +
             '<h5>Qué problema se detectó</h5><p>Faltan explicaciones claras o canales de reclamo efectivos.</p>' +
             '<h5>Por qué importa</h5><p>Sin transparencia no puedes defenderte ni corregir errores.</p>' +
             '<h5>Derecho que podría estar en juego</h5><p>Acceso a información, tutela administrativa y protección de datos.</p>';
@@ -2258,7 +2288,7 @@ function calcularRiesgo() {
         label.innerText = 'Existen señales relevantes de sesgo u opacidad';
         sesgoTag.className = 'sesgo-tag s-high';
         sesgoTag.innerHTML = '🟠 Riesgo alto — Señales: ' + topSesgos;
-        detalle.innerHTML = opacidadNota +
+        detalle.innerHTML = opacidadNota + nc5Nota +
             '<h5>Qué problema se detectó</h5><p>El sistema opera como caja negra o con señales de discriminación.</p>' +
             '<h5>Por qué importa</h5><p>Puede afectar tu trabajo, beneficio, proceso o acceso a recursos sin explicación.</p>' +
             '<h5>Derecho que podría estar en juego</h5><p>Igualdad, debido proceso, trabajo digno o acceso a prestaciones sociales.</p>';
@@ -2268,7 +2298,7 @@ function calcularRiesgo() {
         label.innerText = 'El sistema presenta fallas graves o no es auditable';
         sesgoTag.className = 'sesgo-tag s-crit';
         sesgoTag.innerHTML = '🔴 Riesgo inaceptable — Señales: ' + topSesgos;
-        detalle.innerHTML = opacidadNota +
+        detalle.innerHTML = opacidadNota + nc5Nota +
             '<h5>Qué problema se detectó</h5><p>Múltiples fallas graves: opacidad, sesgo o ausencia de control humano.</p>' +
             '<h5>Por qué importa</h5><p>La decisión automatizada puede ser injusta y difícil de impugnar.</p>' +
             '<h5>Derecho que podría estar en juego</h5><p>Dignidad, no discriminación, debido proceso y acceso a la justicia.</p>';
